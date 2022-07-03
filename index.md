@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+## Privacy Policy
 
-You can use the [editor on GitHub](https://github.com/z415073783/app/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Last updated: Jul 3, 2022
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Thank you for showing interest in this app. We take the security of our users very seriously and this will always be our top priority. The app was created to add stylish widgets to your home screen, while also having an intuitive experience. Another priority of ours is to ensure that your data is kept securely, and only on your device. 
+This privacy policy sets out how the app uses and protects any information that you give to the app when you use it.
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+We take limited data that is necessary for your widgets to function. The information we take is the time, the battery percentage, and the photo you select for your widgets.
+We do not and will never share, upload, or have access to this information. It strictly stays on your device, and is only accessible to you. When it comes to images, the app only saves the image you pick, which will never be shared with anyone other than yourself.
+If you upgrade to the PRO feature, your data will still be secured. We will not have any access to your email, billing address, banking details, or address. Apple proccesses all of the in-app payments.
+This Privacy Policy is subject to change periodically. By using the app you accept the terms and conditions of this Privacy Policy.
+Post likes
 
-- Bulleted
-- List
+### Contact us:
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/z415073783/app/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+If you have any questions regarding privacy while using the app, or have questions about our practices, please contact us via email: zengliangmin0827@gmail.com .
