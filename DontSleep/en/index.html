@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DontSleep - Real-Time Fatigue Detection &amp; Eye Health Reminder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f7f9fc;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a2a6c 0%, #2e4a9e 50%, #4a7bd6 100%);
+            color: #fff;
+            text-align: center;
+            padding: 72px 20px 56px;
+        }
+        .hero .app-name {
+            font-size: 44px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .hero .slogan {
+            font-size: 20px;
+            margin-top: 16px;
+            opacity: 0.95;
+        }
+        .hero .badge {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 10px 28px;
+            background: #fff;
+            color: #1a2a6c;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+        }
+        .lang-switch {
+            margin-top: 18px;
+            font-size: 14px;
+        }
+        .lang-switch a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 48px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a2a6c;
+            margin-bottom: 32px;
+        }
+        .intro {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .feature-card .icon {
+            font-size: 30px;
+        }
+        .feature-card h3 {
+            font-size: 17px;
+            color: #1a2a6c;
+            margin: 12px 0 8px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        .scenes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .scene-chip {
+            background: #e8eefb;
+            color: #1a2a6c;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .privacy-box {
+            background: #eaf6ee;
+            border-left: 4px solid #2e9e5b;
+            padding: 18px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #2d5c40;
+            margin-top: 28px;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 44px;
+        }
+        .cta a {
+            display: inline-block;
+            background: #1a2a6c;
+            color: #fff;
+            padding: 14px 44px;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(26,42,108,0.3);
+        }
+        .footer {
+            background: #2b2f3a;
+            color: #c8ccd8;
+            text-align: center;
+            padding: 28px 20px;
+            font-size: 13px;
+        }
+        .footer a {
+            color: #9fb4e8;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer .contact {
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="app-name">DontSleep</div>
+        <div class="slogan">Real-Time Fatigue Detection &amp; Eye Health Reminder</div>
+        <a class="badge" href="#">Download on the App Store</a>
+        <div class="lang-switch"><a href="index.html">简体中文</a></div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">Why Choose DontSleep?</h2>
+        <p class="intro">Drowsiness often strikes without warning. DontSleep monitors your eye state through the front camera and alerts you the moment you start dozing off — helping you drive, study, and work safely.</p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">👁️</div>
+                <h3>Real-Time Eye Detection</h3>
+                <p>Powered by Apple Vision framework, accurately detects open, half-closed, and closed eyes with millisecond responsiveness.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🎯</div>
+                <h3>Dual Fatigue Detection</h3>
+                <p>Combines prolonged eye-closure duration with PERCLOS metrics to catch both sudden danger and accumulated fatigue.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔔</div>
+                <h3>Progressive Audio Alerts</h3>
+                <p>Three-level alarms — Remind → Warning → Emergency — grow stronger the longer your eyes stay closed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔋</div>
+                <h3>Smart Power-Saving Mode</h3>
+                <p>One-tap switch to low frame rate and resolution to reduce heat and save battery; restores your custom settings automatically.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">☀️</div>
+                <h3>Auto Brightness Control</h3>
+                <p>Dims the screen during detection, restores brightness when you look, and dims again when you look away.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🗣️</div>
+                <h3>Hourly Voice Reminders</h3>
+                <p>A gentle voice reminds you to rest every full hour of continuous detection.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Statistics &amp; History</h3>
+                <p>Tracks detection duration and eye-closure ratio, keeping up to 3 months of history to review your habits.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⚙️</div>
+                <h3>Fully Customizable</h3>
+                <p>Adjust detection sensitivity, alert volume, frame rate, and resolution to fit any scenario.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top:48px;">Where to Use</h2>
+        <div class="scenes">
+            <span class="scene-chip">🚗 Driving</span>
+            <span class="scene-chip">📚 Studying</span>
+            <span class="scene-chip">💻 Late-night Work</span>
+        </div>
+
+        <div class="privacy-box">
+            🔒 <strong>Privacy First:</strong> All detection runs entirely on-device. No network connection, no upload — your privacy stays with you.
+        </div>
+
+        <div class="cta">
+            <a href="#">Download DontSleep Now</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>
+            <a href="en/support">Support</a>
+            <a href="en/privacy">Privacy Policy</a>
+            <a href="index.html">简体中文</a>
+        </div>
+        <div class="contact">Contact: <a href="mailto:z674636160@163.com">z674636160@163.com</a></div>
+    </div>
+
+</body>
+</html>

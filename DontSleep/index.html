@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DontSleep - 用眼疲劳实时检测与休息提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f7f9fc;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a2a6c 0%, #2e4a9e 50%, #4a7bd6 100%);
+            color: #fff;
+            text-align: center;
+            padding: 72px 20px 56px;
+        }
+        .hero .app-name {
+            font-size: 44px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .hero .slogan {
+            font-size: 20px;
+            margin-top: 16px;
+            opacity: 0.95;
+        }
+        .hero .badge {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 10px 28px;
+            background: #fff;
+            color: #1a2a6c;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+        }
+        .lang-switch {
+            margin-top: 18px;
+            font-size: 14px;
+        }
+        .lang-switch a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 48px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 700;
+            color: #1a2a6c;
+            margin-bottom: 32px;
+        }
+        .intro {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .feature-card .icon {
+            font-size: 30px;
+        }
+        .feature-card h3 {
+            font-size: 17px;
+            color: #1a2a6c;
+            margin: 12px 0 8px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        .scenes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .scene-chip {
+            background: #e8eefb;
+            color: #1a2a6c;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .privacy-box {
+            background: #eaf6ee;
+            border-left: 4px solid #2e9e5b;
+            padding: 18px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #2d5c40;
+            margin-top: 28px;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 44px;
+        }
+        .cta a {
+            display: inline-block;
+            background: #1a2a6c;
+            color: #fff;
+            padding: 14px 44px;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 14px rgba(26,42,108,0.3);
+        }
+        .footer {
+            background: #2b2f3a;
+            color: #c8ccd8;
+            text-align: center;
+            padding: 28px 20px;
+            font-size: 13px;
+        }
+        .footer a {
+            color: #9fb4e8;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer .contact {
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="app-name">DontSleep</div>
+        <div class="slogan">用眼疲劳实时检测 · 守护驾驶与专注安全</div>
+        <a class="badge" href="#">App Store 下载</a>
+        <div class="lang-switch"><a href="en/">English</a></div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">为什么选择 DontSleep？</h2>
+        <p class="intro">长时间驾驶、加班工作、熬夜学习，困意往往在不知不觉中袭来。DontSleep 借助前置摄像头实时监测您的眼部状态，在您开始打盹、频繁闭眼的瞬间及时发出提醒。</p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">👁️</div>
+                <h3>实时眼部状态检测</h3>
+                <p>基于 Apple Vision 框架精准识别眼睛睁开、半闭、闭合状态，毫秒级响应。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🎯</div>
+                <h3>双重疲劳判定</h3>
+                <p>连续闭眼时长 + PERCLOS（闭眼时间占比）双指标判定，兼顾瞬时危险与累积疲劳。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔔</div>
+                <h3>分级声音警报</h3>
+                <p>提醒 → 警告 → 紧急三级递进警报，闭眼越久警报越强烈，关键时刻唤醒您。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔋</div>
+                <h3>智能省电模式</h3>
+                <p>一键切换低帧率低分辨率，长时间运行不发烫、更省电，关闭后自动恢复您的设置。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">☀️</div>
+                <h3>自动亮度调节</h3>
+                <p>检测中自动调暗屏幕，注视时恢复亮度，离开屏幕再次调暗，节能又护眼。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🗣️</div>
+                <h3>整点语音播报</h3>
+                <p>持续检测每满 1 小时，语音提醒「已经持续检测 X 小时，请合理休息」。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>检测统计与历史</h3>
+                <p>自动统计检测时长、闭眼时长与占比，保留 3 个月记录，随时回顾用眼习惯。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⚙️</div>
+                <h3>参数自由调节</h3>
+                <p>检测灵敏度、警报音量、帧率、分辨率均可自定义，满足不同场景需求。</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top:48px;">适用场景</h2>
+        <div class="scenes">
+            <span class="scene-chip">🚗 驾驶途中</span>
+            <span class="scene-chip">📚 长时间学习</span>
+            <span class="scene-chip">💻 深夜加班办公</span>
+        </div>
+
+        <div class="privacy-box">
+            🔒 <strong>隐私安全：</strong>所有眼部检测均在设备本地完成，无需网络，不上传任何个人影像数据，您的隐私由您掌控。
+        </div>
+
+        <div class="cta">
+            <a href="#">立即下载 DontSleep</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>
+            <a href="zh-Hans/support">技术支持</a>
+            <a href="zh-Hans/privacy">隐私政策</a>
+            <a href="en/">English</a>
+        </div>
+        <div class="contact">联系邮箱：<a href="mailto:z674636160@163.com">z674636160@163.com</a></div>
+    </div>
+
+</body>
+</html>
