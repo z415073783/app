@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AISummary - AI Notes & Smart Summaries</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f7f9fc;
+        }
+        .hero {
+            background: linear-gradient(135deg, #4a1a6c 0%, #6e2e9e 50%, #9a4ad6 100%);
+            color: #fff;
+            text-align: center;
+            padding: 72px 20px 56px;
+        }
+        .hero .app-name {
+            font-size: 44px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .hero .slogan {
+            font-size: 20px;
+            margin-top: 16px;
+            opacity: 0.95;
+        }
+        .lang-switch {
+            margin-top: 18px;
+            font-size: 14px;
+        }
+        .lang-switch a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 48px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 700;
+            color: #4a1a6c;
+            margin-bottom: 32px;
+        }
+        .intro {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .feature-card .icon {
+            font-size: 30px;
+        }
+        .feature-card h3 {
+            font-size: 17px;
+            color: #4a1a6c;
+            margin: 12px 0 8px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        .scenes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .scene-chip {
+            background: #f0e8fb;
+            color: #4a1a6c;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .privacy-box {
+            background: #eaf6ee;
+            border-left: 4px solid #2e9e5b;
+            padding: 18px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #2d5c40;
+            margin-top: 28px;
+        }
+        .footer {
+            text-align: center;
+            padding: 32px 20px 48px;
+            font-size: 14px;
+            color: #888;
+        }
+        .footer a {
+            color: #6e2e9e;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .contact {
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="app-name">AISummary</div>
+        <div class="slogan">AI-powered notes, summaries, and to-dos — make every record count</div>
+        <div class="lang-switch"><a href="../">中文</a></div>
+    </div>
+
+    <div class="container">
+        <p class="intro">
+            AISummary is an all-in-one productivity app for note-taking, AI summaries, to-do lists, and insights.
+            With iCloud sync, widgets, and a share extension, capture and review anywhere.
+        </p>
+
+        <h2 class="section-title">Key Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">📝</div>
+                <h3>Organize Your Notes</h3>
+                <p>Search, categorize, tag, and notebook — rich text, images, and Markdown support.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">✅</div>
+                <h3>Today's To-Do</h3>
+                <p>Calendar view for task progress; extract to-dos from notes or AI summaries in one tap.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🤖</div>
+                <h3>Smart AI Summary</h3>
+                <p>Auto-summarize notes by week, month, or year with custom templates and follow-up actions.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Insights at a Glance</h3>
+                <p>Track writing habits and note growth with hourly statistics.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">✨</div>
+                <h3>AI Writing Assistant</h3>
+                <p>Polish, expand, continue, translate, and extract to-dos to boost your writing flow.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📤</div>
+                <h3>Export & Share</h3>
+                <p>Export as Markdown, PDF, or image cards for easy sharing and archiving.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">☁️</div>
+                <h3>iCloud Sync</h3>
+                <p>Notes, summaries, and images sync via iCloud across your devices.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔔</div>
+                <h3>Daily Review Reminder</h3>
+                <p>Get reminded to revisit notes from this day in past years.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top:48px;">Use Cases</h2>
+        <div class="scenes">
+            <span class="scene-chip">📔 Daily journal</span>
+            <span class="scene-chip">💼 Work review</span>
+            <span class="scene-chip">📚 Study notes</span>
+            <span class="scene-chip">🗓️ Weekly/monthly recap</span>
+        </div>
+
+        <div class="privacy-box">
+            🔒 <strong>Privacy:</strong> Notes are stored on your device by default, with optional iCloud sync. AI features send relevant text to an AI provider for processing. See our <a href="privacy">Privacy Policy</a>.
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>
+            <a href="support">Support</a>
+            <a href="privacy">Privacy Policy</a>
+            <a href="../">中文</a>
+        </div>
+        <div class="contact">Contact: <a href="mailto:z674636160@163.com">z674636160@163.com</a></div>
+    </div>
+
+</body>
+</html>

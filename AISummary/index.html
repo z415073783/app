@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智记总结 - AI 笔记与智能总结</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f7f9fc;
+        }
+        .hero {
+            background: linear-gradient(135deg, #4a1a6c 0%, #6e2e9e 50%, #9a4ad6 100%);
+            color: #fff;
+            text-align: center;
+            padding: 72px 20px 56px;
+        }
+        .hero .app-name {
+            font-size: 44px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .hero .slogan {
+            font-size: 20px;
+            margin-top: 16px;
+            opacity: 0.95;
+        }
+        .lang-switch {
+            margin-top: 18px;
+            font-size: 14px;
+        }
+        .lang-switch a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 48px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 700;
+            color: #4a1a6c;
+            margin-bottom: 32px;
+        }
+        .intro {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        .feature-card .icon {
+            font-size: 30px;
+        }
+        .feature-card h3 {
+            font-size: 17px;
+            color: #4a1a6c;
+            margin: 12px 0 8px;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        .scenes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .scene-chip {
+            background: #f0e8fb;
+            color: #4a1a6c;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .privacy-box {
+            background: #eaf6ee;
+            border-left: 4px solid #2e9e5b;
+            padding: 18px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #2d5c40;
+            margin-top: 28px;
+        }
+        .footer {
+            text-align: center;
+            padding: 32px 20px 48px;
+            font-size: 14px;
+            color: #888;
+        }
+        .footer a {
+            color: #6e2e9e;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer .contact {
+            margin-top: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="app-name">智记总结</div>
+        <div class="slogan">AI 驱动的笔记、总结与待办，让记录更有价值</div>
+        <div class="lang-switch"><a href="en/">English</a></div>
+    </div>
+
+    <div class="container">
+        <p class="intro">
+            智记总结（AISummary）是一款集笔记管理、AI 智能总结、待办清单与数据洞察于一体的效率工具。
+            支持 iCloud 同步、小组件与分享扩展，随时随地记录与回顾。
+        </p>
+
+        <h2 class="section-title">核心功能</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">📝</div>
+                <h3>轻松管理笔记</h3>
+                <p>搜索、分类、标签与笔记本，富文本编辑，图片与 Markdown 支持，井井有条。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">✅</div>
+                <h3>今日待办</h3>
+                <p>日历视图展示任务进度，支持从笔记或 AI 总结中一键提取待办清单。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🤖</div>
+                <h3>智能 AI 总结</h3>
+                <p>按周、月、年自动生成笔记总结，支持自定义总结模板与二次加工。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>数据洞察</h3>
+                <p>追踪写作习惯与笔记增长，按时段统计，了解自己的记录节奏。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">✨</div>
+                <h3>AI 写作助手</h3>
+                <p>润色、扩写、续写、翻译，以及从文本中提取待办，提升写作效率。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📤</div>
+                <h3>灵活导出分享</h3>
+                <p>支持导出 Markdown、PDF 与图片卡片，方便分享与归档。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">☁️</div>
+                <h3>iCloud 同步</h3>
+                <p>笔记、总结与图片自动同步到 iCloud，多设备无缝衔接。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔔</div>
+                <h3>每日回顾提醒</h3>
+                <p>每天定时提醒回顾「历史上的今天」笔记，温故知新。</p>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top:48px;">适用场景</h2>
+        <div class="scenes">
+            <span class="scene-chip">📔 日常日记</span>
+            <span class="scene-chip">💼 工作复盘</span>
+            <span class="scene-chip">📚 学习笔记</span>
+            <span class="scene-chip">🗓️ 周/月总结</span>
+        </div>
+
+        <div class="privacy-box">
+            🔒 <strong>隐私说明：</strong>笔记数据默认保存在本机，可选 iCloud 同步；使用 AI 功能时会将相关文本发送至 AI 服务商处理。详见<a href="zh-Hans/privacy">隐私政策</a>。
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>
+            <a href="zh-Hans/support">技术支持</a>
+            <a href="zh-Hans/privacy">隐私政策</a>
+            <a href="en/">English</a>
+        </div>
+        <div class="contact">联系邮箱：<a href="mailto:z674636160@163.com">z674636160@163.com</a></div>
+    </div>
+
+</body>
+</html>
