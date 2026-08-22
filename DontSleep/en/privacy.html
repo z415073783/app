@@ -10,7 +10,7 @@
 
     <p><strong>Effective Date:</strong> August 15, 2026</p>
 
-    <p><strong>Last Updated:</strong> August 15, 2026</p>
+    <p><strong>Last Updated:</strong> August 22, 2026</p>
 
     <p>We respect and protect the privacy of all users. To provide you with better services, this app (hereinafter referred to as the "App" or "Service") has formulated this Privacy Policy (hereinafter referred to as the "Policy") to explain how we collect, use, store, share and protect your personal information, as well as how you can access, update, control and delete your personal information.</p>
 
@@ -24,7 +24,7 @@
     <ul>
         <li><strong>Information necessary for specific features:</strong>
             <ul>
-                <li><strong>Camera images:</strong> When you use the fatigue detection feature, the App invokes the device's front camera to capture your facial images in real time. These images are used solely for real-time analysis of your eye state (open / half-closed / closed) to determine fatigue levels and provide timely reminders. The images are processed locally on your device in real time and are <strong>never saved or uploaded to any server</strong>.</li>
+                <li><strong>Camera images:</strong> When you use the fatigue detection feature, the App invokes the device's front camera to capture your facial images in real time. These images are used solely for real-time analysis of your eye state (open / half-closed / closed) to determine fatigue levels and provide timely reminders. The images are processed locally on your device in real time and are <strong>never saved or uploaded to any server</strong>. See Section 3 "Camera and Face Data" for full details.</li>
             </ul>
         </li>
         <li><strong>Locally stored information:</strong>
@@ -35,33 +35,43 @@
         </li>
     </ul>
 
-    <h2>3. How We Use Your Personal Information</h2>
+    <h2>3. Camera and Face Data</h2>
+    <p>DontSleep uses the front camera to detect the user's face and eye state in real time for the sole purpose of fatigue detection. All processing is performed entirely on the user's device using Apple's Vision framework.</p>
+    <ul>
+        <li><strong>What face data is processed:</strong> The App does not collect, record, or store any face data. While a fatigue-detection session is running, each camera video frame is processed transiently in device memory. The App temporarily reads only the normalized coordinates of the eye landmarks in the current frame to compute a single Eye Aspect Ratio (EAR) value that measures how open or closed the eyes are. No facial images, video frames, or facial geometry are captured or saved.</li>
+        <li><strong>Use:</strong> The result is used solely to determine the user's fatigue state in real time and to trigger local sound and visual alerts. No other use is made of face-related information.</li>
+        <li><strong>Storage and retention:</strong> Nothing is stored. Each video frame and its derived eye coordinates exist only for the few milliseconds needed to process that frame and are discarded immediately afterwards. No face data remains after the user stops a detection session.</li>
+        <li><strong>Sharing and disclosure:</strong> Face data is never shared with, sold to, or disclosed to any third party. The App has no networking functionality, no analytics SDKs, and no third-party frameworks.</li>
+        <li><strong>Deletion:</strong> Because no face data is ever saved, there is nothing to delete. The only data the App persists are fatigue session statistics (session start date, total duration, and accumulated closed-eye/half-closed durations), which contain no face, image, or biometric data. These statistics are stored locally on the device, automatically removed after 90 days, and can be manually deleted at any time via the "Clear All Records" button in the Statistics screen.</li>
+    </ul>
+
+    <h2>4. How We Use Your Personal Information</h2>
     <p>We use your personal information mainly for the following purposes:</p>
     <ul>
         <li><strong>Providing core services:</strong> Analyzing your eye state in real time, determining fatigue levels, and providing timely sound and visual alerts when fatigue signals are detected.</li>
         <li><strong>Optimization and improvement:</strong> Delivering a personalized detection experience based on your in-app preferences.</li>
     </ul>
 
-    <h2>4. How We Store and Protect Your Personal Information</h2>
+    <h2>5. How We Store and Protect Your Personal Information</h2>
     <ul>
-        <li><strong>Storage method and retention:</strong> All data processing is performed locally on your device and involves no cloud storage. Camera images are processed in real time and discarded immediately; they are never saved. Detection records and preferences are stored only on your device, with detection records automatically cleared after 3 months.</li>
+        <li><strong>Storage method and retention:</strong> All data processing is performed locally on your device and involves no cloud storage. Camera images are processed in real time and discarded immediately; they are never saved. Detection records and preferences are stored only on your device, with detection records automatically cleared after 3 months. You can also manually delete all detection records at any time via the "Clear All Records" button in the Statistics screen.</li>
         <li><strong>Security measures:</strong> We adopt industry-standard physical, technical and administrative security measures to protect your personal information. Since your images and detection data remain on your device and are never transmitted over the network, third parties cannot access your data remotely.</li>
     </ul>
 
-    <h2>5. How We Share, Transfer and Publicly Disclose Your Personal Information</h2>
+    <h2>6. How We Share, Transfer and Publicly Disclose Your Personal Information</h2>
     <ul>
         <li><strong>Sharing:</strong> This App integrates no third-party analytics SDKs and no advertising services, and does not share your personal information with any third party.</li>
         <li><strong>Transfer:</strong> We will not transfer your personal information to any company, organization or individual, except with your explicit consent or as required by applicable laws and regulations.</li>
         <li><strong>Public disclosure:</strong> We will not publicly disclose your personal information unless we have your explicit authorization or are required to do so by law.</li>
     </ul>
 
-    <h2>6. Changes to This Policy</h2>
+    <h2>7. Changes to This Policy</h2>
     <p>We may revise this Policy from time to time. If significant changes are made, we will notify you through an update notice within the App or by other appropriate means so that you can stay informed of the latest version. Please review this Policy periodically.</p>
 
-    <h2>7. How to Contact Us</h2>
+    <h2>8. How to Contact Us</h2>
     <p>If you have any questions, comments or suggestions regarding this Privacy Policy, or if you discover that your personal information may have been leaked, please contact us through the following channel:</p>
     <ul>
-        <li><strong>Email:</strong> z674636160@qq.com</li>
+        <li><strong>Email:</strong> z674636160@163.com</li>
     </ul>
     <p>We will respond to you as soon as possible after receiving your feedback.</p>
 
