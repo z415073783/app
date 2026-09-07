@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Offline Kit Demo</title>
+  <link rel="stylesheet" href="./assets/demo.css" />
+</head>
+<body>
+  <main class="card">
+    <p class="eyebrow">MCH5OfflineKit · 连通性测试包</p>
+    <h1>离线包已命中本地</h1>
+    <p class="lead">
+      这页不调 Native 桥、不打业务接口。只要 HTML / CSS / JS / 图都显示「本地」，
+      就说明平台下发 → 下载 → 解压 → scheme 改写这条链路是通的。
+    </p>
+    <ul class="status">
+      <li>HTML <strong>本地</strong></li>
+      <li id="css-status">CSS <strong>未生效</strong></li>
+      <li>JS <strong id="js-status">未执行</strong></li>
+      <li>图片 <strong id="img-status">加载中</strong></li>
+    </ul>
+    <img class="mark" src="./assets/mark.png" width="64" height="64" alt="demo mark" />
+    <p class="meta">location: <code id="loc"></code></p>
+  </main>
+  <script src="./js/demo.js"></script>
+</body>
+</html>
