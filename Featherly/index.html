@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Featherly — Private image compression for macOS</title>
+  <meta name="description" content="Shrink JPEG, PNG, HEIC and WebP photos on your Mac. No uploads, no account, no subscription. Unlimited free single-image compression; only batch export is a one-time Pro unlock." />
+  <style>
+    :root {
+      --cream: #f3f0e7;
+      --paper: #fbfaf5;
+      --ink: #18211a;
+      --muted: #5b6357;
+      --line: #d9d5c7;
+      --lime: #c9f26c;
+      --forest: #163426;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--cream); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 26px 0; position: relative; z-index: 2;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand img { width: 42px; height: 42px; }
+    .brand strong {
+      font-family: ui-serif, "New York", Georgia, serif; font-size: 25px;
+      letter-spacing: -.8px; font-weight: 600;
+    }
+    .brand span {
+      display: block; font-family: -apple-system, sans-serif; font-size: 7.5px;
+      letter-spacing: 1.5px; font-weight: 700; color: var(--muted); margin-top: 2px;
+    }
+    nav { display: flex; gap: 26px; align-items: center; font-size: 13px; }
+    nav a { text-decoration: none; color: var(--muted); }
+    nav a:hover { color: var(--ink); }
+    .nav-cta {
+      background: var(--forest); color: #f7f2e4; padding: 10px 17px;
+      border-radius: 999px; font-weight: 600; font-size: 12px;
+    }
+    .nav-cta:hover { color: #fff; }
+    .hero {
+      display: grid; grid-template-columns: .82fr 1.18fr; gap: 34px;
+      align-items: center; padding: 48px 0 80px;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 10px; letter-spacing: 1.7px; font-weight: 800; color: var(--muted);
+      text-transform: uppercase;
+    }
+    .eyebrow:before { content: ""; width: 30px; height: 2px; background: #6a9a2e; }
+    h1 {
+      font-family: ui-serif, "New York", Georgia, serif;
+      font-size: clamp(48px, 4.9vw, 74px); line-height: .98;
+      letter-spacing: -2.6px; font-weight: 600; margin: 24px 0 24px;
+    }
+    .lede { font-size: 18px; line-height: 1.55; color: var(--muted); max-width: 470px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 30px; }
+    .button {
+      display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+      border-radius: 12px; padding: 14px 20px; font-size: 13px; font-weight: 700;
+    }
+    .button.primary { background: var(--lime); color: #17220f; box-shadow: 0 12px 26px rgba(150,190,58,.2); }
+    .button.secondary { border: 1px solid var(--line); background: rgba(251,250,245,.65); }
+    .tiny { font-size: 11px; color: var(--muted); margin-top: 17px; }
+    .hero-art { position: relative; }
+    .hero-art img {
+      width: 100%; border-radius: 22px; box-shadow: 0 28px 70px rgba(38,45,29,.2);
+      display: block;
+    }
+    .trust {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      background: var(--line); border: 1px solid var(--line); border-radius: 16px;
+      overflow: hidden; margin: 0 0 100px;
+    }
+    .trust div { background: var(--paper); padding: 20px 22px; }
+    .trust b { display: block; font-family: ui-serif, "New York", Georgia, serif; font-size: 18px; margin-bottom: 4px; }
+    .trust span { font-size: 11px; color: var(--muted); }
+    section { padding: 90px 0; border-top: 1px solid var(--line); }
+    h2 {
+      font-family: ui-serif, "New York", Georgia, serif;
+      font-size: clamp(34px, 4vw, 54px); line-height: 1.01; letter-spacing: -1.8px;
+      font-weight: 600; margin: 14px 0 20px;
+    }
+    .section-lede { max-width: 580px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+    .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 40px; }
+    .feature {
+      background: rgba(251,250,245,.7); border: 1px solid var(--line);
+      border-radius: 18px; padding: 24px;
+    }
+    .feature .num { font: 600 11px ui-monospace, SFMono-Regular, monospace; color: #709c35; }
+    .feature h3 { margin: 20px 0 8px; font-size: 16px; letter-spacing: -.2px; }
+    .feature p { margin: 0; font-size: 13px; line-height: 1.55; color: var(--muted); }
+    .pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 40px; align-items: stretch; }
+    .plan { border-radius: 22px; padding: 32px; border: 1px solid var(--line); background: var(--paper); }
+    .plan.pro { background: var(--forest); color: #f4efdf; border-color: var(--forest); }
+    .plan .label { font-size: 10px; letter-spacing: 1.5px; font-weight: 800; color: #6b7c58; text-transform: uppercase; }
+    .plan.pro .label { color: var(--lime); }
+    .plan .price { font-family: ui-serif, "New York", Georgia, serif; font-size: 50px; letter-spacing: -2px; margin: 16px 0 4px; }
+    .plan .price small { font: 500 12px -apple-system, sans-serif; letter-spacing: 0; opacity: .58; }
+    .plan ul { list-style: none; margin: 24px 0 0; padding: 0; }
+    .plan li { font-size: 13px; padding: 8px 0; display: flex; gap: 9px; }
+    .plan li:before { content: "✓"; color: #6c9d34; font-weight: 800; }
+    .plan.pro li:before { color: var(--lime); }
+    .plan.pro li { color: rgba(244,239,223,.84); }
+    .plan-cta { display: inline-flex; margin-top: 24px; }
+    .plan.pro .button.primary { background: var(--lime); }
+    .faq { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; margin-top: 40px; }
+    .faq details { border-top: 1px solid var(--line); padding: 16px 0; }
+    .faq summary { cursor: pointer; font-size: 14px; font-weight: 650; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+    .faq summary:after { content: "+"; color: var(--muted); font-weight: 400; }
+    .faq details[open] summary:after { content: "−"; }
+    .faq p { font-size: 13px; line-height: 1.6; color: var(--muted); max-width: 500px; }
+    footer { padding: 42px 0 54px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    footer nav { gap: 20px; }
+    footer a { text-decoration: none; }
+    @media (max-width: 930px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-art { order: -1; }
+      .feature-grid, .trust, .pricing, .faq { grid-template-columns: 1fr; }
+      nav a:not(.nav-cta) { display: none; }
+      .pricing { gap: 12px; }
+    }
+    @media (max-width: 560px) {
+      .wrap { padding: 0 18px; }
+      .hero { padding-top: 18px; }
+      h1 { letter-spacing: -2.5px; }
+      section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="index.html">
+        <img src="assets/icon-256.png" alt="Featherly app icon" />
+        <div><strong>Featherly</strong><span>PRIVATE IMAGE COMPRESSION</span></div>
+      </a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="cli.html">CLI</a>
+        <a class="nav-cta" href="#pricing">Get Featherly</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- TODO before launch: point the "Get Featherly" links at your live App Store product URL. -->
+      <section class="hero" style="border-top: 0; padding-top: 48px;">
+        <div>
+          <span class="eyebrow">Compression without the cloud</span>
+          <h1>Big photos,<br /><span style="white-space:nowrap">feather-light.</span></h1>
+          <p class="lede">Shrink JPEG, PNG, HEIC and WebP images on your Mac. No uploads, no account, no cloud — just smaller files and a very good-looking before/after view.</p>
+          <div class="actions">
+            <a class="button primary" href="#pricing">Get Featherly →</a>
+            <a class="button secondary" href="#features">See how it works</a>
+          </div>
+          <p class="tiny">Free for unlimited single-image compression, resizing, recipes and custom names · only batch export is a one-time purchase<br />Available in English, 中文, Deutsch, Français, Italiano, Español and 日本語</p>
+        </div>
+        <div class="hero-art">
+          <img src="assets/hero.png" alt="Featherly showing a before and after image comparison with 76% savings" />
+        </div>
+      </section>
+
+      <div class="trust">
+        <div><b>100% on-device</b><span>Your photos never touch a server.</span></div>
+        <div><b>Free where it matters</b><span>Unlimited single-image exports.</span></div>
+        <div><b>Pay once</b><span>Pro is a lifetime unlock, not a subscription.</span></div>
+      </div>
+
+      <section id="features">
+        <span class="eyebrow">The good part</span>
+        <h2>Compression you can<br />actually judge.</h2>
+        <p class="section-lede">A draggable split view makes quality visible. Tune the output, check the savings, and keep your original untouched.</p>
+        <div class="feature-grid">
+          <article class="feature"><span class="num">01</span><h3>See the difference</h3><p>Drag the handle to compare original and compressed pixels side by side. No guesswork, no blind exports.</p></article>
+          <article class="feature"><span class="num">02</span><h3>Privacy as architecture</h3><p>No networking code, no analytics, no accounts. Featherly is sandboxed and writes only where you tell it to.</p></article>
+          <article class="feature"><span class="num">03</span><h3>Quality stays yours</h3><p>Choose JPEG, HEIC, PNG or WebP. Strip location metadata and keep original files untouched.</p></article>
+          <article class="feature"><span class="num">04</span><h3>Single files, free</h3><p>Drag in a photo, tune it, copy it or export it. That loop is free forever, with no watermark and no limit.</p></article>
+          <article class="feature"><span class="num">05</span><h3>Ready for the pile</h3><p>When you have a whole shoot, the one-time batch upgrade writes the entire queue in one pass, using the recipes and names you chose.</p></article>
+          <article class="feature"><span class="num">06</span><h3>Made for macOS</h3><p>Native drag and drop, Finder Open With, keyboard shortcuts, and an interface that respects light and dark mode.</p></article>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <span class="eyebrow">Fair by design</span>
+        <h2>Small price.<br />No small print.</h2>
+        <p class="section-lede">The free app is not a demo. Only one workflow is paid: when you want the whole queue handled at once.</p>
+        <div class="pricing">
+          <div class="plan">
+            <span class="label">Featherly Free</span>
+            <div class="price">$0 <small>forever</small></div>
+            <ul>
+              <li>Unlimited single-image compression</li>
+              <li>JPEG, PNG, HEIC and WebP output</li>
+              <li>Before / after comparison</li>
+              <li>Resize to web, social or exact pixels</li>
+              <li>Multiple sizes with 1x/2x/3x variants</li>
+              <li>Save your own output presets</li>
+              <li>Web, Share, Email and Thumbnail recipes</li>
+              <li>Custom filename suffixes</li>
+              <li>EXIF location stripping</li>
+              <li>Export and copy the result</li>
+            </ul>
+            <a class="button secondary plan-cta" href="#faq">How to get it</a>
+          </div>
+          <div class="plan pro">
+            <span class="label">Featherly Pro</span>
+            <div class="price">$4.99 <small>once · lifetime</small></div>
+            <ul>
+              <li>Batch export the whole queue</li>
+              <li>Command-line tool for scripts and automation</li>
+              <li>One-time purchase, no renewal</li>
+              <li>Everything else stays free</li>
+              <li>Restore anytime</li>
+            </ul>
+            <a class="button primary plan-cta" href="#faq">One-time unlock</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <span class="eyebrow">Good questions</span>
+        <h2>No subscriptions.<br />No surprises.</h2>
+        <div class="faq">
+          <div>
+            <details open><summary>Does Featherly upload my images?</summary><p>No. Featherly has no network entitlement and no server. Decoding, compression and export all happen on your Mac.</p></details>
+            <details><summary>What is free, exactly?</summary><p>Unlimited single-image compression, all supported output formats, before/after comparison, multiple sizes with 1x/2x/3x variants, saved output presets, resizing, Web/Share/Email/Thumbnail recipes, custom filename suffixes, metadata stripping, copying and exporting. Only batch export is Pro — and Pro also includes the `featherly` command-line tool.</p></details>
+            <details><summary>Is Pro a subscription?</summary><p>No. It is a one-time non-consumable App Store purchase. No renewals and no account. You can restore it with the same Apple ID.</p></details>
+          </div>
+          <div>
+            <details><summary>Will my original files be changed?</summary><p>Never. Featherly writes a new file to the location you choose. Your originals stay exactly as they were.</p></details>
+            <details><summary>What formats are supported?</summary><p>Reads common ImageIO formats including JPEG, PNG, HEIC, TIFF and WebP. Writes JPEG, HEIC, PNG and WebP.</p></details>
+            <details><summary>Where can I get support?</summary><p>Email <a href="mailto:z674636160@163.com">z674636160@163.com</a>.</p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap" style="padding:0;">
+        <div>© 2026 Featherly. Made for macOS.</div>
+        <nav>
+          <a href="privacy.html">Privacy</a>
+          <a href="support.html">Support</a>
+          <a href="cli.html">CLI</a>
+          <a href="mailto:z674636160@163.com">Contact</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

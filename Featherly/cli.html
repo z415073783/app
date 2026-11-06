@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Featherly CLI — batch image compression for macOS</title>
+  <meta name="description" content="The featherly command-line tool for batch JPEG, PNG, HEIC and WebP compression on macOS. Included with Featherly Pro." />
+  <style>
+    :root { --cream:#f3f0e7; --paper:#fbfaf5; --ink:#18211a; --muted:#5b6357; --line:#d9d5c7; --lime:#c9f26c; --forest:#163426; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--cream); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif; line-height:1.6; }
+    .wrap { max-width:900px; margin:0 auto; padding:0 28px; }
+    header { padding:28px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    header a.brand { color:inherit; text-decoration:none; font-family:ui-serif,"New York",Georgia,serif; font-size:25px; font-weight:600; }
+    header nav { display:flex; gap:20px; font-size:12px; }
+    header nav a { color:var(--muted); text-decoration:none; }
+    h1 { font-family:ui-serif,"New York",Georgia,serif; font-size:58px; letter-spacing:-2.2px; line-height:1.02; margin:54px 0 14px; }
+    .lede { color:var(--muted); font-size:17px; max-width:650px; }
+    .badge { display:inline-flex; gap:7px; align-items:center; background:var(--lime); color:#17220f; font-size:10px; font-weight:800; letter-spacing:1.2px; text-transform:uppercase; padding:8px 12px; border-radius:999px; margin-top:26px; }
+    h2 { font-family:ui-serif,"New York",Georgia,serif; font-size:27px; letter-spacing:-.6px; margin:42px 0 10px; }
+    p { font-size:14px; color:#3f493d; }
+    pre { background:var(--forest); color:#f6f0df; padding:18px 20px; border-radius:14px; overflow:auto; font:12px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace; }
+    code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em; }
+    .card { background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:22px 24px; margin:22px 0; }
+    .actions { display:flex; gap:10px; flex-wrap:wrap; margin:24px 0; }
+    a.button { display:inline-flex; align-items:center; gap:8px; text-decoration:none; border-radius:11px; padding:13px 18px; font-size:13px; font-weight:700; }
+    a.primary { background:var(--lime); color:#17220f; }
+    a.secondary { background:var(--paper); border:1px solid var(--line); color:var(--ink); }
+    ul { font-size:14px; color:#3f493d; }
+    footer { border-top:1px solid var(--line); margin-top:60px; padding:26px 0 46px; font-size:12px; color:var(--muted); }
+    footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:inherit; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="index.html">Featherly</a>
+    <nav><a href="index.html">Home</a><a href="index.html#pricing">Pricing</a><a href="support.html">Support</a></nav>
+  </header>
+
+  <h1>Featherly CLI.</h1>
+  <p class="lede">Batch-compress JPEG, PNG, HEIC and WebP files from Terminal with the same local ImageIO pipeline as the Mac app. No uploads, no account, no server.</p>
+  <span class="badge">Included with Featherly Pro</span>
+
+  <div class="actions">
+    <a class="button primary" href="downloads/featherly-cli.zip">Download featherly CLI</a>
+    <a class="button secondary" href="index.html#pricing">Get Featherly Pro</a>
+  </div>
+
+  <h2>Install</h2>
+  <p>Unzip the download, then install the tool into your path:</p>
+  <pre><code>sudo install -m 755 ~/Downloads/featherly /usr/local/bin/featherly
+featherly license</code></pre>
+  <p>Open Featherly once while Pro is active so it can write the local, signed CLI license token. No network access is used by the CLI.</p>
+
+  <h2>Examples</h2>
+  <pre><code>featherly compress ~/Desktop/photo.jpg --quality 72
+featherly batch ~/Pictures/shoot --out ~/Desktop/web --max 1600
+featherly batch ~/Pictures --out ~/Desktop/optimized --format webp --json</code></pre>
+
+  <div class="card">
+    <h2 style="margin-top:0">Options</h2>
+    <ul>
+      <li><code>--out &lt;folder&gt;</code> — output folder for folders or multiple inputs</li>
+      <li><code>--format</code> — jpeg, png, heic or webp</li>
+      <li><code>--quality</code> — 1–100 for JPEG, HEIC and WebP</li>
+      <li><code>--max</code> — limit the longest side, never upscale</li>
+      <li><code>--suffix</code> — filename suffix, default <code>-featherly</code></li>
+      <li><code>--overwrite</code>, <code>--json</code>, <code>--quiet</code>, <code>--license &lt;path&gt;</code></li>
+    </ul>
+  </div>
+
+  <h2>Pro license</h2>
+  <p>The CLI is part of the one-time batch-export entitlement. It checks a locally signed token written by the app after a verified App Store purchase.</p>
+
+  <footer>
+    <div class="wrap" style="padding:0;">
+      <span>© 2026 Featherly</span>
+      <nav style="display:flex;gap:18px;"><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
