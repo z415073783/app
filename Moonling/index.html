@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Moonling — Baby tracker. No subscription. Private by design.</title>
+<meta name="description" content="Moonling is a private baby tracker for iPhone, iPad and iPhone Duo. Free tracking, one-time $4.99 unlock, no account, no subscription, no data collection. Optional iCloud sync, off by default.">
+<style>
+  :root {
+    --primary: #B94A28;
+    --primary-pressed: #A03E20;
+    --on-primary: #FFF8F2;
+    --primary-tint: #FBE9E1;
+    --canvas: #FFF7EE;
+    --surface: #FFFFFF;
+    --surface-alt: #FCEDDF;
+    --border: #EFDCCB;
+    --text: #2E211B;
+    --text-secondary: #6E5A4E;
+    --text-tertiary: #7F6C61;
+    --honey: #F2B23E;
+    --sage: #7C9E6E;
+    --sky: #7FB3C8;
+    --blush: #F3C3BC;
+    --radius: 20px;
+    --max: 760px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary: #F29066;
+      --primary-pressed: #D97A50;
+      --on-primary: #2A1408;
+      --primary-tint: #3A241B;
+      --canvas: #1B1512;
+      --surface: #241C17;
+      --surface-alt: #2E241D;
+      --border: #3E3128;
+      --text: #F7ECE2;
+      --text-secondary: #C7B5A7;
+      --text-tertiary: #A8978A;
+      --honey: #E8A93F;
+      --sage: #8FAE80;
+      --sky: #8FBFD2;
+      --blush: #C98C82;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--canvas);
+    color: var(--text);
+    font-family: "SF Pro Rounded", ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .skip {
+    position: absolute; left: -9999px; top: 0;
+    background: var(--primary); color: var(--on-primary);
+    padding: 12px 16px; border-radius: 12px; z-index: 10;
+  }
+  .skip:focus { left: 16px; top: 16px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  header.site {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    background: var(--canvas);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text); font-weight: 700; font-size: 19px; letter-spacing: -0.2px; }
+  .brand svg { width: 34px; height: 34px; flex: none; }
+  nav.links { display: flex; gap: 18px; flex-wrap: wrap; }
+  nav.links a { color: var(--text-secondary); text-decoration: none; font-size: 15px; font-weight: 600; }
+  nav.links a:hover, nav.links a:focus { color: var(--primary); text-decoration: underline; }
+  .hero { padding: 56px 0 40px; }
+  .hero h1 { font-size: clamp(34px, 7vw, 52px); line-height: 1.08; letter-spacing: -1px; margin: 0 0 14px; }
+  .hero p.lead { font-size: clamp(18px, 2.6vw, 21px); color: var(--text-secondary); margin: 0 0 26px; max-width: 620px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 30px; padding: 0; list-style: none; }
+  .badges li {
+    background: var(--surface); border: 1px solid var(--border); color: var(--text);
+    border-radius: 999px; padding: 8px 14px; font-size: 14px; font-weight: 600;
+  }
+  .badges li strong { color: var(--primary); }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .cta {
+    display: inline-block; background: var(--primary); color: var(--on-primary);
+    text-decoration: none; font-weight: 700; padding: 14px 22px; border-radius: 999px;
+    min-height: 48px;
+  }
+  .cta:hover, .cta:focus { background: var(--primary-pressed); }
+  .cta-note { color: var(--text-tertiary); font-size: 14px; }
+  section.block { padding: 40px 0; border-top: 1px solid var(--border); }
+  section.block h2 { font-size: clamp(24px, 4vw, 30px); letter-spacing: -0.4px; margin: 0 0 8px; }
+  section.block p.sub { color: var(--text-secondary); margin: 0 0 24px; max-width: 620px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 18px 18px 16px;
+  }
+  .card h3 { margin: 0 0 6px; font-size: 17px; letter-spacing: -0.1px; }
+  .card p { margin: 0; color: var(--text-secondary); font-size: 15px; line-height: 1.5; }
+  .icon-dot { display: inline-flex; width: 38px; height: 38px; align-items: center; justify-content: center; border-radius: 12px; background: var(--primary-tint); margin-bottom: 10px; }
+  .icon-dot svg { width: 22px; height: 22px; }
+  .price {
+    display: inline-block; background: var(--primary-tint); color: var(--primary);
+    border-radius: 999px; padding: 4px 12px; font-weight: 700; font-size: 14px; margin-bottom: 10px;
+  }
+  .privacy-callout {
+    background: var(--surface-alt); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 22px; display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap;
+  }
+  .privacy-callout .stamp {
+    flex: none; background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 12px 16px; font-weight: 700; color: var(--sage);
+  }
+  .faq { display: grid; gap: 10px; }
+  details {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px;
+  }
+  details summary { cursor: pointer; font-weight: 700; font-size: 16px; }
+  details p { color: var(--text-secondary); margin: 10px 0 0; font-size: 15px; }
+  footer.site { border-top: 1px solid var(--border); padding: 28px 0 44px; color: var(--text-tertiary); font-size: 14px; }
+  footer.site a { color: var(--text-secondary); }
+  .contact-box {
+    background: var(--surface); border: 1px dashed var(--border); border-radius: var(--radius); padding: 20px;
+  }
+  .contact-box a { color: var(--primary); font-weight: 700; word-break: break-word; }
+  @media (max-width: 520px) {
+    .hero { padding-top: 36px; }
+    .bar { align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Moonling home">
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" fill="#B94A28"/>
+        <circle cx="40" cy="25" r="17" fill="#FFF7EE"/>
+        <circle cx="24" cy="42" r="3.2" fill="#F2B23E"/>
+        <circle cx="31" cy="47" r="1.8" fill="#F2B23E"/>
+        <circle cx="19" cy="36" r="1.6" fill="#F2B23E"/>
+      </svg>
+      Moonling
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a href="privacy.html">Privacy policy</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap hero">
+    <h1>A baby tracker that respects your family.</h1>
+    <p class="lead">Log feeds, sleep, diapers and growth in one tap — on iPhone, iPad and iPhone Duo. The free version is complete. A single $4.99 purchase unlocks the extras. No account, no subscription, and no data collection.</p>
+    <ul class="badges">
+      <li><strong>Free</strong> tracking</li>
+      <li><strong>$4.99</strong> once · no subscription</li>
+      <li>No account</li>
+      <li>Data Not Collected</li>
+      <li>iPhone · iPad · Duo</li>
+    </ul>
+    <div class="cta-row">
+      <a class="cta" href="#pricing">See what’s free and what’s $4.99</a>
+      <span class="cta-note">Available on the App Store (US, UK, Canada, Australia, New Zealand)</span>
+    </div>
+  </div>
+
+  <section class="block" id="features">
+    <div class="wrap">
+      <h2>Everything a tired parent needs</h2>
+      <p class="sub">Designed for one-handed use at 3 a.m. — and for the partner, grandparent or nanny who takes over in the morning.</p>
+      <div class="grid">
+        <div class="card">
+          <span class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z" fill="none" stroke="#B94A28" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+          <h3>Feeding</h3>
+          <p>Breastfeeding timer with left/right sides, bottle and formula, solids — all one tap away.</p>
+        </div>
+        <div class="card">
+          <span class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 15a7 7 0 1 1 14 0" fill="none" stroke="#B94A28" stroke-width="1.8" stroke-linecap="round"/><path d="M12 4v3" fill="none" stroke="#B94A28" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>Sleep &amp; naps</h3>
+          <p>Start a sleep timer, add a nap later, and see wake windows at a glance.</p>
+        </div>
+        <div class="card">
+          <span class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="5" fill="none" stroke="#B94A28" stroke-width="1.8"/><path d="M9 12h6" stroke="#B94A28" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>Diapers, pumping &amp; health</h3>
+          <p>Wet, dirty or mixed; pump logs and milk stash; temperature, medicine and notes.</p>
+        </div>
+        <div class="card">
+          <span class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18V9m6 9V5m6 13v-7m4 7V3" fill="none" stroke="#B94A28" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>Growth &amp; trends</h3>
+          <p>Weight, length and head circumference, with 7-day trends free and WHO curves in the unlock.</p>
+        </div>
+        <div class="card">
+          <span class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="4" fill="none" stroke="#B94A28" stroke-width="1.8"/><path d="M8 13h3l1.5-4 2 8 1.5-4h2" fill="none" stroke="#B94A28" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Today at a glance</h3>
+          <p>Time since the last feed, sleep and diaper change, plus today’s totals — no digging.</p>
+        </div>
+        <div class="card">
+          <span class="icon-dot" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="3" fill="none" stroke="#B94A28" stroke-width="1.8"/><path d="M8 12h8" stroke="#B94A28" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+          <h3>Widgets &amp; Live Activity</h3>
+          <p>See the running timer from the Lock Screen or Home Screen — free, forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="pricing">
+    <div class="wrap">
+      <h2>Free where it matters. $4.99 once for the keepsake.</h2>
+      <p class="sub">No subscription, no ads, no “trial then read-only”. The free version is a complete tracker; the unlock is extra value, not basic access.</p>
+      <div class="grid">
+        <div class="card">
+          <span class="price">Free</span>
+          <h3>Complete daily tracking</h3>
+          <p>Unlimited logs, today’s timeline, reminders, widgets, Live Activity, 7-day trends, CSV/JSON export, local backup, up to 2 babies, and 3 milestone moments with photos. Free features are never taken away.</p>
+        </div>
+        <div class="card">
+          <span class="price">$4.99 once</span>
+          <h3>Moonling+</h3>
+          <p>WHO growth percentile curves, full history charts beyond 7 days, unlimited milestones with the milestone album and “First Year” pages, all themes (including Moonlight), PDF visit summaries for your pediatrician, including a WHO growth chart page, and a third baby profile. One purchase, yours forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="devices">
+    <div class="wrap">
+      <h2>Made for the devices you actually use</h2>
+      <p class="sub">iPhone in one hand, iPad on the kitchen counter, and iPhone Duo folded or unfolded.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>iPhone</h3>
+          <p>Big buttons, one-handed logging, dark mode and Dynamic Type for tired eyes.</p>
+        </div>
+        <div class="card">
+          <h3>iPhone Duo</h3>
+          <p>Quick-log on the outer display; unfold it and Moonling becomes a two-column day board. Supports Split View.</p>
+        </div>
+        <div class="card">
+          <h3>iPad</h3>
+          <p>A landscape family dashboard the whole household can read — no account needed to pass the iPad around.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="privacy">
+    <div class="wrap">
+      <h2>Private by design</h2>
+      <p class="sub">Baby data is family data. Moonling has no servers, no accounts and no analytics — so there is nothing for us to collect, sell or lose. Optional iCloud sync is off by default.</p>
+      <div class="privacy-callout">
+        <span class="stamp">Data Not Collected</span>
+        <div>
+          <p style="margin:0 0 8px;">Your records stay on your device by default. You can export or back them up whenever you want, and delete everything from inside the app. Optional iCloud sync (off by default) saves your records to your <strong>private iCloud database</strong> so your own Apple devices stay in sync — Moonling can’t read it. The App Store privacy label says it plainly: <strong>Data Not Collected</strong>.</p>
+          <p style="margin:0;"><a href="privacy.html">Read the full privacy policy</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <div class="wrap">
+      <h2>Questions parents ask</h2>
+      <p class="sub">Still unsure? Email us — a real person reads every message.</p>
+      <div class="faq">
+        <details>
+          <summary>Is Moonling really free?</summary>
+          <p>Yes. Unlimited logging, today’s timeline, reminders, widgets, Live Activity, 7-day trends, export/backup and up to 2 babies are free, permanently. There is no trial that turns into a read-only app.</p>
+        </details>
+        <details>
+          <summary>What does the $4.99 purchase unlock?</summary>
+          <p>WHO growth percentile curves, full history charts beyond 7 days, unlimited milestones with the milestone album and “First Year” pages, all themes including Moonlight, PDF visit summaries with a WHO growth chart page, and a third baby profile. It is a one-time, non-consumable purchase — not a subscription.</p>
+        </details>
+        <details>
+          <summary>Do I need an account?</summary>
+          <p>No. There is no sign-up, no login, and no Moonling cloud account. Open the app and start logging. Optional iCloud sync uses your own Apple Account, is off by default, and does not create an account with us.</p>
+        </details>
+        <details>
+          <summary>Where is my data stored? Can I export it?</summary>
+          <p>On your device by default. Export CSV or a complete JSON backup at any time, and delete all local data from inside the app. Because there is no server of ours, we cannot see or recover your data. If you turn on optional iCloud sync, a copy is stored in your private iCloud database and Apple’s iCloud terms apply; the developer still cannot read it.</p>
+        </details>
+        <details>
+          <summary>Does it work on iPad and iPhone Duo?</summary>
+          <p>Yes. Moonling supports iPhone (iOS 18.0+), iPad in landscape, and iPhone Duo in both folded and unfolded states, including Split View.</p>
+        </details>
+        <details>
+          <summary>Is Moonling a medical device?</summary>
+          <p>No. Moonling is a logging tool. Reference ranges from WHO Child Growth Standards. For information only - not medical advice. Talk to your pediatrician.</p>
+        </details>
+        <details>
+          <summary>How do refunds work?</summary>
+          <p>Purchases are processed by Apple. Refund requests are handled by Apple Support — visit <a href="https://support.apple.com/billing" rel="noopener">Apple’s billing support</a>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <div class="contact-box">
+        <p style="margin:0 0 6px; font-weight:700;">Support, bug reports, feature ideas</p>
+        <p style="margin:0 0 10px;">Email <a href="mailto:z674636160@163.com">z674636160@163.com</a> — we usually reply within 2 business days.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>© 2026 Lianzeng. Moonling is an independent app. Apple, iPhone, iPad and App Store are trademarks of Apple Inc.</p>
+    <p><a href="privacy.html">Privacy policy</a> · <a href="index.html">Support home</a></p>
+  </div>
+</footer>
+</body>
+</html>
