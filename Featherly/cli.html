@@ -44,15 +44,19 @@
   <span class="badge">Included with Featherly Pro</span>
 
   <div class="actions">
-    <a class="button primary" href="downloads/featherly-cli.zip">Download featherly CLI</a>
+    <a class="button primary" href="downloads/Featherly-CLI-1.0.0.pkg">Download Featherly CLI (.pkg)</a>
+    <a class="button secondary" href="downloads/Featherly-CLI-1.0.0.zip">Download zip (advanced)</a>
     <a class="button secondary" href="https://apps.apple.com/app/id6831499827">Get Featherly Pro</a>
   </div>
 
   <h2>Install</h2>
-  <p>Unzip the download, then install the tool into your path:</p>
+  <p><strong>Recommended:</strong> download the <code>.pkg</code> above, double-click it, and follow the installer. It installs <code>featherly</code> into <code>/usr/local/bin</code> and is signed with a Developer ID plus notarized by Apple — no Terminal setup or Gatekeeper warning.</p>
+  <pre><code>featherly license
+featherly compress ~/Desktop/photo.jpg --quality 72</code></pre>
+  <p><strong>Advanced (zip):</strong> if you prefer the zip, unzip it and install manually:</p>
   <pre><code>sudo install -m 755 ~/Downloads/featherly /usr/local/bin/featherly
 featherly license</code></pre>
-  <p>Open Featherly once while Pro is active so it can write the local, signed CLI license token. No network access is used by the CLI.</p>
+  <p>Open Featherly once while Pro is active so it can write the local, signed CLI license token. No network access is used by the CLI. Do not run <code>featherly</code> itself with <code>sudo</code>; only the zip install command needs it.</p>
 
   <h2>Examples</h2>
   <pre><code>featherly compress ~/Desktop/photo.jpg --quality 72
