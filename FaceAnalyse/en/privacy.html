@@ -33,7 +33,7 @@
 </head>
 <body>
 <h1>Face Explorer Privacy Policy</h1>
-<p><strong>Version</strong>: 1.0<br/>
+<p><strong>Version</strong>: 2.0<br/>
 <strong>Effective date</strong>: November 10, 2026<br/>
 <strong>Applies to</strong>: Face Explorer (脸型探索) for iPhone, iPad and macOS<br/>
 <strong>Public URL</strong>: <a href="https://z415073783.github.io/app/FaceAnalyse/en/privacy.html">https://z415073783.github.io/app/FaceAnalyse/en/privacy.html</a><br/>
@@ -41,12 +41,17 @@
 <p>Internal note (remove before publishing as a public page): product draft pending owner/legal review of the operator identity, cross-border transfer language and DeepSeek processing statements. Keep this English version consistent with <code>privacy-policy.zh-Hans.md</code>.</p>
 <hr/>
 <h2>Summary</h2>
-<p>Face Explorer does not require an account. You choose one photo; the app compresses it and sends it over an encrypted connection to our own server. A third-party AI service (DeepSeek) analyzes facial features and returns a report. <strong>We do not store your photo or the report text on our servers, and we do not use photos for advertising or model training.</strong> We use only a randomly generated device identifier for request verification, daily limits and abuse prevention.</p>
+<p>Face Explorer does not require an account. The photo, birth information, name, MBTI type or tarot question you choose to provide is sent over an encrypted connection to our own server. The server computes deterministic facts in memory (e.g., Four Pillars/Five Elements, zodiac, tarot cards, life path number, synastry relations) and a third-party AI service (DeepSeek) turns them into an entertainment reading. <strong>We do not store your photo, birth information, name, question or report text on our servers, and we do not use them for advertising or model training.</strong> We use only a randomly generated device identifier for request verification, daily limits and abuse prevention. For two-person scenes, you must obtain the other person's consent.</p>
 <hr/>
 <h2>1. Information We Collect</h2>
 <h3>1.1 Provided by you</h3>
 <ul>
-<li><strong>Photo</strong>: one photo you choose from your library or take with the camera. It is used only for this analysis and released after processing (see Section 2).</li>
+<li><strong>Photo</strong>: one photo you choose from your library or take with the camera for the face/classic-face/palm reading (a palm photo for palm reading). It is used only for this reading and released after processing (see Section 2).</li>
+<li><strong>Birth information</strong>: calendar type, birth date, birth time or "time unknown", birth city/longitude/timezone, and gender you enter for Bazi/horoscope/birthday/two-person scenes. Used only in memory for this reading; not stored.</li>
+<li><strong>Name</strong>: the name you enter for name/synastry readings. Used only for this reading; not stored.</li>
+<li><strong>MBTI type</strong>: the four-letter type you select. Used only for this reading; not stored.</li>
+<li><strong>Tarot question</strong>: the optional question you enter (0–200 characters). Used only for this reading; not stored or logged.</li>
+<li><strong>Two-person information (third party)</strong>: partner birth information and optional name/gender for synastry/Bazi compatibility. <strong>You must have the other person's consent.</strong> Used only for this reading; not stored.</li>
 <li><strong>Language preference</strong>: used to choose the report language (Simplified Chinese or English).</li>
 </ul>
 <h3>1.2 Generated automatically</h3>
@@ -62,7 +67,8 @@
 <li>Apple provides us with limited transaction status so credits can be added to your device.</li>
 </ul>
 <h3>1.4 What we do NOT collect</h3>
-<p>Name, phone number, email (unless you email us), account credentials, contacts, location, other photos in your library, IDFA/advertising identifiers, Face ID or other biometric templates, or information about people you share reports with. We do not integrate advertising or third-party tracking SDKs and do not track you across apps.</p>
+<p>We do not collect account credentials, phone number, email (unless you email us), contacts, precise location, other photos in your library, IDFA/advertising identifiers, Face ID or other biometric templates, or information about people you share reports with. We do not integrate advertising or third-party tracking SDKs and do not track you across apps.</p>
+<p>Name, birth date/time/place/longitude, gender, MBTI type, tarot question and two-person information are processed only when you start the relevant reading, are <strong>not stored, not used for profiling, advertising or model training</strong>, and are not requested when you do not use those scenes.</p>
 <hr/>
 <h2>2. How Photos Are Processed</h2>
 <ol>
@@ -83,7 +89,7 @@
 <th>Data involved</th>
 <th>Notes</th>
 </tr></thead><tbody>
-<tr><td>DeepSeek</td><td>AI facial analysis inference</td><td>Compressed photo, report language</td><td>Processing governed by DeepSeek's official privacy policy; servers may be located in mainland China or elsewhere, which may involve cross-border transfer</td></tr>
+<tr><td>DeepSeek</td><td>AI entertainment reading inference (face/palm/Bazi/horoscope/birthday/tarot/name/MBTI/synastry)</td><td>Compressed photo, birth information/name/MBTI/tarot question/two-person information (as applicable), report language</td><td>Processing governed by DeepSeek's official privacy policy; servers may be located in mainland China or elsewhere, which may involve cross-border transfer</td></tr>
 <tr><td>Apple (App Store / StoreKit)</td><td>In-app purchases and receipts</td><td>Transaction information</td><td>Processed by Apple under its privacy policy; we do not access payment credentials</td></tr>
 <tr><td>Our own server and CDN/reverse proxy</td><td>API access, HTTPS, rate limiting</td><td>Request metadata, network logs</td><td>Used for service operation, security and abuse prevention</td></tr>
 </tbody></table>
@@ -95,6 +101,7 @@
 <li><strong>Aggregated usage without identifiers</strong> (total requests, tokens, image bytes): retained for up to <strong>365 days</strong> for cost and capacity planning.</li>
 <li><strong>Server access logs</strong>: retained short-term under log rotation (typically no more than 30 days) for security and troubleshooting.</li>
 <li><strong>Local credit ledger</strong>: stored in your device Keychain until you uninstall the app or clear its data; after uninstall, Keychain items may remain so unused credits can be restored, depending on system behavior.</li>
+<li><strong>Birth information/name/MBTI/tarot question/two-person information/photos/reports</strong>: not written to server disks, not logged, no history; released after the request ends.</li>
 </ul>
 <hr/>
 <h2>5. Data Security</h2>
@@ -118,7 +125,7 @@
 <p>The app is rated <strong>12+</strong> and is not designed for children under 12. If you are under 18, please use it with the consent and guidance of a parent or guardian. We do not actively collect age or date of birth. If a guardian believes a minor uploaded a photo without consent, contact us and we will help handle the relevant records.</p>
 <hr/>
 <h2>8. AI-Generated Content and Disclaimer</h2>
-<p>Reports are generated by a third-party AI model based on your photo and are <strong>for entertainment and general skincare reference only. They are not medical advice, diagnosis, treatment plans or professional beauty guidance.</strong> AI results may be inaccurate, incomplete or inconsistent with reality. Do not make medical, aesthetic or significant purchasing decisions based on the report, and do not use it to evaluate other people. If a photo cannot be analyzed (e.g., no clear face, multiple faces, severe blur), the app will ask you to choose another photo and will not deduct a credit.</p>
+<p>Reports are generated by a third-party AI model based on the information you provide and traditional/entertainment rules, <strong>for entertainment and self-reflection only. They are not medical, investment, legal, psychological, marital/divorce or other professional decision advice.</strong> AI results may be inaccurate, incomplete or inconsistent with reality. Do not make medical, aesthetic, investment, legal or relationship decisions based on a report, and do not use it to evaluate other people or make decisions for them. Bazi/astrology/tarot/birthday/name/MBTI/synastry content is traditional or pop-culture entertainment, does not predict the future and is not guaranteed to be accurate; 12+. For two-person scenes you must obtain the other person's consent. If a photo/input cannot be analyzed (e.g., no clear face or palm, content filter), the app will ask you to change it and will not deduct a credit.</p>
 <hr/>
 <h2>9. Changes to This Policy</h2>
 <p>We may update this policy due to feature changes, legal requirements or third-party service changes. The new version will be published on this page with a new effective date; material changes will be communicated in the app in a reasonable way. Continued use means you accept the updated policy.</p>
@@ -130,6 +137,16 @@
 <li>Terms of Use: <a href="https://z415073783.github.io/app/FaceAnalyse/en/term.html">https://z415073783.github.io/app/FaceAnalyse/en/term.html</a></li>
 </ul>
 <hr/>
+<h2>11. Multi-Scene Entertainment Reading Data (New in v2.0)</h2>
+<ol>
+<li><strong>Scenes</strong>: face, palm, Bazi/Five Elements, horoscope, birthday, tarot, name, MBTI, synastry and Bazi compatibility, plus the existing classic face score.</li>
+<li><strong>Server-side deterministic calculation</strong>: birth information is used to compute Four Pillars/Five Elements/true solar time in memory; tarot cards are drawn server-side; life path number/zodiac/synastry relations are computed by fixed rules. These facts and inputs exist only in memory for the request and are not written to disk or logs.</li>
+<li><strong>Third-party AI</strong>: the server forwards the necessary facts and inputs (photo/birth information/name/question, as applicable) to DeepSeek to generate the entertainment reading. Processing by DeepSeek is governed by its official privacy policy; we require minimization and prohibit advertising use.</li>
+<li><strong>Two-person information</strong>: you must confirm that you have obtained the other person's consent. We use it only for this reading, do not store it and do not use it for identification or profiling. If the other person contacts us, we will explain the processing; because we do not retain the data, it may not be possible to locate a specific request.</li>
+<li><strong>What we do not do</strong>: no identity verification, age verification, medical/dermatological diagnosis, investment advice, marriage/divorce decisions, psychological diagnosis, advertising profiles, or cross-app tracking; we do not store birth information, name, MBTI, tarot questions, photos, two-person information or report history.</li>
+<li><strong>Age</strong>: 12+; not directed to children under 12. For third-party information you must ensure lawful permission.</li>
+<li><strong>App Store privacy labels</strong>: "Other User Content" (birth information/name/MBTI/question) is collected for App Functionality, not linked to identity and not used for tracking; photos remain "Photos"; device ID is used for App Functionality/abuse prevention.</li>
+</ol>
 <h2>Appendix: App Store Privacy Label Summary (for review and development alignment)</h2>
 <table>
 <thead><tr>
@@ -143,7 +160,8 @@
 <tr><td>Device ID (random UUID)</td><td>Yes</td><td>App functionality, abuse prevention</td><td>No</td><td>No</td></tr>
 <tr><td>Usage data (request/usage metadata)</td><td>Yes (server-side counters)</td><td>App functionality, analytics (cost and reliability)</td><td>No</td><td>No</td></tr>
 <tr><td>Purchases</td><td>Handled by Apple; credits stored locally</td><td>App functionality</td><td>No</td><td>No</td></tr>
-<tr><td>Diagnostics</td><td>No (P0 uses no third-party analytics/crash SDK)</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Diagnostics</td><td>No (no third-party analytics/crash SDK)</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Other user content (birth information/name/MBTI/question/two-person information)</td><td>Yes (only when you start the relevant scene)</td><td>App Functionality</td><td>No</td><td>No</td></tr>
 </tbody></table>
 <div class="footer"><a href="privacy.html">Privacy Policy</a><a href="term.html">Terms of Use</a><a href="support.html">Support</a></div>
 </body>
