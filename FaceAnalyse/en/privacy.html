@@ -33,15 +33,15 @@
 </head>
 <body>
 <h1>Face Explorer Privacy Policy</h1>
-<p><strong>Version</strong>: 2.0<br/>
-<strong>Effective date</strong>: November 10, 2026<br/>
+<p><strong>Version</strong>: 2.1<br/>
+<strong>Effective date</strong>: November 11, 2026<br/>
 <strong>Applies to</strong>: Face Explorer (脸型探索) for iPhone, iPad and macOS<br/>
 <strong>Public URL</strong>: <a href="https://z415073783.github.io/app/FaceAnalyse/en/privacy.html">https://z415073783.github.io/app/FaceAnalyse/en/privacy.html</a><br/>
 <strong>Contact</strong>: z674636160@163.com</p>
 <p>Internal note (remove before publishing as a public page): product draft pending owner/legal review of the operator identity, cross-border transfer language and DeepSeek processing statements. Keep this English version consistent with <code>privacy-policy.zh-Hans.md</code>.</p>
 <hr/>
 <h2>Summary</h2>
-<p>Face Explorer does not require an account. The photo, birth information, name, MBTI type or tarot question you choose to provide is sent over an encrypted connection to our own server. The server computes deterministic facts in memory (e.g., Four Pillars/Five Elements, zodiac, tarot cards, life path number, synastry relations) and a third-party AI service (DeepSeek) turns them into an entertainment reading. <strong>We do not store your photo, birth information, name, question or report text on our servers, and we do not use them for advertising or model training.</strong> We use only a randomly generated device identifier for request verification, daily limits and abuse prevention. For two-person scenes, you must obtain the other person's consent.</p>
+<p>Face Explorer does not require an account. The photo, birth information, name, MBTI type or tarot question you choose to provide is sent over an encrypted connection to our own server. The server computes deterministic facts in memory (e.g., Four Pillars/Five Elements, zodiac, tarot cards, life path number, synastry relations) and a third-party AI service (DeepSeek) turns them into an entertainment reading. <strong>We do not store your photo, birth information, name, question or report text on our servers, and we do not use them for advertising or model training.</strong> We use only a randomly generated device identifier for request verification, daily limits and abuse prevention. For two-person scenes, you must obtain the other person's consent. Completed readings are <strong>saved only on your device</strong> (up to the latest 50, including facts, full report and a compressed thumbnail; no original image). You can delete/clear them at any time; we do not upload local history or thumbnails.</p>
 <hr/>
 <h2>1. Information We Collect</h2>
 <h3>1.1 Provided by you</h3>
@@ -77,7 +77,7 @@
 <li><strong>Encrypted transfer</strong>: the photo is base64-encoded in an HTTPS request to our own server (<code>hk.zengliangmin.cn</code>), protected by request signatures against tampering and replay.</li>
 <li><strong>Forwarded to a third-party AI</strong>: our server forwards the photo to <strong>DeepSeek</strong> for visual analysis. See DeepSeek's privacy policy: <a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-privacy-policy.html">Chinese</a> / <a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html">English</a>. We forward data in a minimized form; the provider's retention, training and processing practices are governed by its own policy, and we make no commitments beyond it.</li>
 <li><strong>In-memory processing, no persistence</strong>: our server validates, forwards and releases the photo in memory only. <strong>We do not write photos to server disks, do not use object storage, do not log them and do not back them up.</strong> Memory is released when analysis ends or the request is closed. Report text is streamed to your device and is not stored on our servers.</li>
-<li><strong>No long-term storage on your device</strong>: the app keeps a thumbnail only in memory for the current session; closing the session or the app discards it. Photos are not written to your library or app cache. A future history feature (if any) will store report text and scores only, never photos.</li>
+<li><strong>Photos are not stored long-term on the device</strong>: the app keeps the photo in memory only for the current session; it is not written to your library or app cache. <strong>Local history stores result facts, the full report and one compressed thumbnail</strong> (240–320px long edge JPEG, EXIF removed, not the original); deleting history or clearing all removes thumbnails.</li>
 <li><strong>No training or advertising</strong>: we do not use your photos to train AI models, for advertising, for sale, or for sharing with research institutions.</li>
 </ol>
 <hr/>
@@ -101,7 +101,8 @@
 <li><strong>Aggregated usage without identifiers</strong> (total requests, tokens, image bytes): retained for up to <strong>365 days</strong> for cost and capacity planning.</li>
 <li><strong>Server access logs</strong>: retained short-term under log rotation (typically no more than 30 days) for security and troubleshooting.</li>
 <li><strong>Local credit ledger</strong>: stored in your device Keychain until you uninstall the app or clear its data; after uninstall, Keychain items may remain so unused credits can be restored, depending on system behavior.</li>
-<li><strong>Birth information/name/MBTI/tarot question/two-person information/photos/reports</strong>: not written to server disks, not logged, no history; released after the request ends.</li>
+<li><strong>Birth information/name/MBTI/tarot question/two-person information/photos/reports</strong>: not written to server disks, not logged; released after the request ends.</li>
+<li><strong>Local history/thumbnails</strong>: stored only in your device's Application Support, up to 50 items; oldest removed beyond 50; deleted on individual delete/clear all; excluded from iCloud backup; never uploaded. Viewing/deleting history does not change credits or purchases.</li>
 </ul>
 <hr/>
 <h2>5. Data Security</h2>
@@ -147,6 +148,16 @@
 <li><strong>Age</strong>: 12+; not directed to children under 12. For third-party information you must ensure lawful permission.</li>
 <li><strong>App Store privacy labels</strong>: "Other User Content" (birth information/name/MBTI/question) is collected for App Functionality, not linked to identity and not used for tracking; photos remain "Photos"; device ID is used for App Functionality/abuse prevention.</li>
 </ol>
+<h2>12. Local History, Thumbnails and Completion Notifications (New in v2.1)</h2>
+<ol>
+<li><strong>Local history content</strong>: successful readings are saved on the device with scene, completion time, language, facts, full report and one compressed thumbnail (240–320px long edge JPEG, EXIF removed for image scenes; scene icon placeholder for text scenes). <strong>We do not store the original image, photo base64, birth date, name, tarot question or two-person raw input</strong>; names/questions naturally appearing in the report are stored locally only as part of that report.</li>
+<li><strong>Device-only, not uploaded</strong>: history and thumbnails live in the app's Application Support, are not sent to our server or third-party AI, are not synced across devices, and are excluded from iCloud backup.</li>
+<li><strong>Limit and deletion</strong>: keep at most the latest <strong>50</strong> items; adding the 51st removes the oldest; individual delete and clear-all are supported with confirmation and are irreversible; deleting history cancels its pending local notification.</li>
+<li><strong>Notification permission and purpose</strong>: before the first reading we ask for notification permission to remind you when a reading completes. Declining does not block analysis and only in-app banners are used. Notifications contain only the scene name and a generic "tap to view" message — <strong>no birth information, name, question, report text or thumbnail</strong>; you can disable them in system settings.</li>
+<li><strong>Billing separation</strong>: saving/viewing/deleting history does not refund, recharge or consume credits; "read again" starts a new reading and is charged as a new reading.</li>
+<li><strong>Birth information/name/MBTI/tarot question/two-person information</strong>: still processed in server memory under this policy, <strong>not written to disk/logs and no server-side history</strong>; local history does not additionally store raw inputs.</li>
+<li><strong>Age</strong>: local history/notifications are also 12+ entertainment; not used for advertising, profiling or cross-app tracking.</li>
+</ol>
 <h2>Appendix: App Store Privacy Label Summary (for review and development alignment)</h2>
 <table>
 <thead><tr>
@@ -162,6 +173,8 @@
 <tr><td>Purchases</td><td>Handled by Apple; credits stored locally</td><td>App functionality</td><td>No</td><td>No</td></tr>
 <tr><td>Diagnostics</td><td>No (no third-party analytics/crash SDK)</td><td>—</td><td>—</td><td>—</td></tr>
 <tr><td>Other user content (birth information/name/MBTI/question/two-person information)</td><td>Yes (only when you start the relevant scene)</td><td>App Functionality</td><td>No</td><td>No</td></tr>
+<tr><td>Local history/thumbnails (device only)</td><td>Yes (stored locally only, not uploaded)</td><td>App Functionality</td><td>No</td><td>No</td></tr>
+<tr><td>Notification permission/local notifications</td><td>Yes (completion reminders only)</td><td>App Functionality</td><td>No</td><td>No</td></tr>
 </tbody></table>
 <div class="footer"><a href="privacy.html">Privacy Policy</a><a href="term.html">Terms of Use</a><a href="support.html">Support</a></div>
 </body>
