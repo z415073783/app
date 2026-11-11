@@ -5,35 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>脸型探索 - 技术支持</title>
     <style>
-        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif; line-height: 1.7; margin: 20px auto; max-width: 760px; padding: 0 16px; color: #333; }
+        body {
+            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+            margin: 20px auto;
+            max-width: 760px;
+            padding: 0 16px;
+            color: #333;
+        }
         h1, h2, h3 { color: #222; line-height: 1.35; }
-        h1 { font-size: 1.6em; }
-        h2 { font-size: 1.2em; margin-top: 1.6em; }
-        ul { margin: .5em 0 .8em; padding-left: 1.4em; }
+        h1 { font-size: 1.6em; margin-bottom: .4em; }
+        h2 { font-size: 1.25em; margin-top: 1.6em; }
+        h3 { font-size: 1.08em; margin-top: 1.2em; }
+        p { margin: .65em 0; }
+        ul, ol { margin: .5em 0 .8em; padding-left: 1.4em; }
         li { margin: .25em 0; }
+        table { border-collapse: collapse; width: 100%; margin: .8em 0; font-size: .95em; }
+        th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
+        th { background: #f6f1fb; }
         a { color: #6e2e9e; text-decoration: none; }
         a:hover { text-decoration: underline; }
+        code { background: #f3f3f3; padding: 1px 4px; border-radius: 3px; font-size: .92em; }
+        .meta { color: #777; font-size: .92em; }
         .footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid #eee; color: #777; font-size: .9em; }
         .footer a { margin-right: 12px; }
     </style>
 </head>
 <body>
 <h1>脸型探索 技术支持</h1>
-<p>感谢使用脸型探索（Face Explorer）。本 App 无需注册账号：选择一张照片，经自建服务转发第三方 AI 分析后，流式返回面部特征报告。</p>
-
+<p>感谢使用脸型探索（Face Explorer）。本 App 无需注册账号：选择一种解读，提供照片或出生信息，由自建服务返回 AI 生成的娱乐向解读。</p>
 <h2>常见问题</h2>
 <ul>
-  <li><strong>分析失败 / 没有识别到人脸？</strong>请换一张光线充足、正脸清晰、无遮挡的照片重试；并确认网络连接正常。</li>
-  <li><strong>照片会被保存吗？</strong>不会。照片仅在本次分析的内存中处理，服务器不落盘、不写日志正文；详见<a href="privacy.html">隐私政策</a>。</li>
-  <li><strong>次数怎么算？</strong>每设备每日 1 次免费额度；内购为消耗型商品（一次购买 +6 次）。只有分析成功且照片可分析时才扣减，失败 / 取消 / 无脸不扣。</li>
-  <li><strong>购买后次数没到账 / 换设备了？</strong>请在 App 设置页点「恢复购买」；消耗型商品按 Apple 交易历史恢复，换设备或清除数据可能无法完全恢复，退款与账单问题请通过 Apple 处理。</li>
-  <li><strong>如何删除本地数据？</strong>卸载 App 或在系统设置中清除 App 数据即可；这会清除本地次数账本。</li>
-  <li><strong>报告准确吗？</strong>报告由 AI 生成，仅供娱乐与日常护肤参考，不构成医疗建议或专业美容意见。</li>
+<li><strong>分析失败 / 没有识别到人脸？</strong> 请换一张光线充足、正脸清晰、无遮挡的照片重试，并确认网络连接正常。</li>
+<li><strong>照片或出生信息会保存在服务器吗？</strong> 不会。照片、出生信息、姓名、塔罗问题和双人信息仅在本次解读的内存中处理，服务器不落盘、不写日志正文。详见<a href="privacy.html">隐私政策</a>。</li>
+<li><strong>结果保存在哪里？</strong> 成功完成的解读会保存在本机（最多 50 条，含小缩略图），可在「历史」中随时查看，不会上传。可单条删除或清空全部历史。</li>
+<li><strong>次数怎么算？</strong> 每设备每日 1 次免费额度；内购为消耗型商品（一次购买 +6 次）。只有解读成功且内容可分析时才扣减，失败、取消、无脸或内容过滤不扣；查看/删除历史不扣次数。</li>
+<li><strong>可以同时跑多个解读吗？</strong> 可以。同一设备最多 2 个并行，更多自动排队并依次开始；离开页面不会中断正在进行的解读。</li>
+<li><strong>为什么没收到完成通知？</strong> 本地通知需要授权；若拒绝授权，App 仍会在前台显示完成横幅。可在设置中管理通知。</li>
+<li><strong>购买后次数没到账 / 换设备了？</strong> 请在设置页点「恢复购买」；消耗型商品按 Apple 交易历史恢复，换设备或清除数据可能无法完全恢复，退款与账单问题请通过 Apple 处理。</li>
+<li><strong>如何删除本地数据？</strong> 卸载 App 或在系统设置中清除 App 数据即可；这会清除本地历史与次数账本。</li>
+<li><strong>报告准确吗？</strong> 解读由 AI 生成，仅供娱乐与日常参考，不构成医疗、心理、法律、投资或婚恋决策建议。</li>
 </ul>
-
 <h2>联系我们</h2>
 <p>邮箱：<a href="mailto:z674636160@163.com">z674636160@163.com</a></p>
-
-<div class="footer"><a href="privacy.html">隐私政策</a><a href="term.html">用户协议</a><a href="https://z415073783.github.io/app/">更多 App</a></div>
+<div class="footer"><a href="privacy.html">隐私政策</a><a href="term.html">用户协议</a><a href="support.html">技术支持</a></div>
 </body>
 </html>

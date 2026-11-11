@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Explorer – Política de privacidad</title>
+    <style>
+        body {
+            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+            margin: 20px auto;
+            max-width: 760px;
+            padding: 0 16px;
+            color: #333;
+        }
+        h1, h2, h3 { color: #222; line-height: 1.35; }
+        h1 { font-size: 1.6em; margin-bottom: .4em; }
+        h2 { font-size: 1.25em; margin-top: 1.6em; }
+        h3 { font-size: 1.08em; margin-top: 1.2em; }
+        p { margin: .65em 0; }
+        ul, ol { margin: .5em 0 .8em; padding-left: 1.4em; }
+        li { margin: .25em 0; }
+        table { border-collapse: collapse; width: 100%; margin: .8em 0; font-size: .95em; }
+        th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
+        th { background: #f6f1fb; }
+        a { color: #6e2e9e; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: #f3f3f3; padding: 1px 4px; border-radius: 3px; font-size: .92em; }
+        .meta { color: #777; font-size: .92em; }
+        .footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid #eee; color: #777; font-size: .9em; }
+        .footer a { margin-right: 12px; }
+    </style>
+</head>
+<body>
+<h1>Política de privacidad de Face Explorer</h1>
+<p><strong>Versión</strong>: 2.1<br/>
+<strong>Fecha de entrada en vigor</strong>: 11 de noviembre de 2026<br/>
+<strong>Se aplica a</strong>: Face Explorer (脸型探索) para iPhone, iPad y macOS<br/>
+<strong>URL pública</strong>: <a href="https://z415073783.github.io/app/FaceAnalyse/es/privacy.html">https://z415073783.github.io/app/FaceAnalyse/es/privacy.html</a><br/>
+<strong>Contacto</strong>: z674636160@163.com</p>
+<p>Nota interna (eliminar antes de publicar como página pública): borrador de producto pendiente de la revisión, por parte del titular y del departamento legal, de la identidad del operador, la redacción sobre transferencias transfronterizas y las declaraciones relativas al tratamiento por DeepSeek. Mantener el contenido de esta versión en español coherente con <code>privacy-policy.zh-Hans.md</code>.</p>
+<hr/>
+<h2>Resumen</h2>
+<p>Face Explorer no requiere cuenta. La foto, los datos de nacimiento, el nombre, el tipo MBTI o la pregunta de tarot que usted decida facilitar se envían mediante una conexión cifrada a nuestro propio servidor. El servidor calcula datos deterministas en memoria (por ejemplo, Cuatro Pilares/Cinco Elementos, zodíaco, cartas de tarot, número del camino de vida, relaciones de sinastría) y un servicio de IA de terceros (DeepSeek) los convierte en una lectura de entretenimiento. <strong>No almacenamos su foto, sus datos de nacimiento, su nombre, su pregunta ni el texto del informe en nuestros servidores, y no los utilizamos para publicidad ni para entrenar modelos.</strong> Solo usamos un identificador de dispositivo generado aleatoriamente para verificar solicitudes, aplicar los límites diarios y prevenir abusos. En las escenas de dos personas, usted debe obtener el consentimiento de la otra persona. Las lecturas completadas se <strong>guardan únicamente en su dispositivo</strong> (hasta las 50 más recientes, incluidos los datos, el informe completo y una miniatura comprimida; nunca la imagen original). Puede eliminarlas o borrarlas en cualquier momento; no subimos el historial local ni las miniaturas.</p>
+<hr/>
+<h2>1. Información que recopilamos</h2>
+<h3>1.1 Datos que usted nos facilita</h3>
+<ul>
+<li><strong>Foto</strong>: una foto que usted elige de su fototeca o toma con la cámara para la lectura del rostro, la puntuación facial clásica o la quiromancia (en este último caso, una foto de la palma). Se usa solo para esta lectura y se libera una vez procesada (véase la sección 2).</li>
+<li><strong>Datos de nacimiento</strong>: tipo de calendario, fecha de nacimiento, hora de nacimiento o «hora desconocida», ciudad/longitud/zona horaria de nacimiento y género que introduce para las escenas de BaZi, horóscopo, cumpleaños y dos personas. Se usan solo en memoria para esta lectura; no se almacenan.</li>
+<li><strong>Nombre</strong>: el nombre que introduce para las lecturas del nombre y de sinastría. Se usa solo para esta lectura; no se almacena.</li>
+<li><strong>Tipo MBTI</strong>: el tipo de cuatro letras que selecciona. Se usa solo para esta lectura; no se almacena.</li>
+<li><strong>Pregunta de tarot</strong>: la pregunta opcional que introduce (0–200 caracteres). Se usa solo para esta lectura; no se almacena ni se registra en los logs.</li>
+<li><strong>Datos de dos personas (terceros)</strong>: los datos de nacimiento de la pareja y, opcionalmente, su nombre y género para la sinastría y la compatibilidad BaZi. <strong>Debe contar con el consentimiento de la otra persona.</strong> Se usan solo para esta lectura; no se almacenan.</li>
+<li><strong>Preferencia de idioma</strong>: se usa para elegir el idioma del informe (chino simplificado o inglés).</li>
+</ul>
+<h3>1.2 Datos generados automáticamente</h3>
+<ul>
+<li><strong>Identificador de dispositivo (Device ID)</strong>: un UUID aleatorio generado cuando se instala la app y guardado en el Llavero del sistema. No es el IDFA, ni el IDFV, ni un número de serie, ni un número de teléfono, y no permite identificarle personalmente. Se usa para firmar solicitudes, aplicar límites diarios por dispositivo, prevenir abusos y diagnosticar problemas.</li>
+<li><strong>Metadatos de la solicitud</strong>: hora, duración, código de estado, bytes y dimensiones de la imagen, consumo de tokens y códigos de error del servidor. Se usan para cuotas, contabilidad de costes y fiabilidad del servicio.</li>
+<li><strong>Registros de red</strong>: nuestro servidor conserva logs de acceso por seguridad y diagnóstico (hora, ruta, código de estado, duración, identificador de dispositivo, dirección IP) durante un periodo de retención breve. Los logs <strong>no contienen la foto, sus datos en base64 ni el texto del informe</strong>.</li>
+</ul>
+<h3>1.3 Compras</h3>
+<ul>
+<li>Las compras dentro de la app las gestiona Apple (App Store / StoreKit). No recopilamos ni almacenamos el número de su tarjeta de pago, su Apple ID ni sus datos de facturación.</li>
+<li>Los créditos de análisis (1 gratuito al día; +6 por cada compra dentro de la app) se guardan localmente en su dispositivo (Llavero) y no se suben a nuestros servidores.</li>
+<li>Apple nos facilita un estado de transacción limitado para que podamos añadir créditos a su dispositivo.</li>
+</ul>
+<h3>1.4 Datos que NO recopilamos</h3>
+<p>No recopilamos credenciales de cuenta, número de teléfono, correo electrónico (salvo que usted nos escriba), contactos, ubicación precisa, otras fotos de su fototeca, identificadores publicitarios ni el IDFA, plantillas de Face ID ni otras plantillas biométricas, ni información sobre las personas con quienes comparte informes. No integramos SDK de publicidad ni de seguimiento de terceros y no le rastreamos entre apps.</p>
+<p>El nombre, la fecha, la hora, el lugar y la longitud de nacimiento, el género, el tipo MBTI, la pregunta de tarot y los datos de dos personas se tratan solo cuando usted inicia la lectura correspondiente, <strong>no se almacenan, no se usan para elaborar perfiles, publicidad ni entrenar modelos</strong>, y no se solicitan si no utiliza esas escenas.</p>
+<hr/>
+<h2>2. Cómo se procesan las fotos</h2>
+<ol>
+<li><strong>Solo la foto que usted elige</strong>: la app no lee su fototeca de forma masiva. Usa el selector de fotos del sistema o la cámara para minimizar el alcance de los permisos.</li>
+<li><strong>Compresión local y eliminación de metadatos</strong>: antes de subirla, la foto se redibuja como JPEG (lado largo de unos 1280 px, calidad de aproximadamente 0,8), la orientación se integra en los píxeles y se eliminan los metadatos EXIF, la ubicación GPS y los datos de la cámara.</li>
+<li><strong>Transferencia cifrada</strong>: la foto se codifica en base64 dentro de una solicitud HTTPS a nuestro propio servidor (<code>hk.zengliangmin.cn</code>), protegida mediante firmas de solicitud contra la manipulación y la repetición.</li>
+<li><strong>Reenvío a una IA de terceros</strong>: nuestro servidor reenvía la foto a <strong>DeepSeek</strong> para el análisis visual. Consulte la política de privacidad de DeepSeek: <a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-privacy-policy.html">chino</a> / <a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html">inglés</a>. Reenviamos los datos de forma minimizada; las prácticas de conservación, entrenamiento y tratamiento del proveedor se rigen por su propia política, y no asumimos compromisos que vayan más allá de ella.</li>
+<li><strong>Tratamiento en memoria, sin persistencia</strong>: nuestro servidor valida, reenvía y libera la foto solo en memoria. <strong>No escribimos las fotos en los discos del servidor, no usamos almacenamiento de objetos, no las registramos en logs ni las incluimos en copias de seguridad.</strong> La memoria se libera cuando termina el análisis o se cierra la solicitud. El texto del informe se transmite a su dispositivo y no se almacena en nuestros servidores.</li>
+<li><strong>Las fotos no se guardan a largo plazo en el dispositivo</strong>: la app mantiene la foto en memoria solo durante la sesión actual; no se escribe en su fototeca ni en la caché de la app. <strong>El historial local guarda los datos del resultado, el informe completo y una miniatura comprimida</strong> (JPEG de 240–320 px de lado largo, sin EXIF, que no es la imagen original); al eliminar el historial o borrarlo todo se eliminan las miniaturas.</li>
+<li><strong>Sin entrenamiento ni publicidad</strong>: no usamos sus fotos para entrenar modelos de IA, ni para publicidad, ni para venderlas, ni para compartirlas con instituciones de investigación.</li>
+</ol>
+<hr/>
+<h2>3. Servicios de terceros</h2>
+<table>
+<thead><tr>
+<th>Tercero</th>
+<th>Finalidad</th>
+<th>Datos implicados</th>
+<th>Notas</th>
+</tr></thead><tbody>
+<tr><td>DeepSeek</td><td>Inferencia de lecturas de entretenimiento con IA (rostro/quiromancia/BaZi/horóscopo/cumpleaños/tarot/nombre/MBTI/sinastría)</td><td>Foto comprimida, datos de nacimiento/nombre/MBTI/pregunta de tarot/datos de dos personas (según corresponda), idioma del informe</td><td>El tratamiento se rige por la política de privacidad oficial de DeepSeek; sus servidores pueden estar en China continental o en otros lugares, lo que puede implicar una transferencia transfronteriza</td></tr>
+<tr><td>Apple (App Store / StoreKit)</td><td>Compras dentro de la app y recibos</td><td>Información de la transacción</td><td>Apple los trata conforme a su política de privacidad; no accedemos a las credenciales de pago</td></tr>
+<tr><td>Nuestro propio servidor y la CDN/proxy inverso</td><td>Acceso a la API, HTTPS, limitación de frecuencia</td><td>Metadatos de la solicitud, registros de red</td><td>Se usan para la operación del servicio, la seguridad y la prevención de abusos</td></tr>
+</tbody></table>
+<p>No vendemos su información personal ni facilitamos fotos a terceros distintos de los servicios anteriores, salvo que la ley lo exija o que sea necesario para proteger a los usuarios o la seguridad pública.</p>
+<hr/>
+<h2>4. Conservación del identificador de dispositivo y de los datos de uso</h2>
+<ul>
+<li><strong>Identificador de dispositivo</strong>: se guarda en el Llavero de su dispositivo para firmar solicitudes y aplicar los límites diarios; en nuestra tabla de uso, el detalle por dispositivo se <strong>elimina transcurridos 30 días</strong>.</li>
+<li><strong>Datos de uso agregados sin identificadores</strong> (total de solicitudes, tokens, bytes de imagen): se conservan hasta <strong>365 días</strong> para planificar costes y capacidad.</li>
+<li><strong>Logs de acceso del servidor</strong>: se conservan a corto plazo mediante rotación de logs (normalmente no más de 30 días) por seguridad y diagnóstico.</li>
+<li><strong>Registro local de créditos</strong>: se guarda en el Llavero de su dispositivo hasta que desinstale la app o borre sus datos; tras la desinstalación, los elementos del Llavero pueden permanecer para que se puedan restaurar los créditos no usados, según el comportamiento del sistema.</li>
+<li><strong>Datos de nacimiento/nombre/MBTI/pregunta de tarot/datos de dos personas/fotos/informes</strong>: no se escriben en los discos del servidor ni se registran en logs; se liberan al terminar la solicitud.</li>
+<li><strong>Historial local/miniaturas</strong>: se guardan solo en la carpeta Application Support de su dispositivo, hasta 50 elementos; al superar los 50 se elimina el más antiguo; se borran al eliminar un elemento o borrar todo; se excluyen de la copia de seguridad de iCloud y nunca se suben. Ver o eliminar el historial no altera los créditos ni las compras.</li>
+</ul>
+<hr/>
+<h2>5. Seguridad de los datos</h2>
+<ul>
+<li>Se usa HTTPS de extremo a extremo; las API utilizan firmas HMAC de solicitud, marcas de tiempo y nonces para evitar la manipulación y la repetición.</li>
+<li>La clave real de la API del proveedor de IA existe solo en nuestro servidor; el cliente no contiene credenciales de ningún proveedor de nube.</li>
+<li>Aplicamos la minimización de datos: ninguna foto en disco, ningún texto de informe en los logs y logs que solo contienen metadatos.</li>
+<li>Ninguna transmisión o tratamiento por internet puede ser absolutamente seguro. Evite subir fotos que contengan información sensible (por ejemplo, documentos de identidad, direcciones o información privada de otras personas).</li>
+</ul>
+<hr/>
+<h2>6. Sus derechos y opciones</h2>
+<ul>
+<li><strong>No usar el análisis</strong>: puede explorar la app sin seleccionar ninguna foto; no se sube ninguna foto salvo que usted inicie un análisis.</li>
+<li><strong>Denegar permisos</strong>: puede denegar el acceso a la fototeca o a la cámara; la app se lo explicará pero no le obligará. Aun así podrá consultar la política de privacidad y comprar créditos.</li>
+<li><strong>Eliminar los datos locales</strong>: desinstale la app o borre sus datos en los ajustes del sistema. Como los créditos comprados se controlan localmente, es posible que necesite «Restaurar compras» (según el historial de transacciones y con las limitaciones indicadas en las Condiciones de uso).</li>
+<li><strong>Contactarnos</strong>: escriba a z674636160@163.com para solicitar el acceso, la rectificación o la supresión de sus datos, o para presentar una reclamación. Como no hay cuentas, es posible que le pidamos el identificador de su dispositivo o la hora de la solicitud para localizar registros; responderemos dentro del plazo exigido por la ley.</li>
+<li><strong>Retirar el consentimiento</strong>: puede dejar de usar el servicio. El tratamiento ya realizado no puede deshacerse, pero ello no afecta a la licitud del tratamiento anterior a la retirada.</li>
+</ul>
+<hr/>
+<h2>7. Menores</h2>
+<p>La app está clasificada para <strong>mayores de 12 años</strong> y no está diseñada para menores de 12 años. Si usted es menor de 18 años, utilícela con el consentimiento y la supervisión de su padre, madre o tutor legal. No recopilamos activamente la edad ni la fecha de nacimiento. Si un tutor legal cree que un menor ha subido una foto sin consentimiento, puede contactarnos y le ayudaremos a gestionar los registros correspondientes.</p>
+<hr/>
+<h2>8. Contenido generado por IA y exención de responsabilidad</h2>
+<p>Los informes los genera un modelo de IA de terceros a partir de la información que usted facilita y de reglas tradicionales y de entretenimiento, <strong>solo con fines de entretenimiento y reflexión personal. No constituyen consejo médico, de inversión, legal, psicológico, matrimonial, de divorcio ni de ninguna otra decisión profesional.</strong> Los resultados de la IA pueden ser inexactos, incompletos o no ajustarse a la realidad. No tome decisiones médicas, estéticas, de inversión, legales o de pareja basándose en un informe, ni lo use para evaluar a otras personas ni para decidir por ellas. El contenido de BaZi, astrología, tarot, cumpleaños, nombre, MBTI y sinastría es entretenimiento tradicional o de cultura popular, no predice el futuro y no se garantiza que sea exacto; +12. En las escenas de dos personas debe obtener el consentimiento de la otra persona. Si una foto o un dato no se puede analizar (por ejemplo, porque no hay un rostro o una palma claros, o por un filtro de contenido), la app le pedirá que lo cambie y no descontará ningún crédito.</p>
+<hr/>
+<h2>9. Cambios en esta política</h2>
+<p>Podemos actualizar esta política por cambios en las funciones, requisitos legales o cambios en los servicios de terceros. La nueva versión se publicará en esta página con una nueva fecha de entrada en vigor; los cambios importantes se comunicarán en la app de forma razonable. El uso continuado implica la aceptación de la política actualizada.</p>
+<hr/>
+<h2>10. Contacto</h2>
+<ul>
+<li>Correo electrónico: z674636160@163.com</li>
+<li>Política de privacidad: <a href="https://z415073783.github.io/app/FaceAnalyse/es/privacy.html">https://z415073783.github.io/app/FaceAnalyse/es/privacy.html</a></li>
+<li>Condiciones de uso: <a href="https://z415073783.github.io/app/FaceAnalyse/es/term.html">https://z415073783.github.io/app/FaceAnalyse/es/term.html</a></li>
+</ul>
+<hr/>
+<h2>11. Datos de las lecturas de entretenimiento multiescena (novedad en la v2.0)</h2>
+<ol>
+<li><strong>Escenas</strong>: rostro, quiromancia, BaZi/Cinco Elementos, horóscopo, cumpleaños, tarot, nombre, MBTI, sinastría y compatibilidad BaZi, además de la puntuación facial clásica existente.</li>
+<li><strong>Cálculo determinista en el servidor</strong>: los datos de nacimiento se usan para calcular en memoria los Cuatro Pilares, los Cinco Elementos y el tiempo solar verdadero; las cartas de tarot se extraen en el servidor; el número del camino de vida, el zodíaco y las relaciones de sinastría se calculan con reglas fijas. Estos datos y entradas solo existen en memoria durante la solicitud y no se escriben en disco ni en los logs.</li>
+<li><strong>IA de terceros</strong>: el servidor reenvía a DeepSeek los datos y entradas necesarios (foto, datos de nacimiento, nombre o pregunta, según corresponda) para generar la lectura de entretenimiento. El tratamiento por parte de DeepSeek se rige por su política de privacidad oficial; exigimos la minimización y prohibimos el uso publicitario.</li>
+<li><strong>Datos de dos personas</strong>: debe confirmar que ha obtenido el consentimiento de la otra persona. Solo los usamos para esta lectura, no los almacenamos y no los utilizamos para identificar ni perfilar a nadie. Si la otra persona se pone en contacto con nosotros, le explicaremos el tratamiento; como no conservamos los datos, es posible que no podamos localizar una solicitud concreta.</li>
+<li><strong>Lo que no hacemos</strong>: no verificamos la identidad ni la edad, no hacemos diagnósticos médicos o dermatológicos, no damos asesoramiento de inversión, no tomamos decisiones de matrimonio o divorcio, no hacemos diagnósticos psicológicos, no creamos perfiles publicitarios ni hacemos seguimiento entre apps; no almacenamos datos de nacimiento, nombres, MBTI, preguntas de tarot, fotos, datos de dos personas ni el historial de informes.</li>
+<li><strong>Edad</strong>: +12; no está dirigida a menores de 12 años. Respecto a la información de terceros, debe asegurarse de contar con una autorización lícita.</li>
+<li><strong>Etiquetas de privacidad del App Store</strong>: «Otro contenido del usuario» (datos de nacimiento/nombre/MBTI/pregunta) se recopila para la funcionalidad de la app, no se vincula a la identidad y no se usa para seguimiento; las fotos siguen figurando como «Fotos»; el identificador de dispositivo se usa para la funcionalidad de la app y la prevención de abusos.</li>
+</ol>
+<h2>12. Historial local, miniaturas y notificaciones de finalización (novedad en la v2.1)</h2>
+<ol>
+<li><strong>Contenido del historial local</strong>: las lecturas completadas correctamente se guardan en el dispositivo con la escena, la hora de finalización, el idioma, los datos, el informe completo y una miniatura comprimida (JPEG de 240–320 px de lado largo con EXIF eliminado en las escenas con imagen; en las escenas de texto, el icono de la escena como marcador). <strong>No almacenamos la imagen original, la foto en base64 ni los objetos de entrada sin procesar (fecha de nacimiento, nombre, pregunta de tarot, datos de dos personas sin procesar)</strong>; los datos derivados que se muestran (por ejemplo, la fecha solar/lunar, los Cuatro Pilares o los Cinco Elementos) pueden guardarse localmente junto con el resultado; los nombres y preguntas que aparecen de forma natural en el informe se guardan localmente solo como parte de ese informe.</li>
+<li><strong>Solo en el dispositivo, sin subida</strong>: el historial y las miniaturas se encuentran en la carpeta Application Support de la app, no se envían a nuestro servidor ni a la IA de terceros, no se sincronizan entre dispositivos y se excluyen de la copia de seguridad de iCloud.</li>
+<li><strong>Límite y eliminación</strong>: se conservan como máximo los <strong>50</strong> elementos más recientes; al añadir el 51.º se elimina el más antiguo; se admite la eliminación individual y el borrado total, con confirmación, y son irreversibles; eliminar un elemento del historial cancela su notificación local pendiente.</li>
+<li><strong>Permiso de notificaciones y finalidad</strong>: antes de la primera lectura solicitamos permiso de notificaciones para avisarle cuando una lectura termine. Denegarlo no bloquea el análisis y solo se usan avisos dentro de la app. Las notificaciones contienen únicamente el nombre de la escena y un mensaje genérico de «toca para ver»: <strong>ni datos de nacimiento, ni nombre, ni pregunta, ni texto del informe, ni miniatura</strong>; puede desactivarlas en los ajustes del sistema.</li>
+<li><strong>Separación de la facturación</strong>: guardar, ver o eliminar el historial no reembolsa, recarga ni consume créditos; «leer de nuevo» inicia una nueva lectura y se cobra como una lectura nueva.</li>
+<li><strong>Datos de nacimiento/nombre/MBTI/pregunta de tarot/datos de dos personas</strong>: se siguen tratando en la memoria del servidor conforme a esta política, <strong>no se escriben en disco ni en los logs y no hay historial en el servidor</strong>; el historial local no guarda además las entradas sin procesar.</li>
+<li><strong>Edad</strong>: el historial local y las notificaciones también son entretenimiento para +12; no se usan para publicidad, perfilado ni seguimiento entre apps.</li>
+</ol>
+<h2>Apéndice: resumen de las etiquetas de privacidad del App Store (para revisión y alineación del desarrollo)</h2>
+<table>
+<thead><tr>
+<th>Tipo de dato</th>
+<th>Recopilado</th>
+<th>Finalidad</th>
+<th>Vinculado a la identidad</th>
+<th>Usado para seguimiento</th>
+</tr></thead><tbody>
+<tr><td>Fotos o vídeos (contenido del usuario)</td><td>Sí (solo se suben cuando usted inicia un análisis)</td><td>Funcionalidad de la app</td><td>No</td><td>No</td></tr>
+<tr><td>Identificador de dispositivo (UUID aleatorio)</td><td>Sí</td><td>Funcionalidad de la app, prevención de abusos</td><td>No</td><td>No</td></tr>
+<tr><td>Datos de uso (metadatos de solicitud y uso)</td><td>Sí (contadores en el servidor)</td><td>Funcionalidad de la app, analítica (costes y fiabilidad)</td><td>No</td><td>No</td></tr>
+<tr><td>Compras</td><td>Gestionadas por Apple; créditos guardados localmente</td><td>Funcionalidad de la app</td><td>No</td><td>No</td></tr>
+<tr><td>Diagnóstico</td><td>No (sin SDK de analítica ni de fallos de terceros)</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Otro contenido del usuario (datos de nacimiento/nombre/MBTI/pregunta/datos de dos personas)</td><td>Sí (solo cuando usted inicia la escena correspondiente)</td><td>Funcionalidad de la app</td><td>No</td><td>No</td></tr>
+<tr><td>Historial local/miniaturas (solo en el dispositivo)</td><td>Sí (guardados solo localmente, sin subida)</td><td>Funcionalidad de la app</td><td>No</td><td>No</td></tr>
+<tr><td>Permiso de notificaciones/notificaciones locales</td><td>Sí (solo recordatorios de finalización)</td><td>Funcionalidad de la app</td><td>No</td><td>No</td></tr>
+</tbody></table>
+<div class="footer"><a href="privacy.html">Política de privacidad</a><a href="term.html">Términos de uso</a><a href="support.html">Soporte</a></div>
+</body>
+</html>
