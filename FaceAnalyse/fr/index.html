@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Face Explorer · AI Reading Studio</title>
+<meta name="description" content="Face Explorer : dix lectures IA ludiques — visage, main, BaZi, horoscope, anniversaire, tarot, prénom, MBTI, synastrie et compatibilité. Sans compte, historique local, 7 langues. Divertissement uniquement.">
+<meta property="og:title" content="Face Explorer · AI Reading Studio">
+<meta property="og:description" content="Face Explorer : dix lectures IA ludiques — visage, main, BaZi, horoscope, anniversaire, tarot, prénom, MBTI, synastrie et compatibilité. Sans compte, historique local, 7 langues. Divertissement uniquement.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/app-icon-512.png">
+<link rel="apple-touch-icon" href="../assets/app-icon-180.png">
+<link rel="icon" href="../assets/app-icon-180.png">
+<style>
+  :root{
+    --ink:#07040d; --surface:#140c22; --surface2:#1e1430;
+    --gold:#d6b36a; --gold-l:#f6d77a; --purple:#8b6fd6;
+    --cream:#f3e8d6; --muted:#c9bba6; --line:rgba(214,179,106,.25);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; min-height:100vh; color:var(--cream);
+    background:
+      radial-gradient(900px 600px at 72% -12%, rgba(139,111,214,.28), transparent 62%),
+      radial-gradient(700px 500px at 8% 12%, rgba(214,179,106,.10), transparent 60%),
+      var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    line-height:1.65;
+  }
+  .stars{position:fixed;inset:0;pointer-events:none;opacity:.55;
+    background-image:radial-gradient(rgba(246,215,122,.75) 1px,transparent 1.6px),radial-gradient(rgba(214,179,106,.45) 1px,transparent 1.6px);
+    background-size:170px 170px,260px 260px;background-position:0 0,90px 70px;
+    mask-image:linear-gradient(#000,transparent 88%);
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:56px 24px 44px;position:relative;z-index:1}
+  header.brand{display:flex;align-items:center;gap:18px;margin-bottom:54px}
+  header.brand img{width:76px;height:76px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.55))}
+  .eyebrow{color:var(--gold);font-size:12px;letter-spacing:.22em;font-weight:600}
+  .name{font-size:20px;font-weight:600;letter-spacing:.06em;margin-top:3px}
+  .name span{color:var(--muted);font-weight:400;font-size:15px;letter-spacing:.02em;margin-left:8px}
+  .hero{max-width:860px}
+  .hero h1{
+    font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;
+    font-size:clamp(40px,7vw,78px);line-height:1.08;margin:0 0 18px;
+    font-weight:900;letter-spacing:.01em;
+  }
+  .hero .lead{color:var(--muted);font-size:clamp(16px,2.2vw,21px);margin:0 0 28px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px;padding:0;list-style:none}
+  .chips li{border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--cream);font-size:13px;background:rgba(20,12,34,.55)}
+  .chips .dot{color:var(--gold);margin-right:6px}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:6px 0 0}
+  .btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--line)}
+  .btn.primary{background:linear-gradient(135deg,var(--gold),#b98f4a);color:#160d06;border-color:transparent;box-shadow:0 10px 30px rgba(214,179,106,.18)}
+  .btn.ghost{color:var(--cream);background:rgba(20,12,34,.6)}
+  .soon{color:var(--muted);font-size:12px}
+  .rule{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:44px 0 34px;border:0}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:rgba(20,12,34,.72);border:1px solid var(--line);border-radius:18px;padding:20px 20px 18px}
+  .card h2{font-size:15px;margin:0 0 4px;letter-spacing:.02em}
+  .card p{margin:0;color:var(--muted);font-size:13px}
+  .card a{display:inline-block;margin-top:12px;color:var(--gold);text-decoration:none;font-size:13px;font-weight:600}
+  .card a:hover{color:var(--gold-l)}
+  .langs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+  @media(max-width:760px){.langs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .lang{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(20,12,34,.55);text-decoration:none;color:var(--cream);font-size:14px}
+  .lang small{display:block;color:var(--muted);font-size:11px;margin-top:2px;letter-spacing:.02em}
+  .lang:hover{border-color:var(--gold)}
+  .note{color:var(--muted);font-size:12px;margin-top:22px;line-height:1.8}
+  footer{margin-top:54px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+  footer a{color:var(--muted);text-decoration:none;margin-right:14px}
+  footer a:hover{color:var(--gold)}
+  .badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:2px 7px;font-size:11px;color:var(--gold)}
+</style>
+<style>
+.site-langs{max-width:1080px;margin:0 auto 22px;display:flex;flex-wrap:wrap;gap:8px;font-size:12px;position:relative;z-index:2}
+.site-langs a{color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 11px;background:rgba(20,12,34,.5)}
+.site-langs a.active{color:var(--gold);border-color:var(--gold);background:rgba(214,179,106,.10)}
+.site-langs a:hover{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<div class="wrap">
+<nav class="site-langs" aria-label="Language"><a href="../index.html" hreflang="en">English</a><a href="../zh-Hans/index.html" hreflang="zh-Hans">简体中文</a><a href="../de/index.html" hreflang="de">Deutsch</a><a href="../ja/index.html" hreflang="ja">日本語</a><a class="active" href="../fr/index.html" hreflang="fr">Français</a><a href="../it/index.html" hreflang="it">Italiano</a><a href="../es/index.html" hreflang="es">Español</a></nav>
+  <header class="brand">
+    <img src="../assets/logo-v3.png" alt="Face Explorer logo" width="76" height="76">
+    <div>
+      <div class="eyebrow">AI READING STUDIO · FACE EXPLORER</div>
+      <div class="name">Face Explorer</div>
+    </div>
+  </header>
+  <section class="hero">
+    <h1>Dix lectures IA ludiques.<br>Découvrez d’autres facettes de vous.</h1>
+    <p class="lead">Visage, main, BaZi (Quatre Piliers et Cinq Éléments), horoscope, anniversaire, tarot, prénom, MBTI, synastrie et compatibilité BaZi. Sans compte, historique local, 7 langues.</p>
+    <ul class="chips"><li><span class="dot">✦</span>10 lectures</li><li><span class="dot">✦</span>Sans compte</li><li><span class="dot">✦</span>Historique local</li><li><span class="dot">✦</span>7 langues</li><li><span class="dot">✦</span>Partage</li></ul>
+    <div class="cta">
+      <a class="btn primary" href="support.html">Assistance</a>
+      <a class="btn ghost" href="privacy.html">Confidentialité</a>
+      <span class="soon">Version App Store bientôt disponible</span>
+    </div>
+    <p class="note">Toutes les lectures sont générées par IA à des fins de divertissement, de réflexion personnelle et d’intérêt culturel uniquement. Elles ne constituent pas un avis médical, psychologique, juridique, financier, esthétique ou relationnel. Ne prenez pas de décisions importantes sur cette seule base. Déconseillé aux moins de 12 ans.</p>
+  </section>
+  <hr class="rule">
+  <section aria-labelledby="legal-title">
+    <div class="eyebrow" id="legal-title">LEGAL &amp; SUPPORT</div>
+    <h2 style="font-family:'Songti SC','STSong',serif;font-size:28px;margin:8px 0 4px">Mentions &amp; assistance</h2>
+    <div class="grid">
+      <div class="card"><h2>Assistance</h2><p>FAQ, restauration des achats, historique et confidentialité.</p><a href="support.html">Ouvrir →</a></div>
+      <div class="card"><h2>Confidentialité</h2><p>Traitement des photos, données de naissance et IA tierce ; v2.3.</p><a href="privacy.html">Ouvrir →</a></div>
+      <div class="card"><h2>Conditions d’utilisation</h2><p>Règles d’usage, achats, responsabilité et avertissement ; v2.2.</p><a href="term.html">Ouvrir →</a></div>
+    </div>
+  </section>
+  <hr class="rule">
+  <section aria-labelledby="lang-title">
+    <div class="eyebrow" id="lang-title">LANGUAGES</div>
+    <h2 style="font-family:'Songti SC','STSong',serif;font-size:28px;margin:8px 0 4px">Choisir la langue</h2>
+    <div class="langs"><a class="lang" href="../index.html">English<small>English</small></a><a class="lang" href="../zh-Hans/index.html">简体中文<small>简体中文</small></a><a class="lang" href="../de/index.html">Deutsch<small>Deutsch</small></a><a class="lang" href="../ja/index.html">日本語<small>日本語</small></a><a class="lang" href="../fr/index.html">Français<small>Français</small></a><a class="lang" href="../it/index.html">Italiano<small>Italiano</small></a><a class="lang" href="../es/index.html">Español<small>Español</small></a></div>
+    <p class="note">Chaque langue ouvre sa page d’accueil ; confidentialité et conditions sont dans le pied de page.</p>
+  </section>
+  <footer>
+    <div>© 2026 Face Explorer <span class="badge">12+ · Généré par IA · Divertissement</span></div>
+    <div><a href="support.html">Assistance</a><a href="privacy.html">Confidentialité</a><a href="term.html">Conditions d’utilisation</a><a href="mailto:z674636160@163.com">Email</a></div>
+  </footer>
+</div>
+</body>
+</html>
