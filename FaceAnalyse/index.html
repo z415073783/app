@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>脸型探索 · AI 相学馆 | Face Explorer</title>
+<meta name="description" content="脸型探索 · AI 相学馆：面相、手相、五行八字、星座、生日、塔罗、名字、MBTI、双人合盘、八字匹配十种 AI 娱乐解读。无需账号，本地历史，7 种语言。仅供娱乐与自我探索。">
+<meta property="og:title" content="脸型探索 · AI 相学馆 | Face Explorer">
+<meta property="og:description" content="十种 AI 娱乐解读：面相、手相、八字、星座、塔罗、MBTI……仅供娱乐与自我探索。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/app-icon-512.png">
+<link rel="apple-touch-icon" href="assets/app-icon-180.png">
+<link rel="icon" href="assets/app-icon-180.png">
+<style>
+  :root{
+    --ink:#07040d; --surface:#140c22; --surface2:#1e1430;
+    --gold:#d6b36a; --gold-l:#f6d77a; --purple:#8b6fd6;
+    --cream:#f3e8d6; --muted:#c9bba6; --line:rgba(214,179,106,.25);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; min-height:100vh; color:var(--cream);
+    background:
+      radial-gradient(900px 600px at 72% -12%, rgba(139,111,214,.28), transparent 62%),
+      radial-gradient(700px 500px at 8% 12%, rgba(214,179,106,.10), transparent 60%),
+      var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",sans-serif;
+    line-height:1.65;
+  }
+  .stars{position:fixed;inset:0;pointer-events:none;opacity:.55;
+    background-image:radial-gradient(rgba(246,215,122,.75) 1px,transparent 1.6px),radial-gradient(rgba(214,179,106,.45) 1px,transparent 1.6px);
+    background-size:170px 170px,260px 260px;background-position:0 0,90px 70px;
+    mask-image:linear-gradient(#000,transparent 88%);
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:56px 24px 44px;position:relative;z-index:1}
+  header.brand{display:flex;align-items:center;gap:18px;margin-bottom:54px}
+  header.brand img{width:76px;height:76px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.55))}
+  .eyebrow{color:var(--gold);font-size:12px;letter-spacing:.22em;font-weight:600}
+  .name{font-size:20px;font-weight:600;letter-spacing:.06em;margin-top:3px}
+  .name span{color:var(--muted);font-weight:400;font-size:15px;letter-spacing:.02em;margin-left:8px}
+  .hero{max-width:860px}
+  .hero h1{
+    font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;
+    font-size:clamp(40px,7vw,78px);line-height:1.08;margin:0 0 18px;
+    font-weight:900;letter-spacing:.01em;
+  }
+  .hero .lead{color:var(--muted);font-size:clamp(16px,2.2vw,21px);margin:0 0 28px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px;padding:0;list-style:none}
+  .chips li{border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--cream);font-size:13px;background:rgba(20,12,34,.55)}
+  .chips .dot{color:var(--gold);margin-right:6px}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:6px 0 0}
+  .btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:12px 20px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--line)}
+  .btn.primary{background:linear-gradient(135deg,var(--gold),#b98f4a);color:#160d06;border-color:transparent;box-shadow:0 10px 30px rgba(214,179,106,.18)}
+  .btn.ghost{color:var(--cream);background:rgba(20,12,34,.6)}
+  .soon{color:var(--muted);font-size:12px}
+  .rule{height:1px;background:linear-gradient(90deg,var(--line),transparent);margin:44px 0 34px;border:0}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:rgba(20,12,34,.72);border:1px solid var(--line);border-radius:18px;padding:20px 20px 18px}
+  .card h2{font-size:15px;margin:0 0 4px;letter-spacing:.02em}
+  .card p{margin:0;color:var(--muted);font-size:13px}
+  .card a{display:inline-block;margin-top:12px;color:var(--gold);text-decoration:none;font-size:13px;font-weight:600}
+  .card a:hover{color:var(--gold-l)}
+  .langs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+  @media(max-width:760px){.langs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .lang{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(20,12,34,.55);text-decoration:none;color:var(--cream);font-size:14px}
+  .lang small{display:block;color:var(--muted);font-size:11px;margin-top:2px;letter-spacing:.02em}
+  .lang:hover{border-color:var(--gold)}
+  .note{color:var(--muted);font-size:12px;margin-top:22px;line-height:1.8}
+  footer{margin-top:54px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+  footer a{color:var(--muted);text-decoration:none;margin-right:14px}
+  footer a:hover{color:var(--gold)}
+  .badge{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:8px;padding:2px 7px;font-size:11px;color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="brand">
+    <img src="assets/logo-v3.png" alt="脸型探索 / Face Explorer 星相标志" width="76" height="76">
+    <div>
+      <div class="eyebrow">AI 相学馆 · FACE EXPLORER</div>
+      <div class="name">脸型探索<span>Face Explorer</span></div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>十种 AI 娱乐解读<br>探索你的多面可能</h1>
+    <p class="lead">面相、手相、五行八字、星座、生日、塔罗、名字、MBTI、双人合盘、八字匹配。无需账号，结果保存在本机，支持 7 种语言。</p>
+    <ul class="chips">
+      <li><span class="dot">✦</span>10 种解读</li>
+      <li><span class="dot">✦</span>无账号</li>
+      <li><span class="dot">✦</span>本地历史</li>
+      <li><span class="dot">✦</span>7 种语言</li>
+      <li><span class="dot">✦</span>报告分享</li>
+    </ul>
+    <div class="cta">
+      <a class="btn primary" href="zh-Hans/support.html">获取技术支持</a>
+      <a class="btn ghost" href="zh-Hans/privacy.html">阅读隐私政策</a>
+      <span class="soon">App Store 版本即将上线</span>
+    </div>
+    <p class="note">本 App 内容由 AI 生成，仅供娱乐与自我探索、文化参考，不构成医疗、心理、法律、投资、财务、美容或婚恋决策建议。请勿仅凭解读做出重要决定。12 岁以下用户不建议使用。</p>
+  </section>
+
+  <hr class="rule">
+
+  <section aria-labelledby="legal-title">
+    <div class="eyebrow" id="legal-title">LEGAL &amp; SUPPORT</div>
+    <h2 style="font-family:'Songti SC','STSong',serif;font-size:28px;margin:8px 0 4px">法务与支持</h2>
+    <div class="grid">
+      <div class="card">
+        <h2>技术支持</h2>
+        <p>常见问题、购买恢复、历史与隐私说明。</p>
+        <a href="zh-Hans/support.html">打开技术支持 →</a>
+      </div>
+      <div class="card">
+        <h2>隐私政策</h2>
+        <p>照片、出生信息与第三方 AI 的处理方式；v2.3。</p>
+        <a href="zh-Hans/privacy.html">打开隐私政策 →</a>
+      </div>
+      <div class="card">
+        <h2>用户协议</h2>
+        <p>使用规则、内购、责任限制与娱乐免责声明。</p>
+        <a href="zh-Hans/term.html">打开用户协议 →</a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section aria-labelledby="lang-title">
+    <div class="eyebrow" id="lang-title">LANGUAGES</div>
+    <h2 style="font-family:'Songti SC','STSong',serif;font-size:28px;margin:8px 0 4px">选择语言</h2>
+    <div class="langs">
+      <a class="lang" href="zh-Hans/support.html">简体中文<small>Chinese (Simplified)</small></a>
+      <a class="lang" href="en/support.html">English<small>English</small></a>
+      <a class="lang" href="de/support.html">Deutsch<small>German</small></a>
+      <a class="lang" href="ja/support.html">日本語<small>Japanese</small></a>
+      <a class="lang" href="fr/support.html">Français<small>French</small></a>
+      <a class="lang" href="it/support.html">Italiano<small>Italian</small></a>
+      <a class="lang" href="es/support.html">Español<small>Spanish</small></a>
+      <a class="lang" href="mailto:z674636160@163.com">联系我们<small>z674636160@163.com</small></a>
+    </div>
+    <p class="note">选择语言后进入该语言的「技术支持」页，可在页脚切换隐私政策与用户协议。</p>
+  </section>
+
+  <footer>
+    <div>© 2026 Face Explorer · 脸型探索 <span class="badge">12+ · AI 生成 · 仅供娱乐</span></div>
+    <div>
+      <a href="zh-Hans/support.html">技术支持</a>
+      <a href="zh-Hans/privacy.html">隐私政策</a>
+      <a href="zh-Hans/term.html">用户协议</a>
+      <a href="mailto:z674636160@163.com">邮箱</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
