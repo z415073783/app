@@ -11,3 +11,8 @@
 .lang-switch a:hover{text-decoration:none;border-color:#c9aee3}
 .lang-switch a[aria-current="page"]{background:#f3ebfb;border-color:#c9aee3;color:#4b1f73;font-weight:600}
 @media (max-width:480px){.lang-switch{padding:8px 12px}.lang-switch a{padding:3px 8px}}
+
+blockquote{
+  margin:14px 0;padding:8px 12px;border-left:3px solid #c9aee3;background:#faf7fd;color:#555;
+}
+blockquote p{margin:0}

@@ -37,7 +37,7 @@
 
 
 <h1>Política de privacidad de Face Explorer</h1>
-<p><strong>Versión</strong>: 2.4
+<p><strong>Versión</strong>: 2.5
 <strong>Fecha de entrada en vigor</strong>: 13 de noviembre de 2026
 <strong>Se aplica a</strong>: Face Explorer (脸型探索) para iPhone, iPad y macOS
 <strong>URL pública</strong>: https://z415073783.github.io/app/FaceAnalyse/es/privacy.html
@@ -45,6 +45,7 @@
 <hr>
 <h2>Resumen</h2>
 <p>Face Explorer no requiere cuenta. La foto, los datos de nacimiento, el nombre, el tipo MBTI o la pregunta de tarot que usted decida facilitar se envían mediante una conexión cifrada a nuestro propio servidor. El servidor calcula datos deterministas en memoria (por ejemplo, Cuatro Pilares/Cinco Elementos, zodíaco, cartas de tarot, número del camino de vida, relaciones de sinastría) y un servicio de IA de terceros (DeepSeek) los convierte en una lectura de entretenimiento. <strong>No almacenamos su foto, sus datos de nacimiento, su nombre, su pregunta ni el texto del informe en nuestros servidores, y no los utilizamos para publicidad ni para entrenar modelos.</strong> Solo usamos un identificador de dispositivo generado aleatoriamente para verificar solicitudes, aplicar los límites diarios y prevenir abusos. En las escenas de dos personas, usted debe obtener el consentimiento de la otra persona. Las lecturas completadas se <strong>guardan únicamente en su dispositivo</strong> (hasta las 50 más recientes, incluidos los datos, el informe completo y una miniatura comprimida; nunca la imagen original). Puede eliminarlas o borrarlas en cualquier momento; no subimos el historial local ni las miniaturas. Además, puede guardar opcionalmente <strong>solo en su dispositivo un «Mi perfil»</strong> (datos de nacimiento, nombre y tipo MBTI) para completar automáticamente las lecturas y los contenidos diarios; nunca se sube y puede editarse o eliminarse en cualquier momento en Ajustes (véase la sección 13).</p>
+<p>En iOS, las estadísticas de uso del producto y el diagnóstico de fallos los proporciona <strong>Firebase (Google)</strong> —Firebase Analytics y Firebase Crashlytics— y se inicializan únicamente <strong>después de que usted acepte esta política</strong>; antes del consentimiento, la app no realiza ninguna solicitud de red. Firebase no se utiliza para publicidad ni personalización publicitaria, no usamos el IDFA y no le rastreamos entre apps (véanse la sección 3 y el apéndice).</p>
 <hr>
 <h2>1. Información que recopilamos</h2>
 <h3>1.1 Datos que usted nos facilita</h3>
@@ -63,6 +64,7 @@
 <li><strong>Identificador de dispositivo (Device ID)</strong>: un UUID aleatorio generado cuando se instala la app y guardado en el Llavero del sistema. No es el IDFA, ni el IDFV, ni un número de serie, ni un número de teléfono, y no permite identificarle personalmente. Se usa para firmar solicitudes, aplicar límites diarios por dispositivo, prevenir abusos y diagnosticar problemas.</li>
 <li><strong>Metadatos de la solicitud</strong>: hora, duración, código de estado, bytes y dimensiones de la imagen, consumo de tokens y códigos de error del servidor. Se usan para cuotas, contabilidad de costes y fiabilidad del servicio.</li>
 <li><strong>Registros de red</strong>: nuestro servidor conserva logs de acceso por seguridad y diagnóstico (hora, ruta, código de estado, duración, identificador de dispositivo, dirección IP) durante un periodo de retención breve. Los logs <strong>no contienen la foto, sus datos en base64 ni el texto del informe</strong>.</li>
+<li><strong>Estadísticas de uso y diagnóstico de fallos (Firebase, solo iOS)</strong>: tras aceptar esta política, Firebase Analytics registra eventos de uso, sesiones, modelo de dispositivo/versión del sistema/versión de la app, un ID de instancia de la app y una región aproximada derivada de su dirección IP; Firebase Crashlytics registra, cuando la app falla, las trazas de la pila del fallo, el estado del dispositivo, la versión del sistema y de la app y un identificador de instalación. Estos datos no se usan para publicidad ni personalización publicitaria, no recopilamos el IDFA y no le rastreamos entre apps (véase la sección 3).</li>
 </ul>
 <h3>1.3 Compras</h3>
 <ul>
@@ -71,8 +73,9 @@
 <li>Apple nos facilita un estado de transacción limitado para que podamos añadir créditos a su dispositivo.</li>
 </ul>
 <h3>1.4 Datos que NO recopilamos</h3>
-<p>No recopilamos credenciales de cuenta, número de teléfono, correo electrónico (salvo que usted nos escriba), contactos, ubicación precisa, otras fotos de su fototeca, identificadores publicitarios ni el IDFA, plantillas de Face ID ni otras plantillas biométricas, ni información sobre las personas con quienes comparte informes. No integramos SDK de publicidad ni de seguimiento de terceros y no le rastreamos entre apps.</p>
+<p>No recopilamos credenciales de cuenta, número de teléfono, correo electrónico (salvo que usted nos escriba), contactos, ubicación precisa, otras fotos de su fototeca, identificadores publicitarios ni el IDFA, plantillas de Face ID ni otras plantillas biométricas, ni información sobre las personas con quienes comparte informes. No integramos SDK de publicidad, no usamos el IDFA ni otros identificadores publicitarios y no le rastreamos entre apps. En iOS, las estadísticas de uso del producto y el diagnóstico de fallos los proporciona Firebase (Google) y se inicializan únicamente después de que usted acepte esta política (véase la sección 3).</p>
 <p>El nombre, la fecha, la hora, el lugar y la longitud de nacimiento, el género, el tipo MBTI, la pregunta de tarot y los datos de dos personas se tratan solo cuando usted inicia la lectura correspondiente, <strong>no se almacenan en nuestros servidores, no se usan para elaborar perfiles, publicidad ni entrenar modelos</strong>, y no se solicitan si no utiliza esas escenas. La única excepción es el perfil local opcional que usted decida guardar en su dispositivo (sección 13): permanece en ese dispositivo, nunca se sube y puede eliminarlo en cualquier momento en Ajustes.</p>
+<p><strong>Ninguna solicitud de red antes del consentimiento</strong>: la app no realiza solicitudes de red hasta que usted acepte esta política. En iOS, Firebase Analytics y Firebase Crashlytics se inicializan solo después del consentimiento y no se usan para publicidad ni personalización publicitaria. Firebase trata los datos conforme a las políticas de Google (<a href="https://policies.google.com/privacy">política de privacidad de Google</a>, <a href="https://firebase.google.com/support/privacy">privacidad y seguridad de Firebase</a>); la conservación y el tratamiento transfronterizo de estos datos se rigen por las políticas de Google. Puede detener esta recopilación no dando su consentimiento o desinstalando la app (véase la sección 6).</p>
 <hr>
 <h2>2. Cómo se procesan las fotos</h2>
 <ol>
@@ -104,6 +107,18 @@
 <td>El tratamiento se rige por la política de privacidad oficial de DeepSeek; sus servidores pueden estar en China continental o en otros lugares, lo que puede implicar una transferencia transfronteriza</td>
 </tr>
 <tr>
+<td>Firebase Analytics (Google)</td>
+<td>Estadísticas de uso del producto y mejora de funcionalidades (solo iOS)</td>
+<td>Eventos de uso, sesiones, modelo del dispositivo/versión del sistema/versión de la app, ID de instancia de la app, región aproximada derivada de la IP</td>
+<td>No se usa para publicidad ni personalización publicitaria; sin IDFA y sin seguimiento entre apps. Tratamiento conforme a la <a href="https://policies.google.com/privacy">política de privacidad de Google</a> y la <a href="https://firebase.google.com/support/privacy">privacidad y seguridad de Firebase</a>; se inicializa solo después de que usted acepte esta política</td>
+</tr>
+<tr>
+<td>Firebase Crashlytics (Google)</td>
+<td>Diagnóstico de fallos y de rendimiento (solo iOS)</td>
+<td>Trazas de la pila del fallo, estado del dispositivo, versión del sistema y de la app, identificador de instalación</td>
+<td>Mismo encargado y políticas que en la fila anterior; se inicializa solo después de que usted acepte esta política</td>
+</tr>
+<tr>
 <td>Apple (App Store / StoreKit)</td>
 <td>Compras dentro de la app y recibos</td>
 <td>Información de la transacción</td>
@@ -117,7 +132,7 @@
 </tr>
 </tbody>
 </table>
-<p>No vendemos su información personal ni facilitamos fotos a terceros distintos de los servicios anteriores, salvo que la ley lo exija o que sea necesario para proteger a los usuarios o la seguridad pública.</p>
+<p>No vendemos su información personal ni facilitamos fotos a terceros distintos de los servicios anteriores, salvo que la ley lo exija o que sea necesario para proteger a los usuarios o la seguridad pública. En iOS, los datos de Firebase no se utilizan para publicidad, personalización publicitaria ni seguimiento entre apps.</p>
 <hr>
 <h2>4. Conservación del identificador de dispositivo y de los datos de uso</h2>
 <ul>
@@ -127,6 +142,7 @@
 <li><strong>Registro local de créditos</strong>: se guarda en el Llavero de su dispositivo hasta que desinstale la app o borre sus datos; tras la desinstalación, los elementos del Llavero pueden permanecer para que se puedan restaurar los créditos no usados, según el comportamiento del sistema.</li>
 <li><strong>Datos de nacimiento/nombre/MBTI/pregunta de tarot/datos de dos personas/fotos/informes</strong>: no se escriben en los discos del servidor ni se registran en logs; se liberan al terminar la solicitud.</li>
 <li><strong>Historial local/miniaturas</strong>: se guardan solo en la carpeta Application Support de su dispositivo, hasta 50 elementos; al superar los 50 se elimina el más antiguo; se borran al eliminar un elemento o borrar todo; se excluyen de la copia de seguridad de iCloud y nunca se suben. Ver o eliminar el historial no altera los créditos ni las compras.</li>
+<li><strong>Datos de Firebase Analytics/Crashlytics (solo iOS)</strong>: los trata Google como nuestro proveedor de servicios; su conservación y su transferencia transfronteriza se rigen por las políticas de Google (véase la sección 3). Los plazos de conservación del servidor indicados arriba no se aplican a estos datos y no fijamos un plazo de conservación propio para ellos.</li>
 </ul>
 <hr>
 <h2>5. Seguridad de los datos</h2>
@@ -143,7 +159,7 @@
 <li><strong>Denegar permisos</strong>: puede denegar el acceso a la fototeca o a la cámara; la app se lo explicará pero no le obligará. Aun así podrá consultar la política de privacidad y comprar créditos.</li>
 <li><strong>Eliminar los datos locales</strong>: desinstale la app o borre sus datos en los ajustes del sistema. Como los créditos comprados se controlan localmente, es posible que necesite «Restaurar compras» (según el historial de transacciones y con las limitaciones indicadas en las Condiciones de uso).</li>
 <li><strong>Contactarnos</strong>: escriba a z674636160@163.com para solicitar el acceso, la rectificación o la supresión de sus datos, o para presentar una reclamación. Como no hay cuentas, es posible que le pidamos el identificador de su dispositivo o la hora de la solicitud para localizar registros; responderemos dentro del plazo exigido por la ley.</li>
-<li><strong>Retirar el consentimiento</strong>: puede dejar de usar el servicio. El tratamiento ya realizado no puede deshacerse, pero ello no afecta a la licitud del tratamiento anterior a la retirada.</li>
+<li><strong>Retirar el consentimiento</strong>: puede dejar de usar el servicio. El tratamiento ya realizado no puede deshacerse, pero ello no afecta a la licitud del tratamiento anterior a la retirada. En iOS, Firebase Analytics y Firebase Crashlytics se inicializan solo después del consentimiento, por lo que no se inicializan si usted no consiente; al desinstalar la app se detiene cualquier recopilación posterior desde ese dispositivo.</li>
 </ul>
 <hr>
 <h2>7. Menores</h2>
@@ -212,9 +228,9 @@ El contenido de BaZi, astrología, tarot, cumpleaños, nombre, MBTI y sinastría
 <td>No</td>
 </tr>
 <tr>
-<td>Identificador de dispositivo (UUID aleatorio)</td>
+<td>Identificador de dispositivo (UUID aleatorio) e ID de instancia de Firebase (solo iOS)</td>
 <td>Sí</td>
-<td>Funcionalidad de la app, prevención de abusos</td>
+<td>Funcionalidad de la app, prevención de abusos; el ID de instancia se usa para las estadísticas de uso en iOS</td>
 <td>No</td>
 <td>No</td>
 </tr>
@@ -226,6 +242,13 @@ El contenido de BaZi, astrología, tarot, cumpleaños, nombre, MBTI y sinastría
 <td>No</td>
 </tr>
 <tr>
+<td>Datos de uso (Firebase Analytics, solo iOS: eventos de uso, sesiones, versión del dispositivo y del sistema/app, región aproximada)</td>
+<td>Sí (solo iOS, tras su consentimiento)</td>
+<td>Funcionalidad de la app, analítica (mejora de funcionalidades)</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
 <td>Compras</td>
 <td>Gestionadas por Apple; créditos guardados localmente</td>
 <td>Funcionalidad de la app</td>
@@ -233,11 +256,11 @@ El contenido de BaZi, astrología, tarot, cumpleaños, nombre, MBTI y sinastría
 <td>No</td>
 </tr>
 <tr>
-<td>Diagnóstico</td>
-<td>No (sin SDK de analítica ni de fallos de terceros)</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
+<td>Diagnóstico (Firebase Crashlytics, solo iOS: trazas de la pila del fallo, estado del dispositivo, versión del sistema y de la app, identificador de instalación)</td>
+<td>Sí (solo iOS, tras su consentimiento)</td>
+<td>Funcionalidad de la app, analítica (diagnóstico de fallos y rendimiento)</td>
+<td>No</td>
+<td>No</td>
 </tr>
 <tr>
 <td>Otro contenido del usuario (datos de nacimiento/nombre/MBTI/pregunta/datos de dos personas)</td>
@@ -269,6 +292,9 @@ El contenido de BaZi, astrología, tarot, cumpleaños, nombre, MBTI y sinastría
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>Nota: las filas relativas a Firebase solo se aplican a la versión de iOS; la versión de macOS no integra Firebase y no recopila estos datos de uso ni de diagnóstico.</p>
+</blockquote>
 
 <div class="footer"><a href="privacy.html">Política de privacidad</a><a href="term.html">Términos de uso</a><a href="support.html">Soporte</a></div>
 </body>

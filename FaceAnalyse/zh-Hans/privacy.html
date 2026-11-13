@@ -37,7 +37,7 @@
 
 
 <h1>脸型探索 隐私政策</h1>
-<p><strong>版本</strong>：v2.4
+<p><strong>版本</strong>：v2.5
 <strong>生效日期</strong>：2026-11-13
 <strong>适用 App</strong>：脸型探索（Face Explorer）iPhone / iPad / macOS 版
 <strong>公开地址</strong>：https://z415073783.github.io/app/FaceAnalyse/zh-Hans/privacy.html
@@ -45,6 +45,7 @@
 <hr>
 <h2>摘要</h2>
 <p>脸型探索不需要注册账号。你主动选择的照片、出生信息、姓名、MBTI 类型或塔罗问题，会通过加密连接发送到我们自建的服务器；服务端在内存中计算确定性事实（如四柱/五行、星座、牌面、生命灵数、合盘关系），再由第三方 AI 服务（DeepSeek）写成娱乐向解读。<strong>我们不在服务器上保存你的照片、出生信息、姓名、问题或报告正文，也不把这些内容用于广告或训练。</strong> 我们只用一个随机生成的设备标识做请求校验、每日限额和防滥用。双人场景的对方信息必须取得对方同意。完成后的解读会<strong>仅保存在你的设备本地</strong>（最近 50 条，含事实卡、报告全文与压缩缩略图，不存原图），你可以随时删除/清空；我们不会把本地历史或缩略图上传服务器。另外，你可以选择在<strong>本机保存一份「我的档案」</strong>（出生信息、姓名、MBTI 类型），用于在解读与每日内容中自动带入；它不会上传，可随时在设置中编辑或删除（见第 13 节）。</p>
+<p>iOS 版的产品使用统计与崩溃诊断由 <strong>Firebase（Google）</strong> 提供（Firebase Analytics 与 Firebase Crashlytics），且<strong>仅在你同意本政策后才初始化</strong>；同意前 App 不发起任何网络请求。Firebase 不用于广告或广告个性化，我们不使用 IDFA、不做跨 App 追踪（见第 3 节与附录）。</p>
 <hr>
 <h2>1. 我们收集哪些信息</h2>
 <h3>1.1 你主动提供的</h3>
@@ -63,6 +64,7 @@
 <li><strong>设备随机标识（Device ID）</strong>：App 安装时随机生成的一串 UUID，保存在系统钥匙串（Keychain）。它不是 IDFA、IDFV、序列号或手机号，不能用来识别你的真实身份；用于请求签名、设备每日限额、防滥用和故障排查。</li>
 <li><strong>请求元数据</strong>：请求时间、耗时、状态码、图片字节数与尺寸、token 用量、服务端错误码。用于限额、成本核算和服务稳定性。</li>
 <li><strong>网络日志</strong>：服务器为安全和排障会记录访问日志（时间、路径、状态码、耗时、设备标识、IP 地址），按日志轮转策略短期保留；日志中<strong>不记录照片内容、图片 base64 或报告正文</strong>。</li>
+<li><strong>产品使用统计与崩溃诊断（Firebase，仅 iOS 版）</strong>：在你同意本政策后，Firebase Analytics 会记录使用事件、会话、设备型号/OS 版本/App 版本、应用实例 ID，以及由 IP 地址推得的粗略地区；Firebase Crashlytics 会在 App 崩溃时记录崩溃堆栈、设备状态、OS/App 版本与安装标识。这些数据不用于广告或广告个性化，不收集 IDFA，也不做跨 App 追踪（见第 3 节）。</li>
 </ul>
 <h3>1.3 购买相关</h3>
 <ul>
@@ -71,8 +73,9 @@
 <li>Apple 会向我们提供交易是否成功等必要信息，用于向你的设备发放次数。</li>
 </ul>
 <h3>1.4 我们不收集 / 不留存</h3>
-<p>我们不收集账号密码、手机号、邮箱（除非你主动发邮件联系我们）、通讯录、精确位置、相册中的其他照片、IDFA/广告标识、Face ID 或其它生物识别模板、你分享报告的接收方信息。我们不接入广告或第三方追踪 SDK，不做跨 App 追踪。</p>
+<p>我们不收集账号密码、手机号、邮箱（除非你主动发邮件联系我们）、通讯录、精确位置、相册中的其他照片、IDFA/广告标识、Face ID 或其它生物识别模板、你分享报告的接收方信息。我们不接入广告 SDK、不使用 IDFA 或其它广告标识、不做跨 App 追踪。iOS 版的产品使用统计与崩溃诊断由 Firebase（Google）提供，且仅在用户同意本政策后才初始化（见第 3 节）。</p>
 <p>姓名、出生日期/时间/地点/经度、性别、MBTI 类型、塔罗问题、双人信息只在你主动发起对应解读时处理，<strong>不在服务器保存、不建立用户画像、不用于广告/训练</strong>；你不使用对应场景时，我们不会要求这些信息。唯一的例外是你主动选择保存在设备本机的档案（第 13 节）：它只留在你的设备上、不会上传，可随时在设置中删除。</p>
+<p><strong>同意前不发起网络请求</strong>：在你同意本政策前，App 不会发起任何网络请求；iOS 版的 Firebase Analytics 与 Firebase Crashlytics 也只在你同意后才初始化，且不用于广告或广告个性化。Firebase 按 Google 的隐私政策处理（<a href="https://policies.google.com/privacy">Google 隐私政策</a>、<a href="https://firebase.google.com/support/privacy">Firebase 隐私与安全</a>），其数据保留与跨境处理以 Google 政策为准。你可以通过不同意本政策或卸载 App 停止此类收集（见第 6 节）。</p>
 <hr>
 <h2>2. 照片如何处理</h2>
 <ol>
@@ -104,6 +107,18 @@
 <td>数据处理以其官方隐私政策为准；服务商可能位于中国大陆或其他地区，涉及跨境传输</td>
 </tr>
 <tr>
+<td>Firebase Analytics（Google）</td>
+<td>iOS 版的产品使用统计与功能改进</td>
+<td>使用事件、会话、设备型号/OS 版本/App 版本、应用实例 ID、由 IP 推得的粗略地区</td>
+<td>不收集 IDFA、不做跨 App 追踪、不用于广告；处理以 <a href="https://policies.google.com/privacy">Google 隐私政策</a> 与 <a href="https://firebase.google.com/support/privacy">Firebase 隐私与安全</a> 为准；仅在你同意本政策后初始化</td>
+</tr>
+<tr>
+<td>Firebase Crashlytics（Google）</td>
+<td>iOS 版的崩溃与性能诊断</td>
+<td>崩溃堆栈、设备状态、OS/App 版本、安装标识</td>
+<td>同上（同一处理方与政策）；仅在你同意本政策后初始化</td>
+</tr>
+<tr>
 <td>Apple（App Store / StoreKit）</td>
 <td>内购与收据处理</td>
 <td>购买交易信息</td>
@@ -117,7 +132,7 @@
 </tr>
 </tbody>
 </table>
-<p>我们不会出售你的个人信息，也不会将照片提供给上述服务之外的第三方，除非法律法规要求或为保护用户/公众安全所必需。</p>
+<p>我们不会出售你的个人信息，也不会将照片提供给上述服务之外的第三方，除非法律法规要求或为保护用户/公众安全所必需。iOS 版的 Firebase 数据不用于广告、广告个性化或跨 App 追踪。</p>
 <hr>
 <h2>4. 设备标识与用量数据的保留</h2>
 <ul>
@@ -127,6 +142,7 @@
 <li><strong>本地次数账本</strong>：保存在你的设备 Keychain，直到你卸载 App 或清除数据；卸载后 Keychain 可能仍保留用于恢复未使用次数，具体行为由系统决定。</li>
 <li><strong>出生信息/姓名/MBTI/塔罗问题/双人信息/照片/报告</strong>：不写入服务器磁盘、不写日志；请求结束即释放。</li>
 <li><strong>本地历史/缩略图</strong>：仅保存在你的设备 Application Support，最多 50 条；超出淘汰最旧；单条删除/清空全部即删除；排除 iCloud 备份/不同步，不上传服务器。历史查看/删除不改变次数或内购。</li>
+<li><strong>Firebase Analytics/Crashlytics 数据（仅 iOS 版）</strong>：由 Google 作为我们的服务提供方处理，其保留期限与跨境传输以 Google 的隐私政策为准（见第 3 节）；不适用上述服务器保留期限，我们也不为其另设保留天数。</li>
 </ul>
 <hr>
 <h2>5. 数据安全</h2>
@@ -143,7 +159,7 @@
 <li><strong>拒绝权限</strong>：你可以拒绝相册/相机权限，App 会提示但不会强制；仍可查看隐私政策与购买次数。</li>
 <li><strong>删除本地数据</strong>：卸载 App 或在系统设置中清除 App 数据；内购次数为本地记账，删除后需通过「恢复购买」按交易历史恢复（受本地账本限制，详见用户协议）。</li>
 <li><strong>联系我们</strong>：通过 z674636160@163.com 提出查询、更正、删除或投诉请求。由于没有账号，我们可能需要你提供设备标识或请求时间以定位记录；我们会在法律要求的期限内处理。</li>
-<li><strong>撤回同意</strong>：你可以停止使用本服务；已完成的处理无法撤回，但不影响此前处理的合法性。</li>
+<li><strong>撤回同意</strong>：你可以停止使用本服务；已完成的处理无法撤回，但不影响此前处理的合法性。iOS 版的 Firebase Analytics 与 Firebase Crashlytics 仅在你同意后初始化，因此未同意时不会初始化；卸载 App 即停止该设备上的后续收集。</li>
 </ul>
 <hr>
 <h2>7. 未成年人</h2>
@@ -211,9 +227,9 @@
 <td>否</td>
 </tr>
 <tr>
-<td>设备 ID（随机 UUID）</td>
+<td>设备 ID（随机 UUID）与 Firebase 应用实例 ID（仅 iOS 版）</td>
 <td>是</td>
-<td>App 功能、防滥用</td>
+<td>App 功能、防滥用；应用实例 ID 用于 iOS 版使用统计</td>
 <td>否</td>
 <td>否</td>
 </tr>
@@ -225,6 +241,13 @@
 <td>否</td>
 </tr>
 <tr>
+<td>使用数据（Firebase Analytics，仅 iOS 版：使用事件、会话、设备与 OS/App 版本、粗略地区）</td>
+<td>是（仅 iOS 版、仅在你同意后）</td>
+<td>App 功能、分析（功能改进）</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
 <td>购买</td>
 <td>由 Apple 处理；本地保存次数</td>
 <td>App 功能</td>
@@ -232,11 +255,11 @@
 <td>否</td>
 </tr>
 <tr>
-<td>诊断</td>
-<td>否（不接第三方统计/崩溃 SDK）</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
+<td>诊断（Firebase Crashlytics，仅 iOS 版：崩溃堆栈、设备状态、OS 与 App 版本、安装标识）</td>
+<td>是（仅 iOS 版、仅在你同意后）</td>
+<td>App 功能、分析（崩溃与性能诊断）</td>
+<td>否</td>
+<td>否</td>
 </tr>
 <tr>
 <td>其他用户内容（出生信息/姓名/MBTI/问题/双人信息）</td>
@@ -268,6 +291,9 @@
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p>注：Firebase 相关条目仅适用于 iOS 版；macOS 版不接入 Firebase，不采集上述 Firebase 使用数据与诊断数据。</p>
+</blockquote>
 
 <div class="footer"><a href="privacy.html">隐私政策</a><a href="term.html">用户协议</a><a href="support.html">技术支持</a></div>
 </body>
