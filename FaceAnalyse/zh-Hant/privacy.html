@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臉型探索 - 隱私權政策</title>
+    <style>
+        body {
+            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
+            line-height: 1.7;
+            margin: 20px auto;
+            max-width: 760px;
+            padding: 0 16px;
+            color: #333;
+        }
+        h1, h2, h3 { color: #222; line-height: 1.35; }
+        h1 { font-size: 1.6em; margin-bottom: .4em; }
+        h2 { font-size: 1.25em; margin-top: 1.6em; }
+        h3 { font-size: 1.08em; margin-top: 1.2em; }
+        p { margin: .65em 0; }
+        ul, ol { margin: .5em 0 .8em; padding-left: 1.4em; }
+        li { margin: .25em 0; }
+        table { border-collapse: collapse; width: 100%; margin: .8em 0; font-size: .95em; }
+        th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
+        th { background: #f6f1fb; }
+        a { color: #6e2e9e; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: #f3f3f3; padding: 1px 4px; border-radius: 3px; font-size: .92em; }
+        .meta { color: #777; font-size: .92em; }
+        .footer { margin-top: 2.5em; padding-top: 1em; border-top: 1px solid #eee; color: #777; font-size: .9em; }
+        .footer a { margin-right: 12px; }
+    </style>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<nav class="lang-switch" aria-label="Language"><a href="../en/privacy.html" hreflang="en">English</a><a href="../zh-Hans/privacy.html" hreflang="zh-Hans">簡體中文</a><a href="privacy.html" hreflang="zh-Hant" aria-current="page">繁體中文</a><a href="../de/privacy.html" hreflang="de">Deutsch</a><a href="../ja/privacy.html" hreflang="ja">日本語</a><a href="../fr/privacy.html" hreflang="fr">Français</a><a href="../it/privacy.html" hreflang="it">Italiano</a><a href="../es/privacy.html" hreflang="es">Español</a></nav>
+
+
+<h1>臉型探索 隱私權政策</h1>
+<p><strong>版本</strong>：v2.5
+<strong>生效日期</strong>：2026-11-13
+<strong>適用 App</strong>：臉型探索（Face Explorer）iPhone / iPad / macOS 版
+<strong>公開地址</strong>：https://z415073783.github.io/app/FaceAnalyse/zh-Hant/privacy.html
+<strong>聯絡方式</strong>：z674636160@163.com</p>
+<hr>
+<h2>摘要</h2>
+<p>臉型探索不需要註冊帳號。你主動選擇的照片、出生資訊、姓名、MBTI 型別或塔羅問題，會透過加密連線傳送到我們自建的伺服器；服務端在記憶體中計算確定性事實（如四柱/五行、星座、牌面、生命靈數、合盤關係），再由第三方 AI 服務（DeepSeek）寫成娛樂向解讀。<strong>我們不在伺服器上儲存你的照片、出生資訊、姓名、問題或報告正文，也不把這些內容用於廣告或訓練。</strong> 我們只用一個隨機生成的裝置標識做請求校驗、每日限額和防濫用。雙人場景的對方資訊必須取得對方同意。完成後的解讀會<strong>僅儲存在你的裝置本地</strong>（最近 50 條，含事實卡、報告全文與壓縮縮圖，不存原圖），你可以隨時刪除/清空；我們不會把本地歷史或縮圖上傳伺服器。另外，你可以選擇在<strong>本機儲存一份「我的檔案」</strong>（出生資訊、姓名、MBTI 型別），用於在解讀與每日內容中自動帶入；它不會上傳，可隨時在設定中編輯或刪除（見第 13 節）。</p>
+<p>iOS 版的產品使用統計與崩潰診斷由 <strong>Firebase（Google）</strong> 提供（Firebase Analytics 與 Firebase Crashlytics），且<strong>僅在你同意本政策後才初始化</strong>；同意前 App 不發起任何網路請求。Firebase 不用於廣告或廣告個性化，我們不使用 IDFA、不做跨 App 追蹤（見第 3 節與附錄）。</p>
+<hr>
+<h2>1. 我們收集哪些資訊</h2>
+<h3>1.1 你主動提供的</h3>
+<ul>
+<li><strong>照片</strong>：你從相簿或相機為「面相/顏值/手相」場景選擇的一張照片（手相為手掌照片）。僅用於本次解讀，處理完即釋放（詳見第 2 節）。</li>
+<li><strong>出生資訊</strong>：為八字/星座/生日/雙人場景主動填寫的日曆型別、出生日期、出生時間或「時辰未知」、出生地城市/經度/時區、性別。服務端僅用於本次排盤/計算與報告，<strong>不在伺服器儲存</strong>。你可以選擇將其儲存在本機的「我的檔案」中（第 13 節）。</li>
+<li><strong>姓名</strong>：為名字分析/雙人場景主動填寫的姓名。僅用於本次解讀，<strong>不在伺服器儲存</strong>（可選擇儲存在本機檔案中，第 13 節）。</li>
+<li><strong>MBTI 型別</strong>：為 MBTI 場景主動選擇的 4 字母型別。僅用於本次解讀，<strong>不在伺服器儲存</strong>（可選擇儲存在本機檔案中，第 13 節）。</li>
+<li><strong>本機檔案（可選）</strong>：你可以把出生資訊、姓名、MBTI 型別儲存在本機的「我的檔案」中，用於在解讀與每日內容中自動帶入。檔案僅儲存在你的裝置上（Application Support，排除 iCloud 備份），<strong>不會上傳到我們的伺服器或第三方 AI</strong>，可隨時在設定中編輯或刪除；刪除檔案不影響已儲存的歷史記錄。</li>
+<li><strong>塔羅問題</strong>：為塔羅場景主動填寫的問題（可選，0–200 字）。僅用於本次解讀，<strong>不在伺服器儲存、不寫日誌</strong>。</li>
+<li><strong>雙人資訊（第三方）</strong>：為雙人合盤/八字匹配填寫的對方出生資訊、可選姓名/性別。<strong>你必須已取得對方同意</strong>；我們僅用於本次解讀，<strong>不在伺服器儲存</strong>。</li>
+<li><strong>你選擇的語言</strong>：用於決定報告語言（繁體中文、簡體中文、英語、德語、法語、義大利語、西班牙語、日語）。</li>
+</ul>
+<h3>1.2 我們自動產生的</h3>
+<ul>
+<li><strong>裝置隨機標識（Device ID）</strong>：App 安裝時隨機生成的一串 UUID，儲存在系統鑰匙串（Keychain）。它不是 IDFA、IDFV、序列號或手機號，不能用來辨識你的真實身分；用於請求籤名、裝置每日限額、防濫用和故障排查。</li>
+<li><strong>請求後設資料</strong>：請求時間、耗時、狀態碼、圖片位元組數與尺寸、token 用量、服務端錯誤碼。用於限額、成本核算和服務穩定性。</li>
+<li><strong>網路日誌</strong>：伺服器為安全和排障會記錄訪問日誌（時間、路徑、狀態碼、耗時、裝置標識、IP 地址），按日誌輪轉策略短期保留；日誌中<strong>不記錄照片內容、圖片 base64 或報告正文</strong>。</li>
+<li><strong>產品使用統計與崩潰診斷（Firebase，僅 iOS 版）</strong>：在你同意本政策後，Firebase Analytics 會記錄使用事件、會話、裝置型號/OS 版本/App 版本、應用例項 ID，以及由 IP 地址推得的粗略地區；Firebase Crashlytics 會在 App 崩潰時記錄崩潰堆疊、裝置狀態、OS/App 版本與安裝標識。這些資料不用於廣告或廣告個性化，不收集 IDFA，也不做跨 App 追蹤（見第 3 節）。</li>
+</ul>
+<h3>1.3 購買相關</h3>
+<ul>
+<li>內購由 Apple（App Store / StoreKit）處理，我們不收集、不儲存你的支付卡號、Apple ID 或帳單資訊。</li>
+<li>分析次數（免費每日 1 次、內購每次 +6 次）記錄在你的裝置本地（Keychain），不上傳到我們的伺服器。</li>
+<li>Apple 會向我們提供交易是否成功等必要資訊，用於向你的裝置發放次數。</li>
+</ul>
+<h3>1.4 我們不收集 / 不留存</h3>
+<p>我們不收集帳號密碼、手機號、電子郵件（除非你主動發郵件聯絡我們）、通訊錄、精確位置、相簿中的其他照片、IDFA/廣告標識、Face ID 或其它生物辨識模板、你分享報告的接收方資訊。我們不接入廣告 SDK、不使用 IDFA 或其它廣告標識、不做跨 App 追蹤。iOS 版的產品使用統計與崩潰診斷由 Firebase（Google）提供，且僅在使用者同意本政策後才初始化（見第 3 節）。</p>
+<p>姓名、出生日期/時間/地點/經度、性別、MBTI 型別、塔羅問題、雙人資訊只在你主動發起對應解讀時處理，<strong>不在伺服器儲存、不建立使用者畫像、不用於廣告/訓練</strong>；你不使用對應場景時，我們不會要求這些資訊。唯一的例外是你主動選擇儲存在裝置本機的檔案（第 13 節）：它只留在你的裝置上、不會上傳，可隨時在設定中刪除。</p>
+<p><strong>同意前不發起網路請求</strong>：在你同意本政策前，App 不會發起任何網路請求；iOS 版的 Firebase Analytics 與 Firebase Crashlytics 也只在你同意後才初始化，且不用於廣告或廣告個性化。Firebase 按 Google 的隱私權政策處理（<a href="https://policies.google.com/privacy">Google 隱私權政策</a>、<a href="https://firebase.google.com/support/privacy">Firebase 隱私與安全</a>），其資料保留與跨境處理以 Google 政策為準。你可以透過不同意本政策或解除安裝 App 停止此類收集（見第 6 節）。</p>
+<hr>
+<h2>2. 照片如何處理</h2>
+<ol>
+<li><strong>只讀取你選中的那一張照片</strong>：App 不會批次讀取相簿；使用系統照片選擇器或相機，避免不必要的相簿權限。</li>
+<li><strong>本地壓縮與去除後設資料</strong>：在上傳前把照片重繪為 JPEG（長邊約 1280 畫素、品質約 0.8），把方向烘焙進畫素，並去除 EXIF、GPS 位置、拍攝裝置等後設資料。</li>
+<li><strong>加密傳輸</strong>：照片以 base64 編碼放入 HTTPS 請求，傳送到我們自建的伺服器（域名 <code>hk.zengliangmin.cn</code>），並使用請求籤名防止篡改和重放。</li>
+<li><strong>轉發第三方 AI</strong>：伺服器把照片轉發給第三方 AI 服務 <strong>DeepSeek</strong> 進行視覺分析。DeepSeek 的隱私權政策見 <a href="https://cdn.deepseek.com/policies/zh-CN/deepseek-privacy-policy.html">中文版</a> / <a href="https://cdn.deepseek.com/policies/en-US/deepseek-privacy-policy.html">English</a>。我們以最小化方式轉發；第三方 AI 服務商的留存、訓練與處理規則以其官方政策為準，我們不做超出該政策的承諾。</li>
+<li><strong>記憶體處理、不落盤</strong>：我們的伺服器只在記憶體中校驗、轉發和釋放照片；<strong>不寫入伺服器磁碟、不使用物件儲存、不寫日誌、不做備份</strong>；分析結束或請求斷開後釋放記憶體。報告正文同樣只流式返回你的裝置，不在伺服器儲存。</li>
+<li><strong>照片不長期儲存</strong>：App 僅在本次分析會話的記憶體中保留照片；分析結束後不寫入相簿、不儲存原圖/base64。<strong>本地歷史會儲存結果事實卡、報告全文與一張壓縮縮圖</strong>（長邊 240–320 JPEG、去 EXIF、不含原圖），僅用於歷史列表展示；刪除歷史或清空全部時縮圖一併刪除。 透過相機拍攝的照片與相簿照片處理方式相同：僅用於本次分析，原圖不在伺服器儲存；裝置本地歷史可能儲存壓縮縮圖，可隨時刪除。</li>
+<li><strong>不用於訓練與廣告</strong>：我們不會把你的照片用於訓練 AI 模型、廣告投放、出售或與研究機構共享。</li>
+<li><strong>報告分享</strong>：分享卡/文字僅在你主動點選分享時於本機生成，只包含已顯示的報告摘錄、場景、日期、品牌與免責；不包含出生資訊、姓名、問題、照片、雙人資訊或原始輸入；不會自動上傳/發帖，目標第三方 App 的處理受其隱私權政策約束。</li>
+</ol>
+<hr>
+<h2>3. 第三方服務</h2>
+<table>
+<thead>
+<tr>
+<th>第三方</th>
+<th>用途</th>
+<th>涉及資料</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeepSeek</td>
+<td>AI 娛樂解讀推理（面相/手相/八字/星座/生日/塔羅/名字/MBTI/合盤）</td>
+<td>壓縮後的照片、出生資訊/姓名/MBTI/塔羅問題/雙人資訊（按場景）、報告語言</td>
+<td>資料處理以其官方隱私權政策為準；服務商可能位於中國大陸或其他地區，涉及跨境傳輸</td>
+</tr>
+<tr>
+<td>Firebase Analytics（Google）</td>
+<td>iOS 版的產品使用統計與功能改進</td>
+<td>使用事件、會話、裝置型號/OS 版本/App 版本、應用例項 ID、由 IP 推得的粗略地區</td>
+<td>不收集 IDFA、不做跨 App 追蹤、不用於廣告；處理以 <a href="https://policies.google.com/privacy">Google 隱私權政策</a> 與 <a href="https://firebase.google.com/support/privacy">Firebase 隱私與安全</a> 為準；僅在你同意本政策後初始化</td>
+</tr>
+<tr>
+<td>Firebase Crashlytics（Google）</td>
+<td>iOS 版的崩潰與效能診斷</td>
+<td>崩潰堆疊、裝置狀態、OS/App 版本、安裝標識</td>
+<td>同上（同一處理方與政策）；僅在你同意本政策後初始化</td>
+</tr>
+<tr>
+<td>Apple（App Store / StoreKit）</td>
+<td>內購與收據處理</td>
+<td>購買交易資訊</td>
+<td>由 Apple 按其隱私權政策處理；我們不接觸支付憑證</td>
+</tr>
+<tr>
+<td>自建伺服器與 CDN/反向代理</td>
+<td>介面接入、HTTPS、限流</td>
+<td>請求後設資料、網路日誌</td>
+<td>用於服務執行、安全與防濫用</td>
+</tr>
+</tbody>
+</table>
+<p>我們不會出售你的個人資訊，也不會將照片提供給上述服務之外的第三方，除非法律法規要求或為保護使用者/公眾安全所必需。iOS 版的 Firebase 資料不用於廣告、廣告個性化或跨 App 追蹤。</p>
+<hr>
+<h2>4. 裝置標識與用量資料的保留</h2>
+<ul>
+<li><strong>裝置隨機標識</strong>：用於請求籤名與裝置日限，儲存在你的裝置 Keychain；伺服器用量表中儲存，按裝置維度的用量明細 <strong>30 天后清理</strong>。</li>
+<li><strong>不含標識的全域性用量彙總</strong>（總請求數、總 token、總圖片位元組等）：最多保留 <strong>365 天</strong>，僅用於成本核算與容量規劃。</li>
+<li><strong>伺服器訪問日誌</strong>：按日誌輪轉策略短期保留（通常不超過 30 天），用於安全審計與排障。</li>
+<li><strong>本地次數帳本</strong>：儲存在你的裝置 Keychain，直到你解除安裝 App 或清除資料；解除安裝後 Keychain 可能仍保留用於恢復未使用次數，具體行為由系統決定。</li>
+<li><strong>出生資訊/姓名/MBTI/塔羅問題/雙人資訊/照片/報告</strong>：不寫入伺服器磁碟、不寫日誌；請求結束即釋放。</li>
+<li><strong>本地歷史/縮圖</strong>：僅儲存在你的裝置 Application Support，最多 50 條；超出淘汰最舊；單條刪除/清空全部即刪除；排除 iCloud 備份/不同步，不上傳伺服器。歷史檢視/刪除不改變次數或內購。</li>
+<li><strong>Firebase Analytics/Crashlytics 資料（僅 iOS 版）</strong>：由 Google 作為我們的服務提供方處理，其保留期限與跨境傳輸以 Google 的隱私權政策為準（見第 3 節）；不適用上述伺服器保留期限，我們也不為其另設保留天數。</li>
+</ul>
+<hr>
+<h2>5. 資料安全</h2>
+<ul>
+<li>全鏈路使用 HTTPS；介面使用 HMAC 請求籤名、時間戳與隨機數防重放。</li>
+<li>AI 服務商的真實 API Key 只存在於伺服器，客戶端不持有；客戶端也不持有任何雲廠商金鑰。</li>
+<li>伺服器按最小化原則處理資料：不落盤照片、不記錄報告正文、日誌只保留後設資料。</li>
+<li>儘管我們採取了合理措施，任何網際網路傳輸與處理都無法保證絕對安全；請避免上傳包含敏感資訊的照片（如證件、住址、他人隱私）。</li>
+</ul>
+<hr>
+<h2>6. 你的權利與選擇</h2>
+<ul>
+<li><strong>不使用分析功能</strong>：你可以只瀏覽 App、不選擇照片；不選擇照片就不會上傳任何照片。</li>
+<li><strong>拒絕權限</strong>：你可以拒絕相簿/相機權限，App 會提示但不會強制；仍可檢視隱私權政策與購買次數。</li>
+<li><strong>刪除本地資料</strong>：解除安裝 App 或在系統設定中清除 App 資料；內購次數為本地記帳，刪除後需透過「恢復購買」按交易歷史恢復（受本地帳本限制，詳見使用者條款）。</li>
+<li><strong>聯絡我們</strong>：透過 z674636160@163.com 提出查詢、更正、刪除或投訴請求。由於沒有帳號，我們可能需要你提供裝置標識或請求時間以定位記錄；我們會在法律要求的期限內處理。</li>
+<li><strong>撤回同意</strong>：你可以停止使用本服務；已完成的處理無法撤回，但不影響此前處理的合法性。iOS 版的 Firebase Analytics 與 Firebase Crashlytics 僅在你同意後初始化，因此未同意時不會初始化；解除安裝 App 即停止該裝置上的後續收集。</li>
+</ul>
+<hr>
+<h2>7. 未成年人</h2>
+<p>本 App 的年齡分級為 <strong>12+</strong>，不面向 12 歲以下兒童設計。若你未滿 18 週歲，請在監護人同意與指導下使用。我們不會主動收集年齡或出生日期；若監護人發現未成年人未經同意上傳了照片，可聯絡我們協助處理相關記錄。</p>
+<hr>
+<h2>8. AI 生成內容與免責</h2>
+<p>報告由第三方 AI 模型根據照片生成，<strong>僅供娛樂與日常護膚參考，不構成醫療建議、診斷、治療方案或專業美容意見</strong>。AI 結果可能不準確、不完整或與真實情況不符；請勿依據報告做出醫療、醫美或重大消費決策，也請勿用報告評價他人。若照片無法分析（如無清晰人臉、多人、嚴重模糊），App 會提示重新選擇，不扣減分析次數。</p>
+<hr>
+<h2>9. 政策更新</h2>
+<p>我們可能因功能變化、法律法規或第三方服務調整而更新本政策。更新後會在本頁面釋出新版本並更新生效日期；重大變更會在 App 內以合理方式提示。繼續使用即表示你接受更新後的政策。</p>
+<hr>
+<h2>10. 聯絡我們</h2>
+<ul>
+<li>電子郵件：z674636160@163.com</li>
+<li>隱私權政策：https://z415073783.github.io/app/FaceAnalyse/zh-Hant/privacy.html</li>
+<li>使用者條款：https://z415073783.github.io/app/FaceAnalyse/zh-Hant/term.html</li>
+</ul>
+<hr>
+<h2>11. 多場景娛樂解讀的資料說明（v2.0 新增）</h2>
+<ol>
+<li><strong>場景範圍</strong>：面相、手相、五行八字、星座運勢、生日專屬、塔羅、名字分析、MBTI、雙人合盤、八字匹配，以及既有顏值分析。</li>
+<li><strong>服務端確定性計算</strong>：出生資訊用於服務端計算四柱/五行/真太陽時等事實；塔羅牌由服務端隨機抽取；生命靈數/星座/合盤關係由服務端按固定規則計算。這些事實與輸入只存在於本次請求記憶體，不落盤、不寫日誌。</li>
+<li><strong>第三方 AI</strong>：服務端將本次所需的事實與輸入（照片/出生資訊/姓名/問題等）轉發給 DeepSeek 生成娛樂解讀；第三方處理以其官方隱私權政策為準，我們要求最小化並禁止用於廣告。</li>
+<li><strong>雙人資訊</strong>：雙人場景必須由你確認已取得對方同意；我們僅用於本次解讀，不儲存，也不用於辨識或畫像。若對方聯絡我們要求處理，因未留存通常無法定位具體請求，但我們會說明資料處理方式。</li>
+<li><strong>不做的事</strong>：不做身分辨識、年齡驗證、醫療/皮膚診斷、投資/理財建議、婚姻/離婚決策、心理診斷、廣告畫像、跨 App 追蹤；不在伺服器儲存出生資訊、姓名、MBTI、塔羅問題、照片、雙人資訊或報告歷史；已完成解讀可能僅儲存在本機歷史記錄中（第 12 節），可選的「我的檔案」也僅儲存在本機（第 13 節）。</li>
+<li><strong>年齡</strong>：12+；不面向 12 歲以下兒童。涉及第三方資訊時，你需確保已獲得合法授權。</li>
+<li><strong>App Store 隱私標籤</strong>：新增「使用者內容（出生資訊/姓名/MBTI/問題等）」按實際場景申報為 App 功能、不追蹤、不與身分關聯；照片仍為「照片」；裝置 ID 用於功能/防濫用。</li>
+</ol>
+<h2>12. 本地歷史、縮圖與通知（v2.1 新增，v2.4 更新）</h2>
+<ol>
+<li><strong>本地歷史內容</strong>：成功完成的解讀會在本機儲存場景、完成時間、語言、事實卡、報告全文和一張壓縮縮圖（圖片場景長邊 240–320px JPEG、去 EXIF；文字場景用場景圖示佔位）。<strong>不儲存原圖、照片 base64、出生日期/姓名/塔羅問題/雙人資訊的原始輸入物件</strong>；事實卡展示所需的派生事實（如太陽/農曆日期、四柱、五行）可隨結果僅儲存在本機；報告文字中自然出現的姓名/問題會隨報告僅儲存在本機。</li>
+<li><strong>僅本機、不上傳</strong>：歷史與縮圖存放在 App 的 Application Support，不傳送到我們的伺服器或第三方 AI；不跨裝置同步；排除 iCloud 備份。</li>
+<li><strong>數量與刪除</strong>：最多保留最近 <strong>50 條</strong>；新增第 51 條時刪除最舊一條；支援單條刪除和清空全部（需二次確認），刪除後不可恢復；刪除歷史同時取消其相關本地通知。</li>
+<li><strong>通知權限與用途</strong>：首次分析前會請求系統通知權限，用於「分析完成提醒」；你也可以在設定中選擇開啟<strong>每日運勢提醒</strong>。拒絕任一項都不影響分析與每日內容，必要時僅使用應用內橫幅。兩類通知都只含通用文案：完成提醒只含場景名與「點選檢視結果」，每日提醒只含「今日運勢已更新」等通用提示——<strong>不含出生資訊、姓名、問題、MBTI 型別、報告內容或縮圖</strong>；可隨時在 App 內或系統設定中關閉完成提醒與每日提醒。</li>
+<li><strong>計費分離</strong>：儲存/檢視/刪除歷史均不退款、不重扣、不佔用次數；「再次解讀」需重新發起分析並按新解讀計費。</li>
+<li><strong>出生資訊/姓名/MBTI/塔羅問題/雙人資訊</strong>：仍按本政策由服務端記憶體處理，<strong>不落盤、不寫日誌、不做服務端歷史</strong>；本地歷史不額外儲存原始輸入。</li>
+<li><strong>年齡</strong>：本地歷史/通知同樣適用 12+ 與娛樂免責；不用於廣告、畫像或跨 App 追蹤。</li>
+</ol>
+<h2>13. 本地檔案、每日內容與提醒、報告快取（v2.4 新增）</h2>
+<ol>
+<li><strong>本地檔案（可選，僅裝置）</strong>：「我的檔案」允許你選擇把出生資訊、姓名、MBTI 型別儲存在本機，以便解讀與每日內容自動帶入。檔案存放在 App 的 Application Support，排除 iCloud 備份，<strong>不會上傳到我們的伺服器或第三方 AI</strong>，也不作為輸入記錄寫入本地歷史。你可以隨時在設定中編輯或刪除；刪除不影響已儲存的歷史記錄或次數。若你從不建立檔案，則不會儲存任何檔案資料。</li>
+<li><strong>每日內容</strong>：檢視今日運勢卡時，App 會以星座，或（在本機推算的）出生月日，加介面語言，向我們的伺服器傳送 <code>POST /api/v1/daily</code>。伺服器在記憶體中計算確定性事實（如星座、幸運色/幸運數字、今日塔羅牌）並返回。<strong>不呼叫第三方 AI，不消耗解讀次數或配額</strong>，該介面也不會建立與你關聯的服務端歷史。</li>
+<li><strong>每日提醒（可選，本地）</strong>：如果你開啟每日提醒，App 會在你的裝置時區<strong>每天 08:30 與 21:00 安排本地通知</strong>。內容為通用文案（如「今日運勢已更新」），<strong>不含出生資訊、姓名、MBTI 型別、問題、報告內容或縮圖</strong>。提醒由系統在你的裝置上安排並展示；可隨時在設定或系統設定中關閉。拒絕或關閉提醒不影響每日內容與解讀。</li>
+<li><strong>MBTI 測評</strong>：12 題性格測評<strong>在你的裝置本機計分</strong>，作答不會上傳；只有當你選擇把得到的 4 字母型別儲存到本機檔案，或發起 MBTI 解讀時，型別才會儲存在裝置上／作為解讀輸入按第 1 節傳送。</li>
+<li><strong>服務端通用報告快取</strong>：對於<strong>星座運勢報告與今日塔羅</strong>（單張、無問題），伺服器可能快取已生成的報告。快取鍵只包含不可辨識個人的引數（星座與週期/日期、語言、prompt 版本），<strong>不含裝置標識、照片、出生日期、姓名、MBTI 型別、問題或其他個人資料</strong>，不能用於建立使用者畫像。快取條目在<strong>週期結束時刻 + 1 小時</strong>過期（今日塔羅為次日 0 點 + 1 小時），快取<strong>最多 500 條</strong>，超出淘汰最舊；帶問題的個性化塔羅解讀不快取。</li>
+<li><strong>評分引導</strong>：在<strong>連續使用 2 天</strong>後，App 可能請求系統展示 App Store 標準評分引導，<strong>最多一次</strong>。該判斷在你的裝置本機完成；<strong>我們不會收集或收到關於引導是否展示、你給出幾分的資料</strong>（由 Apple 按其政策處理），你也可以直接關閉引導，不影響 App 使用。</li>
+</ol>
+<h2>附：App Store 隱私標籤摘要（供稽核與開發對照）</h2>
+<table>
+<thead>
+<tr>
+<th>資料型別</th>
+<th>是否收集</th>
+<th>用途</th>
+<th>是否與身分關聯</th>
+<th>是否用於追蹤</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>照片或影片（使用者內容）</td>
+<td>是（僅在使用者發起分析時上傳）</td>
+<td>App 功能</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>裝置 ID（隨機 UUID）與 Firebase 應用例項 ID（僅 iOS 版）</td>
+<td>是</td>
+<td>App 功能、防濫用；應用例項 ID 用於 iOS 版使用統計</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>使用資料（請求/用量後設資料）</td>
+<td>是（服務端計數）</td>
+<td>App 功能、分析（成本與穩定性）</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>使用資料（Firebase Analytics，僅 iOS 版：使用事件、會話、裝置與 OS/App 版本、粗略地區）</td>
+<td>是（僅 iOS 版、僅在你同意後）</td>
+<td>App 功能、分析（功能改進）</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>購買</td>
+<td>由 Apple 處理；本地儲存次數</td>
+<td>App 功能</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>診斷（Firebase Crashlytics，僅 iOS 版：崩潰堆疊、裝置狀態、OS 與 App 版本、安裝標識）</td>
+<td>是（僅 iOS 版、僅在你同意後）</td>
+<td>App 功能、分析（崩潰與效能診斷）</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>其他使用者內容（出生資訊/姓名/MBTI/問題/雙人資訊）</td>
+<td>是（僅在你發起對應場景時）</td>
+<td>App 功能</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>本地檔案（出生資訊/姓名/MBTI，僅裝置）</td>
+<td>是（僅在你主動儲存時）</td>
+<td>App 功能</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>本地歷史/縮圖（僅裝置）</td>
+<td>是（僅本機儲存，不上傳）</td>
+<td>App 功能</td>
+<td>否</td>
+<td>否</td>
+</tr>
+<tr>
+<td>通知權限/本地通知</td>
+<td>是（完成提醒 + 可選的每日運勢提醒）</td>
+<td>App 功能</td>
+<td>否</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>注：Firebase 相關條目僅適用於 iOS 版；macOS 版不接入 Firebase，不採集上述 Firebase 使用資料與診斷資料。</p>
+</blockquote>
+
+<div class="footer"><a href="privacy.html">隱私權政策</a><a href="term.html">使用者條款</a><a href="support.html">技術支援</a></div>
+</body>
+</html>
