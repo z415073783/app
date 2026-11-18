@@ -1,5 +1,8 @@
 :root {
   color-scheme: dark;
+  /* JS 用它判断「CSS 是否真的加载了」——取得到这个值才说明样式表生效。
+     不要删，删了页面的 CSS 一行会永远显示「未生效」。 */
+  --demo-css-probe: ok;
 }
 
 * { box-sizing: border-box; }
@@ -65,16 +68,13 @@ h1 {
   color: #5eead4;
 }
 
-#css-status strong {
-  font-size: 0;
-}
+/* 结论与状态配色：ok=成功、warn=未命中/失败。
+   不要用 ::after 之类的伪元素写死内容——状态文本由 JS 填，写死会把它的值盖掉。 */
+h1.hit { color: #5eead4; }
+h1.miss { color: #fbbf24; }
 
-#css-status strong::after {
-  content: "本地";
-  font-size: 14px;
-  font-weight: 600;
-  color: #5eead4;
-}
+strong.ok { color: #5eead4; }
+strong.warn { color: #fbbf24; }
 
 .mark {
   display: block;
