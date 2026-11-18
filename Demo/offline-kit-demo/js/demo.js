@@ -73,19 +73,28 @@
     cssStatus.className = cssOk ? 'ok' : 'warn';
   }
 
-  var mark = document.querySelector('.mark');
-  function settleImage() {
+  // 图片行验证「链路完整性」，与是否命中无关：回源时它同样会成功。
+  var probeImg = new Image();
+  probeImg.onload = function () {
     if (!imgStatus) return;
-    var ok = mark && mark.complete && mark.naturalWidth > 0;
-    imgStatus.textContent = ok ? '已加载' : '失败';
-    imgStatus.className = ok ? 'ok' : 'warn';
-  }
+    imgStatus.textContent = '已加载';
+    imgStatus.className = 'ok';
+  };
+  probeImg.onerror = function () {
+    if (!imgStatus) return;
+    imgStatus.textContent = '失败';
+    imgStatus.className = 'warn';
+  };
+  probeImg.src = './assets/mark.png';
+
+  var mark = document.getElementById('mark');
   if (mark) {
-    if (mark.complete) {
-      settleImage();
+    if (isCustomScheme) {
+      mark.textContent = '✓';
+      mark.className = 'mark ok';
     } else {
-      mark.addEventListener('load', settleImage);
-      mark.addEventListener('error', settleImage);
+      mark.textContent = '!';
+      mark.className = 'mark warn';
     }
   }
 })();

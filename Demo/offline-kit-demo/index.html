@@ -22,7 +22,8 @@
       <li>图片 <strong id="img-status">加载中</strong></li>
       <li>离线包标记 <strong id="marker-status">未注入</strong></li>
     </ul>
-    <img class="mark" src="./assets/mark.png" width="64" height="64" alt="demo mark" />
+    <!-- 图标随判定结果切换：未命中时不能还是个绿勾，否则「未命中」+绿勾是矛盾信号。 -->
+    <div class="mark" id="mark" aria-hidden="true"></div>
     <p class="meta">location: <code id="loc"></code></p>
   </main>
   <script src="./js/demo.js"></script>

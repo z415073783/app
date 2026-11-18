@@ -78,9 +78,27 @@ strong.warn { color: #fbbf24; }
 
 .mark {
   display: block;
+  width: 64px;
+  height: 64px;
   margin: 0 auto 16px;
-  border-radius: 12px;
-  background: #042f2e;
+  border-radius: 16px;
+  font-size: 34px;
+  line-height: 64px;
+  text-align: center;
+  font-weight: 700;
+  background: rgba(94, 234, 212, 0.12);
+}
+
+/* 命中才用绿色勾；未命中给个琥珀色感叹号——不能两种状态都配同一个绿勾。 */
+.mark.ok {
+  color: #5eead4;
+  border: 1px solid rgba(94, 234, 212, 0.4);
+}
+
+.mark.warn {
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  background: rgba(251, 191, 36, 0.12);
 }
 
 .meta {
