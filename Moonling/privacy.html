@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Privacy Policy — Moonling</title>
-<meta name="description" content="Moonling privacy policy: no accounts with us, no servers operated by us, no analytics, no data collection. Optional iCloud sync (off by default) stores data only in your private iCloud database.">
+<meta name="description" content="Moonling privacy policy: no accounts with us, no servers of our own, no ads and no cross-app tracking. Optional iCloud sync (off by default) stores data only in your private iCloud database. We use Google Firebase for crash reports and basic usage events that are not linked to your identity and never include your baby's records.">
 <style>
   :root {
     --primary: #B94A28;
@@ -102,15 +102,16 @@
 <main id="main">
   <div class="wrap">
     <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: November 8, 2026 · Last updated: November 8, 2026 (added disclosure for optional iCloud sync) · Applies to the Moonling iOS app and this website</p>
+    <p class="meta">Effective date: November 8, 2026 · Last updated: November 13, 2026 (added disclosure for Google Firebase analytics and crash reporting) · Applies to the Moonling iOS app and this website</p>
 
     <div class="summary">
       <h2>The short version</h2>
       <ul>
-        <li>Moonling has <strong>no accounts with us, no servers operated by us, no analytics and no ads</strong>.</li>
-        <li>We <strong>do not collect personal data</strong>. The App Store privacy label says <strong>Data Not Collected</strong>.</li>
-        <li>Your baby’s records stay <strong>on your device by default</strong> — unless you export them, back them up yourself, or turn on optional iCloud sync.</li>
+        <li>Moonling has <strong>no accounts with us, no servers operated by us, no ads and no cross-app tracking</strong>.</li>
+        <li>We <strong>never collect your baby’s records</strong>. Records stay <strong>on your device by default</strong> and only leave it when you export a file or turn on optional iCloud sync.</li>
+        <li>To keep the app stable and improve it, we use <strong>Google Firebase</strong> for crash reports and basic usage events (device model, iOS version, screens used). This diagnostic data is <strong>not linked to your identity and is never used to track you across apps or websites</strong> — see section 5.</li>
         <li><strong>Optional iCloud sync is off by default.</strong> If you turn it on, your records and photos are stored in <strong>your private iCloud database</strong> so your own Apple devices stay in sync — we cannot read them.</li>
+        <li>You can <strong>turn analytics and crash reporting off at any time</strong> in the app under <strong>Settings → Privacy</strong>.</li>
         <li>In-app purchases are processed by <strong>Apple</strong>. We never see your payment details.</li>
         <li>This website uses <strong>no cookies, no analytics and no third-party scripts</strong>.</li>
       </ul>
@@ -120,17 +121,18 @@
     <p>Moonling is an independent iOS app made by <strong>Lianzeng</strong> (“we”, “us”, “our”). You can contact us any time at <a href="mailto:z674636160@163.com">z674636160@163.com</a>.</p>
 
     <h2>2. Information we collect</h2>
-    <p><strong>We do not collect personal information.</strong> The developer does not receive, store, sell or share your data. Specifically, the Moonling app does not collect, transmit, sell or share with us:</p>
+    <p><strong>We do not collect your baby’s records.</strong> The developer does not receive, store, sell or share the content you enter in Moonling. Specifically, the Moonling app does not collect, transmit, sell or share with us:</p>
     <ul>
       <li>names, email addresses or phone numbers (there is no sign-up or login with us);</li>
-      <li>your baby’s records, photos, notes, or growth measurements — these stay on your device by default; if you turn on optional iCloud sync they are stored in your <strong>own private iCloud database</strong>, which we cannot access (see section 4);</li>
-      <li>device identifiers, advertising identifiers, or usage analytics;</li>
+      <li>your baby’s records, photos, notes, feeding amounts, or growth measurements — these stay on your device by default; if you turn on optional iCloud sync they are stored in your <strong>own private iCloud database</strong>, which we cannot access (see section 4);</li>
       <li>location data, contacts, or health data from Apple Health.</li>
     </ul>
-    <p>We do not use third-party analytics, advertising, crash-reporting, or tracking SDKs. The app does not require any account and does not connect to a server operated by us. If you turn on optional iCloud sync, the app uses Apple’s iCloud/CloudKit service as described in section 4; that data stays in your own iCloud account.</p>
+    <p>The app does collect limited <strong>diagnostic and usage data</strong> through Google Firebase: crash and diagnostic data, a device/app-instance identifier (IDFV), and product interaction events such as which screens were opened. This data is <strong>not linked to your identity</strong>, is <strong>never used to track you across apps or websites</strong>, and never includes your records, baby names, notes, feeding amounts, growth measurements or health values. It is described in full in <a href="#firebase">section 5</a>.</p>
+    <p>We do not use any advertising, attribution or cross-app tracking SDK, and the app does not use the advertising identifier (IDFA) or request App Tracking Transparency permission. Apart from Google Firebase (section 5) and Apple’s own system services, the app does not connect to any server of ours or of another third party. If you turn on optional iCloud sync, the app uses Apple’s iCloud/CloudKit service as described in section 4; that data stays in your own iCloud account.</p>
 
     <h2>3. Where your data is stored</h2>
-    <p>By default, everything you enter in Moonling is stored locally on your device. The app does not upload it to us or to any third party.</p>
+    <p>By default, everything you enter in Moonling is stored locally on your device. The app does not upload your records to us or to any third party.</p>
+    <p>The only data that leaves your device automatically is the technical diagnostic and usage data described in section 5, which is sent to Google Firebase and contains no content from your records.</p>
     <ul>
       <li><strong>Exports:</strong> You can export CSV or a complete JSON backup at any time. Those files are created on your device and shared only where you choose to send them.</li>
       <li><strong>Backups:</strong> Local backups are kept on your device. If you choose to store a backup in iCloud Drive, Files or another service, that storage is controlled by you and governed by that service’s terms.</li>
@@ -151,37 +153,58 @@
       <strong>In short:</strong> optional iCloud sync stores your records in your own iCloud account, not with us. It is not a Moonling account, and Moonling cannot read your records.
     </div>
 
-    <h2>5. In-app purchases</h2>
+    <h2 id="firebase">5. Analytics and crash reporting (Google Firebase)</h2>
+    <p>To keep Moonling stable and to improve it, the app uses two services from <strong>Google Firebase</strong>, provided by <strong>Google LLC</strong>: <strong>Google Analytics for Firebase</strong> (basic usage analytics) and <strong>Firebase Crashlytics</strong> (crash reporting). These are the only third-party SDKs in the app. They are <strong>not</strong> advertising, attribution or tracking services: we do not use the advertising identifier (IDFA), we do not ask for App Tracking Transparency permission, and we do not track you across other apps or websites.</p>
+    <p><strong>What is sent:</strong></p>
+    <ul>
+      <li><strong>Crash and other diagnostic data</strong> — for example the crash stack trace, device model, operating-system version, app version and app state at the time of a crash. Used for App Functionality (fixing crashes) and Analytics.</li>
+      <li><strong>A device/app-instance identifier</strong> — the identifier for vendor (IDFV) and an app-instance ID, used only to group events from the same installation. It is not linked to your name or identity.</li>
+      <li><strong>Product interaction events</strong> — for example that onboarding was completed, that a screen such as Today or Insights was viewed, that the paywall was viewed, and that a purchase was completed. For log entries we count only the kind of event (feed, sleep, diaper, pump or activity) and nothing about what it contained.</li>
+    </ul>
+    <p><strong>What is never sent:</strong> your baby’s records, baby names, notes, photos, dates, feeding amounts, growth measurements, health values or any other content you enter. Moonling never transmits your records to us or to Google.</p>
+    <p><strong>Purposes and sharing:</strong> the data is used only for <strong>App Functionality</strong> and <strong>Analytics</strong> — to fix crashes and understand which features are used. It is <strong>not linked to your identity</strong>, is <strong>not used for tracking</strong>, and is <strong>not sold or shared with advertisers</strong>. Google LLC processes it on our behalf as a service provider (subprocessor); its handling is described in <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase’s privacy and security documentation</a> and <a href="https://policies.google.com/privacy" rel="noopener">Google’s Privacy Policy</a>.</p>
+    <p><strong>Retention:</strong> Google Analytics for Firebase keeps event data for <strong>14 months</strong> by default (this is configured in the Firebase console), and Firebase Crashlytics keeps crash data for <strong>90 days</strong>.</p>
+    <p><strong>Your choice:</strong> analytics and crash reporting are <strong>on by default</strong> and can be turned off at any time in the app under <strong>Settings → Privacy → “Share usage &amp; crash data”</strong>. When it is off, no analytics or crash data is collected or sent from your device. Turning it off does not affect any logging feature. Debug builds used by the developer do not send this data unless explicitly enabled.</p>
+    <div class="note">
+      <strong>In short:</strong> Google Firebase receives crash reports and basic usage events that are not linked to your identity and are never used to track you. It never receives your baby’s records, names or notes.
+    </div>
+
+    <h2>6. In-app purchases</h2>
     <p>Moonling offers one optional one-time purchase ($4.99) that unlocks extra features. Purchases are processed by Apple through the App Store. We do not receive your name, payment card details, or Apple Account information. Apple provides developers with aggregated sales reports that do not identify individual customers.</p>
     <p>Apple’s handling of your information is described in <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>. Refund requests are handled by <a href="https://support.apple.com/billing" rel="noopener">Apple Support</a>.</p>
 
-    <h2>6. Notifications, widgets and Live Activity</h2>
+    <h2>7. Notifications, widgets and Live Activity</h2>
     <p>Reminders are scheduled locally on your device. Widgets and Live Activity display data from your device. None of these features send your data to us. If you turn on optional iCloud sync, the synced copy described in section 4 applies.</p>
 
-    <h2 id="children">7. Children’s privacy</h2>
-    <p>Moonling is intended for parents and caregivers, not for children. The app is not directed to children under 13 (or under the minimum age required in your country), and we do not knowingly collect personal information from children. Because the developer collects no data at all and cannot access your private iCloud database, no child data is transmitted to us.</p>
+    <h2 id="children">8. Children’s privacy</h2>
+    <p>Moonling is intended for parents and caregivers, not for children. The app is not directed to children under 13 (or under the minimum age required in your country), and we do not knowingly collect personal information from children. The app never transmits your baby’s records, names, notes or health values to us or to Google Firebase — the diagnostics described in section 5 relate to the app and the device, not to your child. Because the developer cannot access your private iCloud database, no child data is transmitted to us.</p>
 
-    <h2 id="choices">8. Your rights and choices</h2>
-    <p>Because we do not collect personal data, there is no account to delete and no data for us to access, correct or transfer. You remain in full control of your data:</p>
+    <h2 id="choices">9. Your rights and choices</h2>
+    <p>We do not have an account for you, we do not hold data that identifies you, and the diagnostics we receive are not linked to your identity. There is no account to delete and no personal profile for us to access, correct or transfer. You remain in full control of your data:</p>
     <ul>
+      <li>turn <strong>analytics and crash reporting</strong> on or off at any time in the app under <strong>Settings → Privacy</strong>; when off, no analytics or crash data is collected on the device;</li>
       <li>turn optional iCloud sync on or off at any time in Settings;</li>
       <li>export or back up your data at any time; if you plan to delete the app, export a backup first if you want a copy you control;</li>
       <li>delete individual entries or all local data inside the app;</li>
       <li>delete the app to remove its local data from your device;</li>
       <li>manage or delete data that apps store in your iCloud from your device’s iCloud settings (options depend on your iOS version), or contact Apple.</li>
     </ul>
-    <p>If you have a privacy question, contact us at <a href="mailto:z674636160@163.com">z674636160@163.com</a>.</p>
+    <p>Because the diagnostics sent to Google Firebase are not linked to your identity, we cannot look up or delete data for a specific person on request; turning the setting off stops collection from your device immediately. If you have a privacy question, contact us at <a href="mailto:z674636160@163.com">z674636160@163.com</a>.</p>
 
-    <h2>9. Third parties</h2>
-    <p>We do not share data with third parties because we do not collect it. The only third party involved in the app experience is Apple: for App Store distribution, in-app purchases, operating-system services, and — only if you turn it on — iCloud storage for the optional sync described in section 4. Apple handles that data under its own terms and privacy policy; we cannot access it.</p>
+    <h2>10. Third parties</h2>
+    <p>We do not sell your data and we do not share it with advertisers. We never receive your baby’s records. The third parties involved in the app experience are:</p>
+    <ul>
+      <li><strong>Apple</strong> — for App Store distribution, in-app purchases, operating-system services, and — only if you turn it on — iCloud storage for the optional sync described in section 4. Apple handles that data under its own terms and privacy policy; we cannot access it.</li>
+      <li><strong>Google LLC (Firebase)</strong> — for crash reporting (Firebase Crashlytics) and basic usage analytics (Google Analytics for Firebase), as described in section 5. Google processes this data on our behalf as a service provider (subprocessor). It is not sold and not shared with advertisers.</li>
+    </ul>
 
-    <h2>10. This website</h2>
+    <h2>11. This website</h2>
     <p>This support and policy website is a static site. It does not use cookies, analytics, tracking pixels, third-party fonts, CDNs or scripts. Our hosting provider may keep standard server logs (such as IP address and request time) to operate and secure the service; we do not use those logs to identify or profile visitors.</p>
 
-    <h2>11. Changes to this policy</h2>
+    <h2>12. Changes to this policy</h2>
     <p>If our practices change, we will update this policy and change the effective date above. If the change is significant, we will note it in the app or on this page. The current version always describes the app’s actual practices.</p>
 
-    <h2>12. Contact</h2>
+    <h2>13. Contact</h2>
     <p>Questions about privacy? Email <a href="mailto:z674636160@163.com">z674636160@163.com</a>.</p>
   </div>
 </main>

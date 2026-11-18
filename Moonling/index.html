@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
+<meta name="apple-itunes-app" content="app-id=6832258085">
 <title>Moonling — Baby tracker. No subscription. Private by design.</title>
-<meta name="description" content="Moonling is a private baby tracker for iPhone, iPad and iPhone Duo. Free tracking, one-time $4.99 unlock, no account, no subscription, no data collection. Optional iCloud sync, off by default.">
+<meta name="description" content="Moonling is a private baby tracker for iPhone, iPad and iPhone Duo. Free tracking, one-time $4.99 unlock, no account, no subscription, no ads, no cross-app tracking. Optional iCloud sync, off by default. Crash and usage diagnostics are not linked to you and never used for tracking.">
 <style>
   :root {
     --primary: #B94A28;
@@ -91,6 +92,14 @@
   }
   .cta:hover, .cta:focus { background: var(--primary-pressed); }
   .cta-note { color: var(--text-tertiary); font-size: 14px; }
+  .cta-secondary {
+    display: inline-block; color: var(--text-secondary); text-decoration: none;
+    font-weight: 600; padding: 14px 4px; min-height: 48px;
+  }
+  .cta-secondary:hover, .cta-secondary:focus { color: var(--primary); text-decoration: underline; }
+  .appstore-badge { display: inline-block; line-height: 0; }
+  .appstore-badge img { display: block; height: 48px; width: auto; }
+  .appstore-badge:hover, .appstore-badge:focus { opacity: .88; }
   section.block { padding: 40px 0; border-top: 1px solid var(--border); }
   section.block h2 { font-size: clamp(24px, 4vw, 30px); letter-spacing: -0.4px; margin: 0 0 8px; }
   section.block p.sub { color: var(--text-secondary); margin: 0 0 24px; max-width: 620px; }
@@ -153,6 +162,7 @@
       <a href="#pricing">Pricing</a>
       <a href="#privacy">Privacy</a>
       <a href="#faq">FAQ</a>
+      <a href="https://apps.apple.com/app/id6832258085">Get the app</a>
       <a href="privacy.html">Privacy policy</a>
     </nav>
   </div>
@@ -161,18 +171,24 @@
 <main id="main">
   <div class="wrap hero">
     <h1>A baby tracker that respects your family.</h1>
-    <p class="lead">Log feeds, sleep, diapers and growth in one tap — on iPhone, iPad and iPhone Duo. The free version is complete. A single $4.99 purchase unlocks the extras. No account, no subscription, and no data collection.</p>
+    <p class="lead">Log feeds, sleep, diapers and growth in one tap — on iPhone, iPad and iPhone Duo. The free version is complete. A single $4.99 purchase unlocks the extras. No account, no subscription, no ads and no cross-app tracking. To keep the app stable we collect crash reports and basic usage data that are not linked to you and are never used for tracking — never your records.</p>
     <ul class="badges">
       <li><strong>Free</strong> tracking</li>
       <li><strong>$4.99</strong> once · no subscription</li>
       <li>No account</li>
-      <li>Data Not Collected</li>
+      <li>Not linked. Not tracked.</li>
       <li>iPhone · iPad · Duo</li>
     </ul>
     <div class="cta-row">
-      <a class="cta" href="#pricing">See what’s free and what’s $4.99</a>
-      <span class="cta-note">Available on the App Store (US, UK, Canada, Australia, New Zealand)</span>
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6832258085" aria-label="Download Moonling on the App Store">
+        <picture>
+          <source srcset="appstore-badge-white.svg" media="(prefers-color-scheme: dark)">
+          <img src="appstore-badge-black.svg" alt="Download on the App Store" width="120" height="40">
+        </picture>
+      </a>
+      <a class="cta-secondary" href="#pricing">See what’s free and what’s $4.99</a>
     </div>
+    <p class="cta-note" style="margin: 10px 0 0;">Free download · $4.99 once · Available on the App Store in the US, UK, Canada, Australia and New Zealand.</p>
   </div>
 
   <section class="block" id="features">
@@ -227,8 +243,17 @@
         <div class="card">
           <span class="price">$4.99 once</span>
           <h3>Moonling+</h3>
-          <p>WHO growth percentile curves, full history charts beyond 7 days, unlimited milestones with the milestone album and “First Year” pages, all themes (including Moonlight), PDF visit summaries for your pediatrician, including a WHO growth chart page, and a third baby profile. One purchase, yours forever.</p>
+          <p>WHO growth percentile curves, full history charts beyond 7 days, unlimited milestones with the milestone album and “First Year” pages, all themes (including Moonlight), PDF visit summaries for your pediatrician, including a WHO growth chart page, and unlimited baby profiles (for multiples or a growing family). One purchase, yours forever.</p>
         </div>
+      </div>
+      <div class="cta-row" style="margin-top: 20px;">
+        <a class="appstore-badge" href="https://apps.apple.com/app/id6832258085" aria-label="Download Moonling on the App Store">
+          <picture>
+            <source srcset="appstore-badge-white.svg" media="(prefers-color-scheme: dark)">
+            <img src="appstore-badge-black.svg" alt="Download on the App Store" width="120" height="40" loading="lazy">
+          </picture>
+        </a>
+        <span class="cta-note">One-time $4.99 unlock. Restore Purchases any time.</span>
       </div>
     </div>
   </section>
@@ -257,11 +282,11 @@
   <section class="block" id="privacy">
     <div class="wrap">
       <h2>Private by design</h2>
-      <p class="sub">Baby data is family data. Moonling has no servers, no accounts and no analytics — so there is nothing for us to collect, sell or lose. Optional iCloud sync is off by default.</p>
+      <p class="sub">Baby data is family data. Moonling has no servers of ours, no accounts, no ads and no cross-app tracking. Your records stay on your device. To keep the app stable we collect crash reports and basic usage events that are not linked to your identity — and you can turn that off.</p>
       <div class="privacy-callout">
-        <span class="stamp">Data Not Collected</span>
+        <span class="stamp">Not linked. Not tracked.</span>
         <div>
-          <p style="margin:0 0 8px;">Your records stay on your device by default. You can export or back them up whenever you want, and delete everything from inside the app. Optional iCloud sync (off by default) saves your records to your <strong>private iCloud database</strong> so your own Apple devices stay in sync — Moonling can’t read it. The App Store privacy label says it plainly: <strong>Data Not Collected</strong>.</p>
+          <p style="margin:0 0 8px;">Your records stay on your device by default. You can export or back them up whenever you want, and delete everything from inside the app. Optional iCloud sync (off by default) saves your records to your <strong>private iCloud database</strong> so your own Apple devices stay in sync — Moonling can’t read it. To fix crashes and improve the app, we use Google Firebase for crash reports and basic usage events; that data is not linked to you, not used for tracking, and never includes your records, baby names or notes. You can turn it off in Settings → Privacy. The App Store privacy label says exactly that: crash and usage diagnostics, <strong>not linked to you and not used for tracking</strong>.</p>
           <p style="margin:0;"><a href="privacy.html">Read the full privacy policy</a></p>
         </div>
       </div>
@@ -279,7 +304,7 @@
         </details>
         <details>
           <summary>What does the $4.99 purchase unlock?</summary>
-          <p>WHO growth percentile curves, full history charts beyond 7 days, unlimited milestones with the milestone album and “First Year” pages, all themes including Moonlight, PDF visit summaries with a WHO growth chart page, and a third baby profile. It is a one-time, non-consumable purchase — not a subscription.</p>
+          <p>WHO growth percentile curves, full history charts beyond 7 days, unlimited milestones with the milestone album and “First Year” pages, all themes including Moonlight, PDF visit summaries with a WHO growth chart page, and unlimited baby profiles (for multiples or a growing family). It is a one-time, non-consumable purchase — not a subscription.</p>
         </details>
         <details>
           <summary>Do I need an account?</summary>
@@ -288,6 +313,10 @@
         <details>
           <summary>Where is my data stored? Can I export it?</summary>
           <p>On your device by default. Export CSV or a complete JSON backup at any time, and delete all local data from inside the app. Because there is no server of ours, we cannot see or recover your data. If you turn on optional iCloud sync, a copy is stored in your private iCloud database and Apple’s iCloud terms apply; the developer still cannot read it.</p>
+        </details>
+        <details>
+          <summary>Do you collect any data?</summary>
+          <p>We never collect your baby’s records, names or notes. To keep the app stable and improve it, we use Google Firebase for crash reports and basic usage events (device model, iOS version, screens used). This data is not linked to your identity, is never used to track you across apps or websites, and is never sold or shared with advertisers. The app does not use the advertising identifier and never asks for App Tracking Transparency permission. You can turn analytics and crash reporting off at any time in Settings → Privacy.</p>
         </details>
         <details>
           <summary>Does it work on iPad and iPhone Duo?</summary>
@@ -319,7 +348,7 @@
 <footer class="site">
   <div class="wrap">
     <p>© 2026 Lianzeng. Moonling is an independent app. Apple, iPhone, iPad and App Store are trademarks of Apple Inc.</p>
-    <p><a href="privacy.html">Privacy policy</a> · <a href="index.html">Support home</a></p>
+    <p><a href="https://apps.apple.com/app/id6832258085">Download on the App Store</a> · <a href="privacy.html">Privacy policy</a> · <a href="index.html">Support home</a></p>
   </div>
 </footer>
 </body>
